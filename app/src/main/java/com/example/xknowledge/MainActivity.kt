@@ -1,12 +1,11 @@
 package com.example.xknowledge
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+import com.example.xknowledge.ui.UiActivity as UiActivity1
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : ListActivity() {
+    override fun getMyListItemList(): List<ListItem> {
+        return listOf(
+            ListItem("界面", UiActivity1::class.java)
+        )
     }
 }

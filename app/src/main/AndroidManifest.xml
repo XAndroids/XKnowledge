@@ -9,6 +9,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.NestedScrollingActivity">
+        </activity>
+        <activity android:name=".ListActivity">
+        </activity>
+        <activity android:name=".framework.FrameworkActivity">
+        </activity>
+        <activity android:name=".feature.FeatureActivity">
+        </activity>
+        <activity android:name=".ui.UiActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
