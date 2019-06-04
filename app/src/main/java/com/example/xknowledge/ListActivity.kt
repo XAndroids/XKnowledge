@@ -3,14 +3,15 @@ package com.example.xknowledge
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.xknowledge.TitleActivity.Companion.TITLE_NAME
 
 abstract class ListActivity : AppCompatActivity() {
     private lateinit var mRecyclerView: RecyclerView
@@ -21,18 +22,12 @@ abstract class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        supportActionBar?.title = intent.getStringExtra(TITLE_NAME) ?: "XKnowledge"
-
         mRecyclerView = findViewById<RecyclerView>(R.id.list_recyclerview).apply {
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             addItemDecoration(ListItemDecoration(30))
             adapter = ListAdapter(getMyListItemList())
         }
-    }
-
-    companion object {
-        const val TITLE_NAME = "title"
     }
 
     class ListAdapter(private val myListItemList: List<ListItem>) : RecyclerView.Adapter<ListAdapter.MyViewHolder>(),
@@ -56,7 +51,7 @@ abstract class ListActivity : AppCompatActivity() {
 
         override fun onClick(view: View?) {
             val listItem = myListItemList[view?.tag as Int]
-            val intent = Intent(view?.context, listItem.pageClass)
+            val intent = Intent(view.context, listItem.pageClass)
             intent.putExtra(TITLE_NAME, listItem.title)
             view.context.startActivity(intent)
         }
