@@ -43,6 +43,7 @@ class RecyclerViewActivity : TitleActivity() {
             if (changeIndex < dataSources.size) {
                 dataSources[changeIndex] = "Change"
                 recyclerAdapter.notifyItemChanged(changeIndex)
+                recyclerAdapter.notifyDataSetChanged()
                 changeIndex++
             }
         }
@@ -63,6 +64,8 @@ class RecyclerViewActivity : TitleActivity() {
         }
 
         override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
+            //添加和Change等notify*方法只会重新绑定修改位置数据
+            //notifyDataSetChanged会引起所有数据的重新绑定
             Log.i("RecyclerView", "onBindViewHolder position = " + position)
             holder.button.text = dataSources[position]
         }
