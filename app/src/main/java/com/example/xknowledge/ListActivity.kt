@@ -7,13 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.xknowledge.TitleActivity.Companion.TITLE_NAME
 
-abstract class ListActivity : AppCompatActivity() {
+abstract class ListActivity : TitleActivity() {
     private lateinit var mRecyclerView: RecyclerView
 
     abstract fun getMyListItemList(): List<ListItem>

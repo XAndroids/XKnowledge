@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.RecyclerViewActivity"
+        android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+        <Button android:id="@+id/recyclerview_insert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insert"/>
+        <Button android:id="@+id/recyclerview_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"/>
+        <Button android:id="@+id/recyclerview_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_recyclerview"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+</LinearLayout>
