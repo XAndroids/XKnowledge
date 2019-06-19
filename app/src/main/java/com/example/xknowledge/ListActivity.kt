@@ -1,7 +1,6 @@
 package com.example.xknowledge
 
 import android.content.Intent
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +22,6 @@ abstract class ListActivity : TitleActivity() {
         mRecyclerView = findViewById<RecyclerView>(R.id.list_recyclerview).apply {
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-            addItemDecoration(ListItemDecoration(30))
             adapter = ListAdapter(getMyListItemList())
         }
     }
@@ -31,18 +29,21 @@ abstract class ListActivity : TitleActivity() {
     class ListAdapter(private val myListItemList: List<ListItem>) : RecyclerView.Adapter<ListAdapter.MyViewHolder>(),
         View.OnClickListener {
 
-        class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+        class MyViewHolder(val rootView: View) : RecyclerView.ViewHolder(rootView) {
+            val titleTextView: TextView = rootView.findViewById(R.id.list_item_title)
+            val subTitleTextView: TextView = rootView.findViewById(R.id.list_item_subtitle)
+        }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-            val textView =
-                LayoutInflater.from(parent.context).inflate(R.layout.main_recycler_item, parent, false) as TextView
-            return MyViewHolder(textView)
+            val rootView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+            return MyViewHolder(rootView)
         }
 
         override fun onBindViewHolder(viewHolder: MyViewHolder, position: Int) {
-            viewHolder.textView.text = myListItemList[position].title
-            viewHolder.textView.tag = position
-            viewHolder.textView.setOnClickListener(this)
+            viewHolder.titleTextView.text = myListItemList[position].title
+            viewHolder.subTitleTextView.text = myListItemList[position].subTitle
+            viewHolder.rootView.tag = position
+            viewHolder.rootView.setOnClickListener(this)
         }
 
         override fun getItemCount(): Int = myListItemList.size
@@ -55,17 +56,7 @@ abstract class ListActivity : TitleActivity() {
         }
     }
 
-    class ListItemDecoration(private val space: Int) : RecyclerView.ItemDecoration() {
-        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-            outRect.left = space
-            outRect.right = space
-            outRect.bottom = space
-            outRect.top = space
-        }
-    }
-
-    data class ListItem(val title: String, val pageClass: Class<*>)
-
+    data class ListItem(val title: String, val subTitle: String, val pageClass: Class<*>)
 }
 
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.xknowledge.ui.event.nested.scrolling.NestedLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+    <FrameLayout
+            android:id="@+id/activity_nestedscrolling_framelayout_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="256dp"
+                  android:text="NestedScrolling"
+                  android:gravity="center"
+                  android:textSize="30sp"
+                  android:textStyle="bold"/>
+    </FrameLayout>
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_nestedscrolling_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/activity_nestedscrolling_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </androidx.viewpager.widget.ViewPager>
+</com.example.xknowledge.ui.event.nested.scrolling.NestedLayout>

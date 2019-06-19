@@ -7,8 +7,8 @@ import com.example.xknowledge.ui.view.ViewActivity
 class UiActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
-            ListItem("View", ViewActivity::class.java),
-            ListItem("Event", EventActivity::class.java)
+            ListItem("View", "视图和组件使用相关", ViewActivity::class.java),
+            ListItem("Event", "点击和滑动等交互相关", EventActivity::class.java)
         )
     }
 }

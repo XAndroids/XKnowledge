@@ -23,7 +23,7 @@ class RecyclerViewActivity : TitleActivity() {
         val recyclerAdapter = RecyclerAdapter(dataSources)
 
         findViewById<RecyclerView>(R.id.recyclerview_recyclerview).apply {
-            layoutManager = StaggeredGridLayoutManager(3, VERTICAL)
+            layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
             adapter = recyclerAdapter
         }
 

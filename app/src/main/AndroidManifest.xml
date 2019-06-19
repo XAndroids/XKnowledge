@@ -11,22 +11,27 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:replace="android:appComponentFactory"
-            tools:ignore="GoogleAppIndexingWarning">
+            tools:ignore="GoogleAppIndexingWarning"
+            tools:replace="android:appComponentFactory">
+        <activity android:name=".ui.view.dialog.DialogActivity">
+        </activity>
+        <activity android:name=".ui.view.dialog.DialogWebviewActivity">
+        </activity>
+        <activity android:name=".ui.event.nested.RecyclerViewActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.UiActivity"/>
         <activity android:name=".ui.view.RecyclerViewActivity"/>
         <activity android:name=".ui.view.ViewActivity"/>
-
         <activity android:name=".ui.event.EventActivity"/>
         <activity android:name=".ui.event.nested.ViewPagerActivity"/>
-        <activity android:name=".ui.event.nested.ScrollingActivity"/>
+        <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity"/>
     </application>
 
 </manifest>
