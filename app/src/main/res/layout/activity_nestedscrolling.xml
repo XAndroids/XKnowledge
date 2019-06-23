@@ -5,22 +5,23 @@
         android:layout_width="match_parent"
         android:orientation="vertical">
     <FrameLayout
-            android:id="@+id/activity_nestedscrolling_framelayout_top"
+            android:id="@+id/activity_nestedscrolling_topframelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <TextView android:layout_width="match_parent"
                   android:layout_height="256dp"
                   android:text="NestedScrolling"
                   android:gravity="center"
-                  android:textSize="30sp"
+                  android:textSize="20sp"
                   android:textStyle="bold"/>
     </FrameLayout>
+
     <androidx.viewpager.widget.ViewPager
-            android:id="@+id/activity_nestedscrolling_viewpager"
+            android:id="@+id/activity_nestedscrolling_contentviewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <com.google.android.material.tabs.TabLayout
-                android:id="@+id/activity_nestedscrolling_tablayout"
+                android:id="@+id/activity_nestedscrolling_titletablayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </androidx.viewpager.widget.ViewPager>

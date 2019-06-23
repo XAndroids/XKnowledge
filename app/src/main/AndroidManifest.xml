@@ -13,6 +13,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
+        <activity android:name=".ui.sensor.SensorActivity">
+        </activity>
         <activity android:name=".ui.view.dialog.DialogActivity">
         </activity>
         <activity android:name=".ui.view.dialog.DialogWebviewActivity">
