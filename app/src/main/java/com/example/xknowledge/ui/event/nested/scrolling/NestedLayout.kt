@@ -2,7 +2,6 @@ package com.example.xknowledge.ui.event.nested.scrolling
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.Interpolator
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
@@ -15,7 +14,6 @@ import androidx.viewpager.widget.ViewPager
 import com.example.xknowledge.R
 import kotlin.math.abs
 import kotlin.math.min
-import kotlin.math.round
 import kotlin.math.roundToInt
 
 class NestedLayout(context: Context?, attributeSet: AttributeSet?) : LinearLayout(context, attributeSet) {
@@ -199,7 +197,7 @@ class NestedLayout(context: Context?, attributeSet: AttributeSet?) : LinearLayou
         Log.i(TAG, "onFinishInflate")
         //视图和它的子视图都解析完之后，获取相关视图对象
         mTopFrameLayout = findViewById(R.id.activity_nestedscrolling_topframelayout)
-        mContentViewPager = findViewById(R.id.activity_nestedscrolling_contentviewpager)
+        mContentViewPager = findViewById(R.id.nestedscrolling_viewpager_content)
 
     }
 

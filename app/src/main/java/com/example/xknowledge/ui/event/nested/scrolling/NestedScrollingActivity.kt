@@ -15,9 +15,9 @@ class NestedScrollingActivity : TitleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nestedscrolling)
 
-        val contentViewPager = findViewById<ViewPager>(R.id.activity_nestedscrolling_contentviewpager)
-        val titleTablayout = findViewById<TabLayout>(R.id.activity_nestedscrolling_titletablayout)
-        titleTablayout.setupWithViewPager(contentViewPager)
-        contentViewPager.adapter = PagerAdaper(supportFragmentManager, arrayOf("Pager1", "Pager2", "Pager3"))
+        val viewPagerContent = findViewById<ViewPager>(R.id.nestedscrolling_viewpager_content)
+        val tablayoutTitle = findViewById<TabLayout>(R.id.nestedscrolling_tablayout_title)
+        tablayoutTitle.setupWithViewPager(viewPagerContent)
+        viewPagerContent.adapter = PagerAdaper(supportFragmentManager, arrayOf("Pager1", "Pager2", "Pager3"))
     }
 }

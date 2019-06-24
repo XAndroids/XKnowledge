@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".hybrid.webview.WebviewActivity"
+        android:orientation="vertical">
+    <!--网站标题-->
+    <TextView
+            android:id="@+id/webview_textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <!--开始加载提示-->
+    <TextView
+            android:id="@+id/webview_textview_beginloading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <!--加载进度-->
+    <TextView
+            android:id="@+id/webview_textview_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <!--结束加载提示-->
+    <TextView
+            android:id="@+id/webview_textview_endloading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <!--webview-->
+    <WebView
+            android:id="@+id/webview_webview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+</LinearLayout>

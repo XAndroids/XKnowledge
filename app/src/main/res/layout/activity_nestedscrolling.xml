@@ -17,11 +17,11 @@
     </FrameLayout>
 
     <androidx.viewpager.widget.ViewPager
-            android:id="@+id/activity_nestedscrolling_contentviewpager"
+            android:id="@+id/nestedscrolling_viewpager_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <com.google.android.material.tabs.TabLayout
-                android:id="@+id/activity_nestedscrolling_titletablayout"
+                android:id="@+id/nestedscrolling_tablayout_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </androidx.viewpager.widget.ViewPager>

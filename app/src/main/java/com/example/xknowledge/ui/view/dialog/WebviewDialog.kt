@@ -21,7 +21,7 @@ class WebviewDialog : DialogFragment() {
         return WebView(context).apply {
             //WebView的透明背景
             setBackgroundColor(Color.parseColor("#00000000"))
-            loadUrl("file:///android_asset/web/transport.html")
+//            loadUrl("file:///android_asset/web/transport.html")
         }
     }
 }
