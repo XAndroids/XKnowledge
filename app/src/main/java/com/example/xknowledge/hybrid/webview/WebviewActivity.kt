@@ -1,15 +1,15 @@
 package com.example.xknowledge.hybrid.webview
 
 import android.graphics.Bitmap
+import android.net.http.SslError
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.KeyEvent.KEYCODE_BACK
 import android.view.ViewGroup
-import android.webkit.WebChromeClient
+import android.webkit.*
 import android.webkit.WebSettings.LOAD_NO_CACHE
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.xknowledge.R
 import com.example.xknowledge.TitleActivity
@@ -20,6 +20,7 @@ class WebviewActivity : TitleActivity() {
     }
 
     private lateinit var mWebView: WebView
+    private lateinit var mRootLinearLayout: LinearLayout
     private lateinit var mTitleTextView: TextView
     private lateinit var mBeginloadingTextView: TextView
     private lateinit var mLoadingTextView: TextView
@@ -29,12 +30,13 @@ class WebviewActivity : TitleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
 
+        mRootLinearLayout = findViewById(R.id.webview_linearlayout_root)
         mTitleTextView = findViewById(R.id.webview_textview_title)
         mBeginloadingTextView = findViewById(R.id.webview_textview_beginloading)
         mLoadingTextView = findViewById(R.id.webview_textview_loading)
         mEndLoadingTextView = findViewById(R.id.webview_textview_endloading)
 
-        mWebView = findViewById<WebView>(R.id.webview_webview).apply {
+        mWebView = WebView(applicationContext).apply {
             val webSettings = settings
             webSettings.javaScriptEnabled = true
 
@@ -109,6 +111,25 @@ class WebviewActivity : TitleActivity() {
                         "onReceivedError.view = $view,errorCode = $errorCode,description = $description,failingUrl=$failingUrl"
                     )
                 }
+
+                override fun onReceivedHttpError(
+                    view: WebView?,
+                    request: WebResourceRequest?,
+                    errorResponse: WebResourceResponse?
+                ) {
+                    super.onReceivedHttpError(view, request, errorResponse)
+                    Log.i(TAG, "onReceivedHttpError.view = $view,request = ${request.toString()},errorResponse=${errorResponse.toString()}")
+                }
+
+                override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+                    super.onReceivedError(view, request, error)
+                    Log.i(TAG, "onReceivedError.view=$view,request=${request.toString()},error=${error.toString()}")
+                }
+
+                override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
+                    super.onReceivedSslError(view, handler, error)
+                    Log.i(TAG, "onReceivedSslError.view=$view,handler=${handler.toString()},error=${error.toString()}")
+                }
             }
 
             webChromeClient = object : WebChromeClient() {
@@ -121,11 +142,26 @@ class WebviewActivity : TitleActivity() {
                     Log.i(TAG, "onProgressChanged.view = $view,newProgress = $newProgress")
                     mLoadingTextView.text = "$newProgress%"
                 }
+
+                override fun onJsPrompt(
+                    view: WebView?,
+                    url: String?,
+                    message: String?,
+                    defaultValue: String?,
+                    result: JsPromptResult?
+                ): Boolean {
+                    return super.onJsPrompt(view, url, message, defaultValue, result)
+                }
             }
         }
+
+        //动态添加，避免内存泄露
+        mRootLinearLayout.addView(mWebView)
+
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        //按Back键，返回上一页
         if ((keyCode === KEYCODE_BACK) && mWebView.canGoBack()) {
             mWebView.goBack()
             return true
@@ -135,10 +171,13 @@ class WebviewActivity : TitleActivity() {
     }
 
     override fun onDestroy() {
+        //避免内存泄露
+        mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null)
         mWebView.clearHistory()
 
         (mWebView.parent as ViewGroup).removeView(mWebView)
         mWebView.destroy()
+
         super.onDestroy()
     }
 }

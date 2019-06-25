@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/webview_linearlayout_root"
         tools:context=".hybrid.webview.WebviewActivity"
         android:orientation="vertical">
     <!--网站标题-->
@@ -26,10 +27,4 @@
             android:id="@+id/webview_textview_endloading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    <!--webview-->
-    <WebView
-            android:id="@+id/webview_webview"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
 </LinearLayout>
