@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Carson_Ho</title>
+        <script>
+            function callJS(){
+                alert("Android调用了JS的callJS方法");
+            }
+
+            function callAndroid1(){
+                test.showToast("js调用了android中的hello方法");
+            }
+
+            function callAndroid2(){
+                document.location = "js://webview?arg1=111&arg2=222";
+            }
+
+            function clickprompt(){
+                var result=prompt("js://demo?arg2=222&arg2=222");
+                alert("demo " + result);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JS相互调用</h1>
+        <button type="button" id="button1" onclick="callAndroid1()">点击调用Android代码1</button>
+        <button type="button" id="button2" onclick="callAndroid2()">点击调用Android代码2</button>
+        <button type="button" id="button3" onclick="clickprompt()">点击调用Android代码3</button>
+    </body>
+</html>
