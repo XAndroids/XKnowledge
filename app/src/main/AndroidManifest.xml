@@ -4,6 +4,7 @@
           package="com.example.xknowledge">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
             android:allowBackup="true"
@@ -15,19 +16,7 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity">
-        </activity>
-        <activity android:name=".hybrid.webview.WebviewActivity">
-        </activity>
-        <activity android:name=".hybrid.HybridActivity">
-        </activity>
-        <activity android:name=".ui.sensor.SensorActivity">
-        </activity>
-        <activity android:name=".ui.view.dialog.DialogActivity">
-        </activity>
-        <activity android:name=".ui.view.dialog.DialogWebviewActivity">
-        </activity>
-        <activity android:name=".ui.event.nested.RecyclerViewActivity">
+        <activity android:name=".component.activity.ActivityOne">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -36,12 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity"/>
+        <activity android:name=".hybrid.webview.WebviewActivity"/>
+        <activity android:name=".hybrid.HybridActivity"/>
+        <activity android:name=".ui.sensor.SensorActivity"/>
+        <activity android:name=".ui.view.dialog.DialogActivity"/>
+        <activity android:name=".ui.view.dialog.DialogWebviewActivity"/>
+        <activity android:name=".ui.event.nested.RecyclerViewActivity"/>
         <activity android:name=".ui.UiActivity"/>
         <activity android:name=".ui.view.RecyclerViewActivity"/>
         <activity android:name=".ui.view.ViewActivity"/>
         <activity android:name=".ui.event.EventActivity"/>
         <activity android:name=".ui.event.nested.ViewPagerActivity"/>
         <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity"/>
+        <activity android:name=".component.ComponentActivity"/>
+        <activity android:name=".component.activity.ActivityActivity"/>
+        <activity android:name=".component.activity.LifeCycleActivity"/>
     </application>
 
 </manifest>
