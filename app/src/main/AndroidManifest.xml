@@ -4,7 +4,7 @@
           package="com.example.xknowledge">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <application
             android:allowBackup="true"
@@ -16,6 +16,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
+        <activity android:name="com.example.xknowledge.test.robolectric.RobolectricActivity">
+        </activity>
         <activity android:name=".component.activity.ActivityOne">
         </activity>
         <activity android:name=".MainActivity">
@@ -41,6 +43,7 @@
         <activity android:name=".component.ComponentActivity"/>
         <activity android:name=".component.activity.ActivityActivity"/>
         <activity android:name=".component.activity.LifeCycleActivity"/>
+        <activity android:name=".test.TestActivity"/>
     </application>
 
 </manifest>

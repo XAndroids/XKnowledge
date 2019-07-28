@@ -9,8 +9,14 @@
 /.idea/assetWizardSettings.xml
 /.idea/vcs.xml
 /.idea/dictionaries
-.idea/misc.xml
+/.idea/misc.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+.project
+.settings/
+app/.classpath
+app/.settings/
+
+
