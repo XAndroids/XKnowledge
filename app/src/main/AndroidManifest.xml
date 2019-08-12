@@ -16,7 +16,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name="com.example.xknowledge.test.robolectric.RobolectricActivity">
+        <activity android:name=".test.robolectric.LoginActivity">
+        </activity>
+        <activity android:name=".test.robolectric.RobolectricActivity">
         </activity>
         <activity android:name=".component.activity.ActivityOne">
         </activity>
