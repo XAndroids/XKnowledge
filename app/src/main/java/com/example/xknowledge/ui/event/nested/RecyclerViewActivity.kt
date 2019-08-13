@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xknowledge.R
 import com.example.xknowledge.TitleActivity
-import com.example.xknowledge.ui.view.RecyclerViewActivity
+import com.example.xknowledge.ui.view.recyclerview.RecyclerViewActivity
 
 class RecyclerViewActivity : TitleActivity() {
 

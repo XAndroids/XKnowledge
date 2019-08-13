@@ -1,4 +1,4 @@
-package com.example.xknowledge.ui.view
+package com.example.xknowledge.ui.view.recyclerview
 
 import android.os.Bundle
 import android.util.Log
@@ -20,7 +20,8 @@ class RecyclerViewActivity : TitleActivity() {
         setContentView(R.layout.activity_recycler_view)
 
         val dataSources = mutableListOf("A", "B", "C", "D", "E", "F", "G")
-        val recyclerAdapter = RecyclerAdapter(dataSources)
+        val recyclerAdapter =
+            RecyclerAdapter(dataSources)
 
         findViewById<RecyclerView>(R.id.recyclerview_recyclerview).apply {
             layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
@@ -56,7 +57,9 @@ class RecyclerViewActivity : TitleActivity() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerHolder {
             val button: Button =
                 LayoutInflater.from(parent.context).inflate(R.layout.recycler_recycler_item, parent, false) as Button
-            return RecyclerHolder(button)
+            return RecyclerHolder(
+                button
+            )
         }
 
         override fun getItemCount(): Int {

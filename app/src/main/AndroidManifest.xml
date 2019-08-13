@@ -16,6 +16,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
+        <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity">
+        </activity>
         <activity android:name=".test.robolectric.LoginActivity">
         </activity>
         <activity android:name=".test.robolectric.RobolectricActivity">
@@ -37,7 +39,7 @@
         <activity android:name=".ui.view.dialog.DialogWebviewActivity"/>
         <activity android:name=".ui.event.nested.RecyclerViewActivity"/>
         <activity android:name=".ui.UiActivity"/>
-        <activity android:name=".ui.view.RecyclerViewActivity"/>
+        <activity android:name=".ui.view.recyclerview.RecyclerViewActivity"/>
         <activity android:name=".ui.view.ViewActivity"/>
         <activity android:name=".ui.event.EventActivity"/>
         <activity android:name=".ui.event.nested.ViewPagerActivity"/>
