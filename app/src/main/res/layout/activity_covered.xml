@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.covered.CoveredActivity">
+
+    <!--检测View1，被屏幕遮挡-->
+    <View
+            android:id="@+id/covered_checked1_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-50dp"
+            android:background="@android:color/darker_gray" />
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+        <!--前面的View-->
+        <View
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@android:color/holo_orange_light" />
+        <!--检测View2，被兄弟视图遮挡-->
+        <View
+                android:id="@+id/covered_checked2_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/holo_green_dark" />
+        <!--后面的View-->
+        <View
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_bright" />
+    </FrameLayout>
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+        <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <!--检测View3，被父视图子视图遮挡-->
+                <View
+                        android:id="@+id/covered_checked3_view"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/holo_green_dark" />
+            </FrameLayout>
+
+            <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/darker_gray" />
+        </FrameLayout>
+    </FrameLayout>
+
+
+    <!--检测View4，没有被遮挡-->
+    <View
+            android:id="@+id/covered_checked4_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/holo_green_dark" />
+</RelativeLayout>

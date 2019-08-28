@@ -1,6 +1,7 @@
 package com.example.xknowledge.ui.view
 
 import com.example.xknowledge.ListActivity
+import com.example.xknowledge.ui.view.covered.CoveredActivity
 import com.example.xknowledge.ui.view.dialog.DialogActivity
 import com.example.xknowledge.ui.view.recyclerview.RecyclerViewActivity
 import com.example.xknowledge.ui.view.viewpager.ViewPagerCacheActivity
@@ -10,7 +11,8 @@ class ViewActivity : ListActivity() {
         return listOf(
             ListItem("RecyclerView", "RecyclerView相关", RecyclerViewActivity::class.java),
             ListItem("Dialog", "对话框相关", DialogActivity::class.java),
-            ListItem("ViewPager", "ViewPager缓存相关", ViewPagerCacheActivity::class.java)
+            ListItem("ViewPager", "ViewPager缓存相关", ViewPagerCacheActivity::class.java),
+            ListItem("Covered", "View遮挡检测相关", CoveredActivity::class.java)
         )
     }
 }

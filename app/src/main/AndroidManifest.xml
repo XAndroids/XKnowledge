@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.example.xknowledge">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.xknowledge">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
             android:allowBackup="true"
@@ -16,38 +16,36 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity">
-        </activity>
-        <activity android:name=".test.robolectric.LoginActivity">
-        </activity>
-        <activity android:name=".test.robolectric.RobolectricActivity">
-        </activity>
-        <activity android:name=".component.activity.ActivityOne">
-        </activity>
+        <activity android:name=".ui.view.dialog.DialogCheckActivity"></activity>
+        <activity android:name=".ui.view.covered.CoveredActivity" />
+        <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
+        <activity android:name=".test.robolectric.LoginActivity" />
+        <activity android:name=".test.robolectric.RobolectricActivity" />
+        <activity android:name=".component.activity.ActivityOne" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity"/>
-        <activity android:name=".hybrid.webview.WebviewActivity"/>
-        <activity android:name=".hybrid.HybridActivity"/>
-        <activity android:name=".ui.sensor.SensorActivity"/>
-        <activity android:name=".ui.view.dialog.DialogActivity"/>
-        <activity android:name=".ui.view.dialog.DialogWebviewActivity"/>
-        <activity android:name=".ui.event.nested.RecyclerViewActivity"/>
-        <activity android:name=".ui.UiActivity"/>
-        <activity android:name=".ui.view.recyclerview.RecyclerViewActivity"/>
-        <activity android:name=".ui.view.ViewActivity"/>
-        <activity android:name=".ui.event.EventActivity"/>
-        <activity android:name=".ui.event.nested.ViewPagerActivity"/>
-        <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity"/>
-        <activity android:name=".component.ComponentActivity"/>
-        <activity android:name=".component.activity.ActivityActivity"/>
-        <activity android:name=".component.activity.LifeCycleActivity"/>
-        <activity android:name=".test.TestActivity"/>
+        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity" />
+        <activity android:name=".hybrid.webview.WebviewActivity" />
+        <activity android:name=".hybrid.HybridActivity" />
+        <activity android:name=".ui.sensor.SensorActivity" />
+        <activity android:name=".ui.view.dialog.DialogActivity" />
+        <activity android:name=".ui.view.dialog.DialogWebviewActivity" />
+        <activity android:name=".ui.event.nested.RecyclerViewActivity" />
+        <activity android:name=".ui.UiActivity" />
+        <activity android:name=".ui.view.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".ui.view.ViewActivity" />
+        <activity android:name=".ui.event.EventActivity" />
+        <activity android:name=".ui.event.nested.ViewPagerActivity" />
+        <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity" />
+        <activity android:name=".component.ComponentActivity" />
+        <activity android:name=".component.activity.ActivityActivity" />
+        <activity android:name=".component.activity.LifeCycleActivity" />
+        <activity android:name=".test.TestActivity" />
     </application>
 
 </manifest>
