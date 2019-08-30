@@ -15,7 +15,7 @@ class ShowView : LinearLayout {
     var approveCount: Int = 0
     var opposeCount: Int = 0
 
-    private val approveView: TextView
+    val approveView: TextView
     val opposeView: TextView
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
@@ -25,6 +25,7 @@ class ShowView : LinearLayout {
 
         approveView = findViewById(R.id.showview_approve_textview)
         opposeView = findViewById(R.id.showview_oppose_textview)
+        //本地广播，只有本app发送的广播
         val localBroadcastManager = LocalBroadcastManager.getInstance(context)
         localBroadcastManager.registerReceiver(object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
@@ -35,8 +36,8 @@ class ShowView : LinearLayout {
 
         }, IntentFilter("APPROVE_ACTION"))
 
-
-        localBroadcastManager.registerReceiver(
+        //全局广播，可以接受系统全局的广播
+        context.registerReceiver(
             object : BroadcastReceiver() {
                 override fun onReceive(context: Context?, intent: Intent?) {
                     opposeCount++
