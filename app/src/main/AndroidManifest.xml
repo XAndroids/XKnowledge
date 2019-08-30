@@ -16,7 +16,13 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.event.distribute.DistributeActivity"></activity>
+        <service
+                android:name=".component.broadcast.SendLocalBroadcastService"
+                android:exported="false"></service>
+
+        <activity android:name=".component.broadcast.LocalBroadcastActivity" />
+        <activity android:name=".component.broadcast.BroadcastActivity" />
+        <activity android:name=".ui.event.distribute.DistributeActivity" />
         <activity android:name=".ui.view.dialog.DialogCheckActivity" />
         <activity android:name=".ui.view.covered.CoveredActivity" />
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
