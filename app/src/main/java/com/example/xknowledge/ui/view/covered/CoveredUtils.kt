@@ -1,6 +1,7 @@
 package com.example.xknowledge.ui.view.covered
 
 import android.graphics.Rect
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 
@@ -30,6 +31,7 @@ class CoveredUtils {
             //判断当前Views是否被兄弟或父视图遮挡
             while (currentView.parent is ViewGroup) {
                 val currentParent = currentView.parent as ViewGroup
+                Log.i("CoveredActivity","currentParent = ${currentParent.id}")
 
                 //如果父View不可见，则在屏幕总不显示，被"完全遮挡"
                 if (currentParent.visibility != View.VISIBLE) {
@@ -42,6 +44,7 @@ class CoveredUtils {
                     view.getGlobalVisibleRect(viewRect)
 
                     val otherView = currentParent.getChildAt(i)
+                    Log.i("CoveredActivity","otherView = ${otherView.id}")
                     val otheViewRect = Rect()
                     otherView.getGlobalVisibleRect(otheViewRect)
 

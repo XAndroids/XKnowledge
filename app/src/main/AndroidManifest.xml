@@ -16,7 +16,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.view.dialog.DialogCheckActivity"></activity>
+        <activity android:name=".ui.event.distribute.DistributeActivity"></activity>
+        <activity android:name=".ui.view.dialog.DialogCheckActivity" />
         <activity android:name=".ui.view.covered.CoveredActivity" />
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
         <activity android:name=".test.robolectric.LoginActivity" />
