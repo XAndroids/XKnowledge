@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.xknowledge.MyEventBusIndex
 import com.example.xknowledge.R
 import com.example.xknowledge.TitleActivity
 import org.greenrobot.eventbus.EventBus
@@ -15,6 +16,8 @@ class EventbusActivity : TitleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eventbus)
+
+        EventBus.builder().addIndex(MyEventBusIndex()).build()
 
         findViewById<Button>(R.id.eventbus_postmainthread_button).setOnClickListener {
             EventBus.getDefault().post(MessageEvent("Post on MainThread!"))
