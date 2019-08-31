@@ -16,9 +16,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".framework.eventbus.EventbusActivity"/>
+        <activity android:name=".framework.eventbus.StickyActivity"></activity>
+        <activity android:name=".framework.eventbus.EventbusActivity" />
         <activity android:name=".framework.FrameworkActivity" />
-
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />
         <activity android:name=".ui.event.distribute.DistributeActivity" />

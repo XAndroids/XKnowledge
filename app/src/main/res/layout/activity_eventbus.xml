@@ -17,4 +17,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="postEvent OnChildThread" />
+
+    <Button
+            android:id="@+id/eventbus_poststicky_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="postEvent Sticky" />
+
+    <Button
+            android:id="@+id/eventbus_deletesticky_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DeleteEvent Sticky" />
+
+    <Button
+            android:id="@+id/eventbus_tosticky_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ToSticky" />
 </LinearLayout>

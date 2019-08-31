@@ -1,5 +1,6 @@
 package com.example.xknowledge.framework.eventbus
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -27,6 +28,27 @@ class EventbusActivity : TitleActivity() {
                 Log.i("EventbusActivity", "child post after")
             }).start()
         }
+
+        findViewById<Button>(R.id.eventbus_poststicky_button).setOnClickListener {
+            //发送粘性事件
+            EventBus.getDefault().postSticky(MessageEvent("Post on Sticky"))
+        }
+
+        findViewById<Button>(R.id.eventbus_tosticky_button).setOnClickListener {
+            val intent = Intent(this, StickyActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.eventbus_deletesticky_button).setOnClickListener {
+            //手动获取粘性事件
+            val strickyEvent = EventBus.getDefault().getStickyEvent(MessageEvent::class.java)
+            if (strickyEvent != null) {
+                //手动删除粘性事件
+                EventBus.getDefault().removeStickyEvent(strickyEvent)
+            }
+        }
+        //重新配置默认的EventBus实例
+        EventBus.builder().throwSubscriberException(true).installDefaultEventBus()
     }
 
     override fun onStart() {
