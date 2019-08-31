@@ -2,12 +2,12 @@ package com.example.xknowledge.framework.eventbus
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import com.example.xknowledge.R
+import com.example.xknowledge.TitleActivity
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 
-class StickyActivity : AppCompatActivity() {
+class StickyActivity : TitleActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

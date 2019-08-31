@@ -64,27 +64,31 @@ class EventbusActivity : TitleActivity() {
         super.onStop()
     }
 
-//    //默认的ThreadMode.PSTING，和发送线程在同一个线程执行
-//    //事件同步完成，一旦发布完成，所有接受者都调用
-//    @Subscribe
-//    fun onMessageEvent(event: MessageEvent) {
-//        Log.i(
-//            "EventbusActivity",
-//            "onMessageEvent," + event.message + ",Thread = ${Thread.currentThread()}"
-//        )
-//    }
-//
-//    @Subscribe
-//    fun onMessageEvent2(event: MessageEvent) {
-//        //发布线程在主线程，即订阅者调用也是在main线程
-//        Log.i(
-//            "EventbusActivity",
-//            "onMessageEvent2," + event.message + ",Thread = ${Thread.currentThread()}"
-//        )
-//        //模拟耗时操作，阻塞发布线程main，"阻塞"main,无法运行
-//        Thread.sleep(3000)
-//    }
-//
+    //默认的ThreadMode.PSTING，和发送线程在同一个线程执行
+    //事件同步完成，一旦发布完成，所有接受者都调用
+    @Subscribe
+    fun onMessageEvent(event: MessageEvent) {
+        Log.i(
+            "EventbusActivity",
+            "onMessageEvent," + event.message + ",Thread = ${Thread.currentThread()}"
+        )
+    }
+
+    //优先级较高，优先接受事件
+    @Subscribe(priority = 1)
+    fun onMessageEvent2(event: MessageEvent) {
+        //发布线程在主线程，即订阅者调用也是在main线程
+        Log.i(
+            "EventbusActivity",
+            "onMessageEvent2," + event.message + ",Thread = ${Thread.currentThread()}"
+        )
+        //模拟耗时操作，阻塞发布线程main，"阻塞"main,无法运行
+        Thread.sleep(3000)
+
+        //取消事件传递
+//        EventBus.getDefault().cancelEventDelivery(event)
+    }
+
 //    @Subscribe(threadMode = ThreadMode.MAIN)
 //    fun onMessageEvent3(event: MessageEvent) {
 //        //无论发布线程是什么线程，都在主线程
@@ -131,7 +135,8 @@ class EventbusActivity : TitleActivity() {
 //    }
 
     //始终保持独立线程运行
-    @Subscribe(threadMode = ThreadMode.ASYNC)
+    //优先级只在发布线程中有效，不同线程无效
+    @Subscribe(threadMode = ThreadMode.ASYNC, priority = 100)
     fun onMessageEvent7(event: MessageEvent) {
         Log.i(
             "EventbusActivity",
