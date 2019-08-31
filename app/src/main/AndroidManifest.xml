@@ -16,9 +16,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <service
-                android:name=".component.broadcast.SendLocalBroadcastService"
-                android:exported="false"></service>
+        <activity android:name=".framework.eventbus.EventbusActivity"/>
+        <activity android:name=".framework.FrameworkActivity" />
 
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />
