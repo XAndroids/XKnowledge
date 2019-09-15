@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.xknowledge"
+        applicationId "com.android.xknowledge"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -51,6 +51,6 @@ dependencies {
 
 kapt {
     arguments {
-        arg('eventBusIndex', 'com.example.xknowledge.MyEventBusIndex')
+        arg('eventBusIndex', 'com.android.xknowledge.MyEventBusIndex')
     }
 }
