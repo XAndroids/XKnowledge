@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.ViewGroup
 import androidx.collection.SparseArrayCompat
 
+/**
+ * 模块上下文，保存了模块需要保存的Activity，saveInstance和viewGroups信息
+ */
 class ModuleContext {
     private var component: Activity? = null
     private var saveInstance: Bundle? = null
@@ -14,12 +17,8 @@ class ModuleContext {
         return component
     }
 
-    fun setActivity(component: Activity) {
+    fun setActivity(component: Activity?) {
         this.component = component
-    }
-
-    fun getSaveInstance(): Bundle? {
-        return saveInstance
     }
 
     fun setSaveInstance(saveInstance: Bundle?) {
@@ -28,10 +27,6 @@ class ModuleContext {
 
     fun getView(key: Int): ViewGroup? {
         return viewGroups.get(key)
-    }
-
-    fun getViewGroups(): SparseArrayCompat<ViewGroup> {
-        return viewGroups
     }
 
     fun setViewGroups(viewGroups: SparseArrayCompat<ViewGroup>) {
