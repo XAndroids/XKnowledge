@@ -1,4 +1,4 @@
-package com.android.xknowledge.component.activity
+package com.android.xknowledge.component.activity.lifecycler
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

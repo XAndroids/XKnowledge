@@ -16,7 +16,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".framework.eventbus.StickyActivity"/>
+        <activity android:name=".component.activity.distribute.DistributeMainActivity"></activity>
+        <activity android:name=".framework.eventbus.StickyActivity" />
         <activity android:name=".framework.eventbus.EventbusActivity" />
         <activity android:name=".framework.FrameworkActivity" />
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
@@ -27,7 +28,7 @@
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
         <activity android:name=".test.robolectric.LoginActivity" />
         <activity android:name=".test.robolectric.RobolectricActivity" />
-        <activity android:name=".component.activity.ActivityOne" />
+        <activity android:name=".component.activity.lifecycler.ActivityOne" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,7 +51,7 @@
         <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity" />
         <activity android:name=".component.ComponentActivity" />
         <activity android:name=".component.activity.ActivityActivity" />
-        <activity android:name=".component.activity.LifeCycleActivity" />
+        <activity android:name=".component.activity.lifecycler.LifeCycleActivity" />
         <activity android:name=".test.TestActivity" />
     </application>
 

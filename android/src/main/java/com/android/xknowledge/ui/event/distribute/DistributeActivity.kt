@@ -21,7 +21,7 @@ class DistributeActivity : TitleActivity() {
      */
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "DistributeActivity_dispatchTouchEvent,event=${event?.action}"
         )
         return super.dispatchTouchEvent(event)
@@ -32,14 +32,14 @@ class DistributeActivity : TitleActivity() {
      */
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "DistributeActivity_onTouchEvent"
         )
 
         val className = Class.forName("android.view.ViewGroup")
         val field = className.getDeclaredField("mFirstTouchTarget")
         field.isAccessible = true
-        Log.i("DistributeActivity", "${field.get(rootView)}")
+        Log.i("DistributeMainActivity", "${field.get(rootView)}")
         return super.onTouchEvent(event)
     }
 }

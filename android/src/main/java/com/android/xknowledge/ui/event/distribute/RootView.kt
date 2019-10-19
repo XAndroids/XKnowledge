@@ -12,7 +12,7 @@ class RootView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context
      */
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "RootView_dispatchTouchEventevent"
         )
         return super.dispatchTouchEvent(ev)
@@ -23,7 +23,7 @@ class RootView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context
      */
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "RootView_onInterceptTouchEvent"
         )
         return super.onInterceptTouchEvent(ev)
@@ -34,7 +34,7 @@ class RootView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context
      */
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "RootView_onTouchEvent"
         )
         return super.onTouchEvent(event)

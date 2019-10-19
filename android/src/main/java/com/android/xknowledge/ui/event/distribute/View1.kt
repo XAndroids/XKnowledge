@@ -12,7 +12,7 @@ class View1(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
      */
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "View1_dispatchTouchEvent"
         )
         return super.dispatchTouchEvent(event)
@@ -23,7 +23,7 @@ class View1(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
      */
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "View1_onTouchEvent"
         )
         return super.onTouchEvent(event)

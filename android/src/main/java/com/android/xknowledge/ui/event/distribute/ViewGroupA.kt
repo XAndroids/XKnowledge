@@ -12,7 +12,7 @@ class ViewGroupA(context: Context?, attrs: AttributeSet?) : LinearLayout(context
      */
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "ViewGroupA_dispatchTouchEventevent"
         )
         return super.dispatchTouchEvent(ev)
@@ -23,7 +23,7 @@ class ViewGroupA(context: Context?, attrs: AttributeSet?) : LinearLayout(context
      */
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "ViewGroupA_onInterceptTouchEvent"
         )
         return super.onInterceptTouchEvent(ev)
@@ -34,7 +34,7 @@ class ViewGroupA(context: Context?, attrs: AttributeSet?) : LinearLayout(context
      */
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         Log.i(
-            "DistributeActivity",
+            "DistributeMainActivity",
             "ViewGroupA_onTouchEvent"
         )
         return super.onTouchEvent(event)
