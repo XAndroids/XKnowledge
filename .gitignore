@@ -10,5 +10,5 @@
 .settings/
 /app/.classpath
 /app/.settings/
-android/.classpath
+android/
 
