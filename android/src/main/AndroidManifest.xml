@@ -16,9 +16,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
-        <activity android:name=".component.fragment.distribute.DistrubiteFragmentActivity"></activity>
-        <activity android:name=".component.fragment.FragmentActivity" />
-        <activity android:name=".component.activity.distribute.DistributeActivity" />
+        <activity android:name="com.android.xknowledge.component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity"></activity>
+        <activity android:name="com.android.xknowledge.component.activity.distribute.fragment.FragmentActivity" />
+        <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
         <activity android:name=".framework.eventbus.StickyActivity" />
         <activity android:name=".framework.eventbus.EventbusActivity" />
         <activity android:name=".framework.FrameworkActivity" />

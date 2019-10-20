@@ -1,7 +1,7 @@
 package com.android.xknowledge.component.activity
 
 import com.android.xknowledge.ListActivity
-import com.android.xknowledge.component.activity.distribute.DistributeActivity
+import com.android.xknowledge.component.activity.distribute.activity.DistributeActivity
 import com.android.xknowledge.component.activity.lifecycler.LifeCycleActivity
 
 class ActivityActivity : ListActivity() {
