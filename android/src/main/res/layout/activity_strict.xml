@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".optimize.strictmode.StrictActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="线程策略检测-ThreadPolicy"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="writeToExternalStorage"
+        android:text="磁盘写入操作：detectDiskWrites" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="readFromExternalStorage"
+        android:text="磁盘读取操作：detectDiskReads" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络操作：detectNetwork" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义的耗时调用：detectCustomSlowCalls"
+        android:onClick="customSlowCalls"/>
+
+    <TextView
+        android:id="@+id/strict_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="虚拟机策略—VmPolicy"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity泄露：detectActivityLeaks"
+        android:onClick="activityLeak"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="未关闭的Closable对象泄露：detectLeakedClosableObjects"
+        android:textAlignment="viewStart" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="泄露的Sqlite对象：detectLeakedSqlLiteObjects" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="检测实例数量：setClassInstanceLimit" />
+
+</LinearLayout>

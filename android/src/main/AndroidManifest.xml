@@ -7,17 +7,18 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
-            android:allowBackup="true"
-            android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            tools:ignore="GoogleAppIndexingWarning"
-            tools:replace="android:appComponentFactory">
-        <activity android:name="com.android.xknowledge.component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity"></activity>
-        <activity android:name="com.android.xknowledge.component.activity.distribute.fragment.FragmentActivity" />
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:appComponentFactory"
+        android:name=".XApplication">
+        <activity android:name=".component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity" />
+        <activity android:name=".component.activity.distribute.fragment.FragmentActivity" />
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
         <activity android:name=".framework.eventbus.StickyActivity" />
         <activity android:name=".framework.eventbus.EventbusActivity" />
@@ -60,6 +61,8 @@
         <activity android:name=".component.activity.ActivityActivity" />
         <activity android:name=".component.activity.lifecycler.LifeCycleActivity" />
         <activity android:name=".test.TestActivity" />
+        <activity android:name=".optimize.strictmode.StrictActivity"></activity>
+        <activity android:name=".optimize.OptimizeActivity" />
     </application>
 
 </manifest>
