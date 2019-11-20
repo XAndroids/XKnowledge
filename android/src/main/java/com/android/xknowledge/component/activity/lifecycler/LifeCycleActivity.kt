@@ -17,8 +17,10 @@ class LifeCycleActivity : TitleActivity() {
 
         val toOneButton = findViewById<Button>(R.id.lifecycler_button_toone)
         toOneButton.setOnClickListener {
-            val intent = Intent(this@LifeCycleActivity, ActivityOne::class.java)
-            startActivity(intent)
+            Intent().apply {
+                action = "com.android.xknowledge.component.activity.lifecycler.ActivityOne"
+                startActivity(this)
+            }
         }
     }
 

@@ -42,7 +42,11 @@ dependencies {
     kapt 'org.greenrobot:eventbus-annotation-processor:3.1.1'
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0-alpha02'
     implementation 'com.google.android.material:material:1.0.0-rc01'
 
     //Robolectric框架构建配置

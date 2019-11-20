@@ -30,7 +30,12 @@
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
         <activity android:name=".test.robolectric.LoginActivity" />
         <activity android:name=".test.robolectric.RobolectricActivity" />
-        <activity android:name=".component.activity.lifecycler.ActivityOne" />
+        <activity android:name=".component.activity.lifecycler.ActivityOne">
+            <intent-filter>
+                <action android:name="com.android.xknowledge.component.activity.lifecycler.ActivityOne" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
