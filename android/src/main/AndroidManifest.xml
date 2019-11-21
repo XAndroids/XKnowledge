@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        package="com.android.xknowledge">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.xknowledge">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
+        android:name=".XApplication"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -15,8 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
-        tools:replace="android:appComponentFactory"
-        android:name=".XApplication">
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".ui.view.viewstub.ViewStubActivity"></activity>
         <activity android:name=".component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity" />
         <activity android:name=".component.activity.distribute.fragment.FragmentActivity" />
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
@@ -34,6 +35,7 @@
         <activity android:name=".component.activity.lifecycler.ActivityOne">
             <intent-filter>
                 <action android:name="com.android.xknowledge.component.activity.lifecycler.ActivityOne" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -61,7 +63,7 @@
         <activity android:name=".component.activity.ActivityActivity" />
         <activity android:name=".component.activity.lifecycler.LifeCycleActivity" />
         <activity android:name=".test.TestActivity" />
-        <activity android:name=".optimize.strictmode.StrictActivity"></activity>
+        <activity android:name=".optimize.strictmode.StrictActivity" />
         <activity android:name=".optimize.OptimizeActivity" />
     </application>
 
