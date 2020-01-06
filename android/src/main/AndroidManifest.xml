@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.view.viewstub.ViewStubActivity"></activity>
+        <activity android:name=".framework.fresco.FrescoActivity" />
+        <activity android:name=".ui.view.viewstub.ViewStubActivity" />
         <activity android:name=".component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity" />
         <activity android:name=".component.activity.distribute.fragment.FragmentActivity" />
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
