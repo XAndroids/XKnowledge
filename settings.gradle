@@ -1,1 +1,2 @@
 include ':android', ':java'
+include ':kotlin'
