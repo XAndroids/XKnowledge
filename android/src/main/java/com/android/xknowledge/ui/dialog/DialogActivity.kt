@@ -1,6 +1,7 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog
 
 import com.android.xknowledge.ListActivity
+import com.android.xknowledge.ui.dialog.translucent.DialogTranslucentActivity
 
 class DialogActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {

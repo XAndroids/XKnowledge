@@ -1,4 +1,4 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog.translucent
 
 import android.app.Dialog
 import android.os.Bundle
@@ -16,19 +16,14 @@ class TranslucentDialog : DialogFragment() {
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
 
-//        dialog.let {
-//            //取消点击，点击外部和Back按键关闭对话框
-//            //参考：https://www.jianshu.com/p/b6b89eda6904
-//            it.setCancelable(false)
-//            it.setCanceledOnTouchOutside(false)
+        dialog.let {
+            //取消点击，点击外部和Back按键关闭对话框
+            //参考：https://www.jianshu.com/p/b6b89eda6904
+            it.setCancelable(false)
+            it.setCanceledOnTouchOutside(false)
 //            it.setOnKeyListener { _, keyCode, _ -> keyCode == KeyEvent.KEYCODE_BACK }
-//        }
+        }
 
         return dialog
-    }
-
-    override fun onStart() {
-        super.onStart()
-        dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
     }
 }

@@ -1,4 +1,4 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog
 
 import android.os.Bundle
 import android.util.Log

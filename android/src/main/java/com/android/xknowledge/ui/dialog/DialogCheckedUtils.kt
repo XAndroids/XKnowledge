@@ -1,4 +1,4 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog
 
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity

@@ -1,4 +1,4 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog.translucent
 
 import android.os.Bundle
 import android.widget.Button
@@ -12,12 +12,14 @@ class DialogTranslucentActivity : TitleActivity() {
         setContentView(R.layout.activity_dialog_translucent)
 
         findViewById<Button>(R.id.fulldialog_button_notranslucent).setOnClickListener {
-            val noTranslucentDialog = NoTranslucentDialog()
+            val noTranslucentDialog =
+                NoTranslucentDialog()
             noTranslucentDialog.show(supportFragmentManager, "NoTranslucentDialog")
         }
 
         findViewById<Button>(R.id.fulldialog_button_translucent).setOnClickListener {
-            val translucentDialog = TranslucentDialog()
+            val translucentDialog =
+                TranslucentDialog()
             translucentDialog.show(supportFragmentManager, "TranslucentDialog")
         }
     }

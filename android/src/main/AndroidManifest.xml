@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.view.dialog.DialogTranslucentActivity"></activity>
+        <activity android:name="com.android.xknowledge.ui.dialog.translucent.DialogTranslucentActivity"></activity>
         <activity android:name=".framework.fresco.FrescoActivity" />
         <activity android:name=".ui.view.viewstub.ViewStubActivity" />
         <activity android:name=".component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity" />
@@ -29,7 +29,7 @@
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />
         <activity android:name=".ui.event.distribute.EventDistributeActivity" />
-        <activity android:name=".ui.view.dialog.DialogCheckActivity" />
+        <activity android:name="com.android.xknowledge.ui.dialog.DialogCheckActivity" />
         <activity android:name=".ui.view.covered.CoveredActivity" />
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
         <activity android:name=".test.robolectric.LoginActivity" />
@@ -52,8 +52,8 @@
         <activity android:name=".hybrid.webview.WebviewActivity" />
         <activity android:name=".hybrid.HybridActivity" />
         <activity android:name=".ui.sensor.SensorActivity" />
-        <activity android:name=".ui.view.dialog.DialogActivity" />
-        <activity android:name=".ui.view.dialog.DialogWebviewActivity" />
+        <activity android:name="com.android.xknowledge.ui.dialog.DialogActivity" />
+        <activity android:name="com.android.xknowledge.ui.dialog.DialogWebviewActivity" />
         <activity android:name=".ui.event.nested.RecyclerViewActivity" />
         <activity android:name=".ui.UiActivity" />
         <activity android:name=".ui.view.recyclerview.RecyclerViewActivity" />

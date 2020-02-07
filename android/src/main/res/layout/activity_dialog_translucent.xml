@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.view.dialog.DialogTranslucentActivity">
+    tools:context=".ui.dialog.translucent.DialogTranslucentActivity">
 
     <Button
         android:id="@+id/fulldialog_button_notranslucent"

@@ -1,4 +1,4 @@
-package com.android.xknowledge.ui.view.dialog
+package com.android.xknowledge.ui.dialog
 
 import android.app.Dialog
 import android.os.Bundle
