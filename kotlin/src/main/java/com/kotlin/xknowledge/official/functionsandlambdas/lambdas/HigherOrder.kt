@@ -1,4 +1,4 @@
-package com.kotlin.study.official.functionsandlambdas.lambdas
+package com.kotlin.xknowledge.official.functionsandlambdas.lambdas
 
 
 fun main(args: Array<String>) {
