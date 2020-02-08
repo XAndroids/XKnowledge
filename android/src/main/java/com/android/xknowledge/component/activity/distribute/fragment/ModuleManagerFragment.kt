@@ -40,7 +40,7 @@ abstract class ModuleManagerFragment : Fragment() {
 
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         if(this::fragmentModuleManager.isInitialized){
             fragmentModuleManager.onConfigurationChanged(newConfig!!)

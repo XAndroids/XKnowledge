@@ -13,7 +13,7 @@ import com.android.xknowledge.R
 class CacheFragment : Fragment() {
     private var mTitle: String? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         Log.i("ViewPagerCacheActivity", "CacheFragment_onAttach")
     }

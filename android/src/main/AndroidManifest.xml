@@ -17,6 +17,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
+        <activity android:name=".jetpack.paging.ui.PagingListActivity"></activity>
+        <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
+        <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
+        <activity android:name=".jetpack.paging.ui.DbActivity" />
+        <activity android:name=".jetpack.paging.PagingActivity" />
+        <activity android:name=".jetpack.JetpackActivity" />
+        <activity android:name=".ui.view.dialog.DialogTranslucentActivity"></activity>
         <activity android:name="com.android.xknowledge.ui.dialog.translucent.DialogTranslucentActivity"></activity>
         <activity android:name=".framework.fresco.FrescoActivity" />
         <activity android:name=".ui.view.viewstub.ViewStubActivity" />

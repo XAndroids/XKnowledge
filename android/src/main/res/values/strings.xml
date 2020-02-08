@@ -6,4 +6,10 @@
 
     <string name="showview_approve_text">赞成:%d票</string>
     <string name="showview_oppose_text">反对:%d票</string>
+
+    <string name="pagelist_searchhint">Subreddit Name</string>
+    <string name="pagelist_default_subreddit">androiddev</string>
+
+    <string name="post_subtitle">Submitted by %s</string>
+    <string name="retry">Retry</string>
 </resources>

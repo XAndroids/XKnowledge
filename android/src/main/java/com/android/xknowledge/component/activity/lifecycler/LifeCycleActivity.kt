@@ -54,7 +54,7 @@ class LifeCycleActivity : TitleActivity() {
         Log.i("LifeCycle", "LifeCycleActivity_onRestart")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.i("LifeCycle", "LifeCycleActivity_onSaveInstanceState " + TaskTools.geStaskToptActivity(this))
     }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".jetpack.paging.ui.PagingListActivity">
+    <!--输入框-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/paging_textinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:focusedByDefault="false">
+
+        <EditText
+            android:id="@+id/pagelist_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pagelist_searchhint"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:text="@string/pagelist_default_subreddit"
+            tools:text="androiddev" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--下拉刷新-->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pagelist_swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--列表-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pagelist_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

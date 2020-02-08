@@ -43,7 +43,7 @@ class ActivityOne : AppCompatActivity() {
         Log.i("LifeCycle", "ActivityOne_onRestart")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.i("LifeCycle", "ActivityOne_onSaveInstanceState")
     }

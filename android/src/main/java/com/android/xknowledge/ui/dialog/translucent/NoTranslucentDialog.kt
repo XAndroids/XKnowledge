@@ -21,7 +21,7 @@ class NoTranslucentDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         //实现没有蒙层，并且对话框可以点击的效果
         //参考：https://stackoverflow.com/questions/15382540/allow-outside-touch-for-dialogfragment/28043015
-        dialog.window?.let {
+        dialog?.window?.let {
             it.setFlags(LayoutParams.FLAG_NOT_TOUCH_MODAL, LayoutParams.FLAG_NOT_TOUCH_MODAL)
             it.clearFlags(LayoutParams.FLAG_DIM_BEHIND)
         }
