@@ -17,18 +17,21 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".jetpack.paging.ui.PagingListActivity"></activity>
+        <activity
+            android:name=".jetpack.navigation.NavigationActivity"
+            android:theme="@style/NavigationTheme">
+            <!--添加<nav-graph> tag生成相应的IntentFilter，执行导航图中指定的Destination-->
+            <nav-graph android:value="@navigation/navigation_graph" />
+        </activity>
+        <activity android:name=".jetpack.paging.ui.PagingListActivity" />
         <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
         <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
         <activity android:name=".jetpack.paging.ui.DbActivity" />
         <activity android:name=".jetpack.paging.PagingActivity" />
         <activity android:name=".jetpack.JetpackActivity" />
-        <activity android:name=".ui.view.dialog.DialogTranslucentActivity"></activity>
-        <activity android:name="com.android.xknowledge.ui.dialog.translucent.DialogTranslucentActivity"></activity>
+        <activity android:name=".ui.dialog.translucent.DialogTranslucentActivity" />
         <activity android:name=".framework.fresco.FrescoActivity" />
         <activity android:name=".ui.view.viewstub.ViewStubActivity" />
-        <activity android:name=".component.activity.distribute.fragment.distribute.DistrubiteFragmentActivity" />
-        <activity android:name=".component.activity.distribute.fragment.FragmentActivity" />
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
         <activity android:name=".framework.eventbus.StickyActivity" />
         <activity android:name=".framework.eventbus.EventbusActivity" />
@@ -36,7 +39,7 @@
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />
         <activity android:name=".ui.event.distribute.EventDistributeActivity" />
-        <activity android:name="com.android.xknowledge.ui.dialog.DialogCheckActivity" />
+        <activity android:name=".ui.dialog.DialogCheckActivity" />
         <activity android:name=".ui.view.covered.CoveredActivity" />
         <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
         <activity android:name=".test.robolectric.LoginActivity" />
@@ -59,8 +62,8 @@
         <activity android:name=".hybrid.webview.WebviewActivity" />
         <activity android:name=".hybrid.HybridActivity" />
         <activity android:name=".ui.sensor.SensorActivity" />
-        <activity android:name="com.android.xknowledge.ui.dialog.DialogActivity" />
-        <activity android:name="com.android.xknowledge.ui.dialog.DialogWebviewActivity" />
+        <activity android:name=".ui.dialog.DialogActivity" />
+        <activity android:name=".ui.dialog.DialogWebviewActivity" />
         <activity android:name=".ui.event.nested.RecyclerViewActivity" />
         <activity android:name=".ui.UiActivity" />
         <activity android:name=".ui.view.recyclerview.RecyclerViewActivity" />
@@ -74,6 +77,16 @@
         <activity android:name=".test.TestActivity" />
         <activity android:name=".optimize.strictmode.StrictActivity" />
         <activity android:name=".optimize.OptimizeActivity" />
+
+        <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
+        <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_deeplink_info" />
+        </receiver>
     </application>
 
 </manifest>

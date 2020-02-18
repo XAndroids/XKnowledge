@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><!--导航资源文件-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.android.xknowledge.jetpack.navigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/flow_step_one_dest"
+            app:destination="@id/flowstepFragmentOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deepLinkFragment"
+        android:name="com.android.xknowledge.jetpack.navigation.DeepLinkFragment"
+        android:label="fragment_deeplink"
+        tools:layout="@layout/fragment_deeplink">
+        <!--定义目的地参数，用来在目的地之间传递数据。参考：定义目的地数据：https://developer.android.com/guide/navigation/navigation-pass-data-->
+        <argument
+            android:name="myarg"
+            android:defaultValue="Android!" />
+        <!--定义URL映射，使得www.example.com链接和deepLinkFragment关联在一起-->
+        <deepLink app:uri="www.example.com/{myarg}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flowstepFragmentOne"
+        android:name="com.android.xknowledge.jetpack.navigation.FlowStepFragment"
+        android:label="fragment_flowstep"
+        tools:layout="@layout/fragment_stepone">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flowstepFragmentTwo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flowstepFragmentTwo"
+        android:name="com.android.xknowledge.jetpack.navigation.FlowStepFragment"
+        android:label="fragment_flowstep"
+        tools:layout="@layout/fragment_steptwo">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/homeFragment" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/settingsFragment"
+        android:name="com.android.xknowledge.jetpack.navigation.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

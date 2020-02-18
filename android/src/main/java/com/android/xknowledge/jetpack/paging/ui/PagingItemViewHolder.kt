@@ -47,7 +47,7 @@ class PagingItemViewHolder(
         //更新UI文案
         title.text = pagingData?.title ?: "loading"
         subtitle.text = itemView.context.resources.getString(
-            R.string.post_subtitle,
+            R.string.paging_post_subtitle,
             pagingData?.author ?: "unknown"
         )
         score.text = "${pagingData?.score ?: 0}"

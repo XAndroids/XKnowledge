@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--最小宽度限定符：书屏幕时候，大于470dp高度屏幕应用布局-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".jetpack.navigation.NavigationActivity">
+    <!--工具栏-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <!--导航空白容器-->
+    <fragment
+        android:id="@+id/navigation_container_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_graph" />
+    <!--底部导航栏-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/navigation_nav_menu" />
+</LinearLayout>
