@@ -4,6 +4,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'org.jooq:joor-java-8:0.9.7'
+
+    //rxjava相关
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 
 sourceCompatibility = "7"
