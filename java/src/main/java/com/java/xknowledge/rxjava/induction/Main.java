@@ -6,7 +6,8 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-//分步骤实现，参考：https://www.jianshu.com/p/a406b94f3188
+//分步骤实现、可采用 Disposable.dispose() 切断观察者 与 被观察者 之间的连接
+//参考：https://www.jianshu.com/p/a406b94f3188
 public class Main {
     public static void main(String[] args) {
         //1.创建被观察者 Observable 对象
@@ -33,15 +34,25 @@ public class Main {
 
         //3.创建观察者（Observer ）对象
         Observer<Integer> observer = new Observer<Integer>() {
+            //6.定义Disposable类变量
+            private Disposable disposable = null;
+
             //4.创建对象时通过对应复写对应事件方法 从而响应对应事件
             @Override
             public void onSubscribe(Disposable d) {
+                //7. 对Disposable类变量赋值
+                disposable = d;
                 System.out.println("observer 开始采用Subscribe连接");
             }
 
             @Override
             public void onNext(Integer value) {
                 System.out.println("observer 对Next事件作出响应" + value);
+                //8.设置在接收到第二个事件后切断观察者和被观察者的连接
+                if (value == 2) {
+                    disposable.dispose();
+                    System.out.println("disposable 已经切断了连接：" + disposable.isDisposed());
+                }
             }
 
             @Override
