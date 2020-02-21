@@ -1,7 +1,6 @@
 package com.java.xknowledge.rxjava.create;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
