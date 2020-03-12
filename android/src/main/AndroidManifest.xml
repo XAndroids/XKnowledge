@@ -5,6 +5,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".XApplication"
@@ -35,6 +38,13 @@
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
         <activity android:name=".framework.eventbus.StickyActivity" />
         <activity android:name=".framework.eventbus.EventbusActivity" />
+        <activity android:name=".framework.reactive.ReactiveActivity" />
+        <activity android:name=".framework.reactive.rxbinding.RxBindingActivity" />
+        <activity android:name=".framework.reactive.rxbinding.ClickActivity" />
+        <activity android:name=".framework.reactive.rxbinding.FormActivity" />
+        <activity android:name=".framework.reactive.rxbinding.VerifyActivity" />
+        <activity android:name=".framework.reactive.rxbinding.RecyclerActivity" />
+        <activity android:name=".framework.reactive.rxbinding.PermissionActivity" />
         <activity android:name=".framework.FrameworkActivity" />
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />

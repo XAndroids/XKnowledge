@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <EditText
+            android:id="@+id/veriy_code_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/ic_verification"
+            android:drawablePadding="5dp"
+            android:hint="输入手机验证码"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/verify_get_textview"
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical|right"
+            android:background="@drawable/shape_verify_code_bg"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+    </FrameLayout>
+</LinearLayout>

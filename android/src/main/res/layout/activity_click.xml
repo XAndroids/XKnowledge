@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".framework.reactive.rxbinding.RxBindingActivity">
+
+    <Button
+        android:id="@+id/click_click_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click" />
+
+    <Button
+        android:id="@+id/click_longclick_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LongClick" />
+
+    <Button
+        android:id="@+id/click_nomulticlick_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NoMultiClick" />
+
+    <Button
+        android:id="@+id/click_multiclick_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MultiClick" />
+</LinearLayout>
