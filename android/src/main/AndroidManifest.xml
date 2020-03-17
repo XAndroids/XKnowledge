@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".XApplication"
@@ -87,6 +88,9 @@
         <activity android:name=".test.TestActivity" />
         <activity android:name=".optimize.strictmode.StrictActivity" />
         <activity android:name=".optimize.OptimizeActivity" />
+        <activity android:name=".security.SecurityActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
 
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
