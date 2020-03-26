@@ -1,3 +1,4 @@
 include ':android', ':java'
 include ':kotlin'
 include ':jvm'
+include ':xposed'
