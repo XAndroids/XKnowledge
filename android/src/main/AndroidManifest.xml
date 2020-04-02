@@ -93,6 +93,8 @@
         <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
         <activity android:name=".ui.statusbar.StatusBarActivity" />
         <activity android:name=".ui.statusbar.ImmersiveActivity" />
+        <activity android:name=".other.OtherActivity" />
+        <activity android:name=".other.AdbActivity" />
 
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">

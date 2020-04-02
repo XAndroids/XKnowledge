@@ -5,6 +5,7 @@ import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity
 import com.android.xknowledge.jetpack.JetpackActivity
 import com.android.xknowledge.optimize.OptimizeActivity
+import com.android.xknowledge.other.OtherActivity
 import com.android.xknowledge.security.SecurityActivity
 import com.android.xknowledge.test.TestActivity
 import com.android.xknowledge.ui.UiActivity
@@ -21,7 +22,8 @@ class MainActivity : ListActivity() {
             ListItem("Hybrid", "Hybrid混合开发相关", HybridActivity::class.java),
             ListItem("Test", "自动化测试相关", TestActivity::class.java),
             ListItem("Optimize", "性能优化相关", OptimizeActivity::class.java),
-            ListItem("Security", "安全相关", SecurityActivity::class.java)
+            ListItem("Security", "安全相关", SecurityActivity::class.java),
+            ListItem("Other", "其它相关", OtherActivity::class.java)
         )
     }
 }
