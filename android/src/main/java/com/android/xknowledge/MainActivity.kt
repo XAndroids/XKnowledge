@@ -10,6 +10,7 @@ import com.android.xknowledge.security.SecurityActivity
 import com.android.xknowledge.test.TestActivity
 import com.android.xknowledge.ui.UiActivity
 import com.android.xknowledge.ui.sensor.SensorActivity
+import com.reactnative.knowledge.ReactNativeActivity
 
 class MainActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
@@ -23,6 +24,7 @@ class MainActivity : ListActivity() {
             ListItem("Test", "自动化测试相关", TestActivity::class.java),
             ListItem("Optimize", "性能优化相关", OptimizeActivity::class.java),
             ListItem("Security", "安全相关", SecurityActivity::class.java),
+            ListItem("ReactNative", "React Native相关", ReactNativeActivity::class.java),
             ListItem("Other", "其它相关", OtherActivity::class.java)
         )
     }

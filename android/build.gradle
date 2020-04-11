@@ -140,6 +140,7 @@ dependencies {
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
 
     implementation 'org.aspectj:aspectjrt:1.8.9'
+    implementation project(':reactnative')
 
     annotationProcessor 'androidx.room:room-compiler:2.2.3'
     kapt 'org.greenrobot:eventbus-annotation-processor:3.1.1'
