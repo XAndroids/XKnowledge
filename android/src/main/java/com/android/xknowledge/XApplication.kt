@@ -10,7 +10,9 @@ import com.facebook.drawee.backends.pipeline.Fresco
 class XApplication : Application() {
     companion object {
         var sLeakyActivities = ArrayList<Activity>()
+        var isLogin = false
     }
+
 
     override fun onCreate() {
         super.onCreate()

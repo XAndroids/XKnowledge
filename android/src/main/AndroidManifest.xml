@@ -46,6 +46,8 @@
         <activity android:name=".framework.reactive.rxbinding.VerifyActivity" />
         <activity android:name=".framework.reactive.rxbinding.RecyclerActivity" />
         <activity android:name=".framework.reactive.rxbinding.PermissionActivity" />
+        <activity android:name=".framework.aspectj.AspectJActivity" />
+        <activity android:name=".framework.aspectj.Login2Activity" />
         <activity android:name=".framework.FrameworkActivity" />
         <activity android:name=".component.broadcast.LocalBroadcastActivity" />
         <activity android:name=".component.broadcast.BroadcastActivity" />

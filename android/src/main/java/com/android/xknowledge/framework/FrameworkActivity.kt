@@ -1,6 +1,7 @@
 package com.android.xknowledge.framework
 
 import com.android.xknowledge.ListActivity
+import com.android.xknowledge.framework.aspectj.AspectJActivity
 import com.android.xknowledge.framework.eventbus.EventbusActivity
 import com.android.xknowledge.framework.fresco.FrescoActivity
 import com.android.xknowledge.framework.reactive.ReactiveActivity
@@ -10,7 +11,8 @@ class FrameworkActivity : ListActivity() {
         return listOf(
             ListItem("EventBus", "EventBus使用", EventbusActivity::class.java),
             ListItem("Fresco", "Fresco请求取消", FrescoActivity::class.java),
-            ListItem("Reactive", "响应式编程", ReactiveActivity::class.java)
+            ListItem("Reactive", "响应式编程", ReactiveActivity::class.java),
+            ListItem("AspectJ", "切面编程", AspectJActivity::class.java)
         )
     }
 }

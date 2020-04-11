@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".framework.aspectj.Login2Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择登录状态"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/login2_login_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/login2_login_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <RadioButton
+            android:id="@+id/login2_nologin_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="未登录" />
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/login2_attention_textview"
+        style="@style/login2_item_style"
+        android:text="我的关注" />
+
+    <TextView
+        android:id="@+id/login2_footprint_textview"
+        style="@style/login2_item_style"
+        android:text="我的足迹" />
+
+    <TextView
+        android:id="@+id/login2_shoppingcart_textview"
+        style="@style/login2_item_style"
+        android:text="我的购物车" />
+
+</LinearLayout>
