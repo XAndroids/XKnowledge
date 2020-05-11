@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.xknowledge">
+    <!--自定义普通权限，安装的时候就授予-->
+    <permission
+        android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER"
+        android:description="@string/permission_script_server"
+        android:protectionLevel="normal" />
+    <!--自定义危险权限，运行时动态向用户申请-->
+    <permission
+        android:name="com.aimsio.android.READ_FORM_DATA"
+        android:description="@string/permission_form_data"
+        android:protectionLevel="dangerous" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -9,6 +19,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--声明使用普通自定义权限-->
+    <uses-permission android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER" />
+    <!--声明使用危险自定义权限-->
+    <uses-permission android:name="com.aimsio.android.READ_FORM_DATA" />
 
     <application
         android:name=".XApplication"
@@ -93,11 +108,11 @@
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
         <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
+        <activity android:name=".security.permission.CustomPermissionActivity" />
         <activity android:name=".ui.statusbar.StatusBarActivity" />
         <activity android:name=".ui.statusbar.ImmersiveActivity" />
         <activity android:name=".other.OtherActivity" />
         <activity android:name=".other.AdbActivity" />
-
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
             <intent-filter>
