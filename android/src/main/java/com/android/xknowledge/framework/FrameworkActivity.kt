@@ -10,7 +10,7 @@ class FrameworkActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
             ListItem("EventBus", "EventBus使用", EventbusActivity::class.java),
-            ListItem("Fresco", "Fresco请求取消", FrescoActivity::class.java),
+            ListItem("Fresco", "Fresco使用", FrescoActivity::class.java),
             ListItem("Reactive", "响应式编程", ReactiveActivity::class.java),
             ListItem("AspectJ", "切面编程", AspectJActivity::class.java)
         )

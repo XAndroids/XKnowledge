@@ -50,6 +50,8 @@
         <activity android:name=".jetpack.JetpackActivity" />
         <activity android:name=".ui.dialog.translucent.DialogTranslucentActivity" />
         <activity android:name=".framework.fresco.FrescoActivity" />
+        <activity android:name=".framework.fresco.ListActivity" />
+        <activity android:name=".framework.fresco.GifActivity"/>
         <activity android:name=".ui.view.viewstub.ViewStubActivity" />
         <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
         <activity android:name=".framework.eventbus.StickyActivity" />
