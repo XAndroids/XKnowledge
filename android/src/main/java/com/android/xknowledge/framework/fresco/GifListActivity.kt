@@ -16,6 +16,9 @@ import com.facebook.drawee.interfaces.DraweeController
 import com.facebook.drawee.view.SimpleDraweeView
 import com.facebook.imagepipeline.image.ImageInfo
 
+/**
+ * Fresco Gif是列表中，滑出屏幕gif资源释放，滑入屏幕gif资源重新加载
+ */
 class GifListActivity : TitleActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
