@@ -40,7 +40,7 @@ class GifActivity : AppCompatActivity() {
         }
 
         val draweeController: DraweeController =
-            Fresco.newDraweeControllerBuilder().setUri("asset:///test1.gif")
+            Fresco.newDraweeControllerBuilder().setUri("https://raw.githubusercontent.com/penfeizhou/APNG4Android/master/app/src/main/assets/1.webp")
                 .setAutoPlayAnimations(false).setControllerListener(controllerListener).build()
         simpleDraweeView.controller = draweeController
 

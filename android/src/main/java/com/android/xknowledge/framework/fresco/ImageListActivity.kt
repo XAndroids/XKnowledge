@@ -10,11 +10,11 @@ import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
 import com.facebook.drawee.view.SimpleDraweeView
 
-class ListActivity : TitleActivity() {
+class ImageListActivity : TitleActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fresco)
+        setContentView(R.layout.activity_fresco_imagelist)
         val dataSources = mutableListOf(
             "http://img0.imgtn.bdimg.com/it/u=3239102320,3312918336&fm=26&gp=0.jpg",
             "http://img0.imgtn.bdimg.com/it/u=2859565705,2669619369&fm=26&gp=0.jpg",
