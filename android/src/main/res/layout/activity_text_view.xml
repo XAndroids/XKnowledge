@@ -17,10 +17,11 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textview_lineheight_linespacetitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:lineHeight="32dp"
                 android:text="T24B"
                 android:textSize="24dp"
                 android:textStyle="bold" />
@@ -28,9 +29,18 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="32dp"
-                android:lineSpacingExtra="4dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                tools:lineHeight="32dp" />
+
+            <TextView
+                android:id="@+id/textview_lineheight_linespace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="24dp"
                 android:textStyle="bold" />
@@ -42,19 +52,28 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textview_lineheight_stringtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:lineSpacingExtra="14dp"
                 android:text="T24"
                 android:textSize="24dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:lineHeight="32dp"
+                android:layout_weight="2"
                 android:lineSpacingExtra="4dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="24dp"
+                tools:lineHeight="32dp" />
+
+            <TextView
+                android:id="@+id/textview_lineheight_string"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="24dp" />
         </LinearLayout>
@@ -68,7 +87,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T20B"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -76,8 +94,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="28dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="4.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="20dp"
@@ -93,15 +119,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T20"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="28dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="4.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="20dp" />
@@ -116,7 +148,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T18B"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -124,8 +155,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="24dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="18dp"
@@ -141,15 +180,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T18"
                 android:textSize="18dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="24dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="18dp" />
@@ -164,7 +209,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T16B"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -172,8 +216,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="22dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="16dp"
@@ -189,15 +241,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T16"
                 android:textSize="16dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="22dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="16dp" />
@@ -212,7 +270,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T14B"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -220,8 +277,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="20dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.75dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="14dp"
@@ -237,15 +302,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T14"
                 android:textSize="14dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="20dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.75dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="14dp" />
@@ -260,7 +331,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T12B"
                 android:textSize="12dp"
                 android:textStyle="bold" />
@@ -268,8 +338,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="18dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="12dp"
@@ -285,15 +363,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T12"
                 android:textSize="12dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="18dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="12dp" />
@@ -308,7 +392,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T11B"
                 android:textSize="11dp"
                 android:textStyle="bold" />
@@ -316,8 +399,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="16dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="11dp"
@@ -333,15 +424,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T11"
                 android:textSize="11dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="16dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="11dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="3dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="11dp" />
@@ -356,7 +453,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T10B"
                 android:textSize="10dp"
                 android:textStyle="bold" />
@@ -364,8 +460,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="14dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="2.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="10dp"
@@ -381,15 +485,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:text="T10"
                 android:textSize="10dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:lineHeight="14dp"
+                android:text="去哪儿旅行\nTitle 1"
+                android:textSize="10dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:lineSpacingExtra="2.5dp"
                 android:text="去哪儿旅行\nTitle 1"
                 android:textSize="10dp" />
