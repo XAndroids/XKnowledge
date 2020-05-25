@@ -21,6 +21,7 @@ class TextViewActivity : TitleActivity() {
         setContentView(R.layout.activity_text_view)
 
         //LineSpace方案，原理和API > 28 setHeight源码一样
+        //参考：https://stackoverflow.com/questions/37754299/how-to-properly-set-line-height-for-android
         val textviewLineSpaceTitle = findViewById<TextView>(R.id.textview_lineheight_linespacetitle)
         val lineHeight = textviewLineSpaceTitle.paint.getFontMetricsInt(null)
         textviewLineSpaceTitle.setLineSpacing(dpToPx(32f) - lineHeight, 1f)
