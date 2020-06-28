@@ -123,7 +123,9 @@ package="com.android.xknowledge">
     <activity android:name=".thread.HandlerActivity" />
     <activity android:name=".ui.view.textview.TextViewActivity" />
     <activity android:name=".ui.view.textview.EllipsizeActivity" />
-    <activity android:name=".ui.view.textview.IconFontActivity"/>
+    <activity android:name=".ui.view.textview.IconFontActivity" />
+    <activity android:name=".ui.layout.LayoutActivity" />
+    <activity android:name=".ui.layout.IncludeActivity"/>
     <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
     <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
         <intent-filter>
