@@ -125,8 +125,9 @@ package="com.android.xknowledge">
     <activity android:name=".ui.view.textview.EllipsizeActivity" />
     <activity android:name=".ui.view.textview.IconFontActivity" />
     <activity android:name=".ui.layout.LayoutActivity" />
-    <activity android:name=".ui.layout.IncludeActivity"/>
-    <activity android:name=".ui.layout.MergeActivity"/>
+    <activity android:name=".ui.layout.IncludeActivity" />
+    <activity android:name=".ui.layout.MergeActivity" />
+    <activity android:name=".component.broadcast.StaticBroadcastActivity"/>
     <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
     <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
         <intent-filter>
@@ -135,6 +136,13 @@ package="com.android.xknowledge">
         <meta-data
             android:name="android.appwidget.provider"
             android:resource="@xml/appwidget_deeplink_info" />
+    </receiver>
+
+    <!--注册静态广播-->
+    <receiver android:name="component.broadcast.StaticBroadcastReceiver">
+        <intent-filter>
+            <action android:name="com.byread.static" />
+        </intent-filter>
     </receiver>
 </application>
 </manifest>
