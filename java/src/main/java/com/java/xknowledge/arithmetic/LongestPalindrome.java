@@ -7,12 +7,17 @@ package com.java.xknowledge.arithmetic;
  * 输入: "babad" 输出: "bab" 注意: "aba" 也是一个有效答案。
  * 示例2:
  * 输入: "cbbd" 输出: "bb"
+ * 参考：
+ * https://leetcode-cn.com/problems/longest-palindrome/
+ * https://juejin.im/post/5d3e92ace51d45508c2fb940
  */
 public class LongestPalindrome {
 
     public static void main(String[] args) {
         System.out.println(violenceMethod("eaaaaccccf"));
         System.out.println(invertMethod("eaaaaccccf"));
+        System.out.println(dynamicMethod("eaaaaccccf"));
+        System.out.println(centerMethod("eaaaaccccf"));
     }
 
     /**
@@ -87,5 +92,76 @@ public class LongestPalindrome {
         }
 
         return longestString;
+    }
+
+    /**
+     * 动态规划法：由短到长依次遍历子串判断是否是回文，长子串dp[i][j]依赖于短子串[i+1][j-1]
+     */
+    private static String dynamicMethod(String s) {
+        System.out.println("动态规划字符串：" + s);
+        //最长回文子串的left和right索引
+        int len = s.length(), longestLeft = 0, longestRight = 0;
+
+        // db[i][j] 表示字符串区间 [i, j] 是否为回文串
+        boolean[][] db = new boolean[len][len];
+        //右end_i为索引和终点，start_j为起点，遍历start_j至end_i的子字符串判断是否是回文
+        for (int end_i = 0; end_i < len; end_i++)
+            for (int start_j = 0; start_j <= end_i; start_j++) {
+                //判断回文条件start_j和end_i字符相等，并且子串也是回文
+                db[start_j][end_i] = (s.charAt(start_j) == s.charAt(end_i)) && (end_i - start_j < 2 || db[start_j + 1][end_i - 1]);
+
+                //如果是回文字符串，并且比之前的回文字符串要长，更新字符串长度，记录字符串
+                if (db[start_j][end_i] && end_i - start_j > longestRight - longestLeft) {
+                    longestLeft = start_j;
+                    longestRight = end_i;
+                }
+            }
+        return s.substring(longestLeft, longestRight + 1);
+    }
+
+    /**
+     * 中心扩展法：回文左右互为镜像，从回文中心进行展开。
+     * 回文类型分为两类：
+     * 1.所含字母数为奇数的回文，如："cdabafe"，中心处在某一个字符上；
+     * 2.所含字符数为偶数的回文，如："rabbaf" ，中心出在两个数中间；
+     */
+    private static String centerMethod(String s) {
+        System.out.println("中心扩展字符串：" + s);
+
+        //定义最长回文字符串起始和末尾索引
+        int longestStart = 0, longestEnd = 0;
+        //以center_i为中心遍历待检测字符串
+        for (int center_i = 0; center_i < s.length(); center_i++) {
+            //奇数长度回文，以中心点为一个字符串，向外拓展判断回文
+            int oddLength = expandAroundCenter(s, center_i, center_i);
+            //偶数长度回文，以中心点为两个字符串中间，向外拓展判断回文
+            int evenLength = expandAroundCenter(s, center_i, center_i + 1);
+            //找出两种类型回文最大长
+            int maxLongest = Math.max(oddLength, evenLength);
+
+            //如果大于保存的最大回文长度
+            if (maxLongest > longestEnd - longestStart + 1) {
+                //中心+/- 1/2的回文长度，计算左右索引
+                longestStart = center_i - (maxLongest - 1) / 2;
+                longestEnd = center_i + maxLongest / 2;
+            }
+        }
+
+        //根据最长回文左右索引截取最长回文
+        return s.substring(longestStart, longestEnd + 1);
+    }
+
+    /**
+     * 从startLeft和startRight开始向外扩展逐步判断是否是回文
+     */
+    private static int expandAroundCenter(String s, int startLeft, int startRight) {
+        //如果当前字符串是回文，则继续向外拓展判断
+        while (startLeft >= 0 && startRight < s.length() && s.charAt(startLeft) == s.charAt(startRight)) {
+            startLeft--;
+            startRight++;
+        }
+
+        //直到不满足回文条件，计算改中心点的回文长度
+        return startRight - startLeft - 1;
     }
 }
