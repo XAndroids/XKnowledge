@@ -5,3 +5,5 @@ include ':xposed'
 //依赖本地指定目录项目，参考：https://stackoverflow.com/questions/19299316/require-gradle-project-from-another-directory
 include ':reactnative'
 project(":reactnative").projectDir = file("./reactnative/android/")
+include ':aidl_client'
+include ':aidl_server'

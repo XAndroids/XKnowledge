@@ -1,5 +1,6 @@
 package com.android.xknowledge
 
+import com.android.xknowledge.aidl.AidlActivity
 import com.android.xknowledge.component.ComponentActivity
 import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity
@@ -17,8 +18,8 @@ class MainActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
             ListItem("UI", "页面展示和交互相关", UiActivity::class.java),
-            ListItem("Thread", "线程相关", ThreadActivity::class.java),
             ListItem("Compontent", "四大组件相关", ComponentActivity::class.java),
+            ListItem("Thread", "线程相关", ThreadActivity::class.java),
             ListItem("Sensor", "传感器功能现相关", SensorActivity::class.java),
             ListItem("Framework", "开源框架相关", FrameworkActivity::class.java),
             ListItem("Jetpack", "Jetpack组件相关", JetpackActivity::class.java),

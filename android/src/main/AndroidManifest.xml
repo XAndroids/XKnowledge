@@ -127,7 +127,8 @@ package="com.android.xknowledge">
     <activity android:name=".ui.layout.LayoutActivity" />
     <activity android:name=".ui.layout.IncludeActivity" />
     <activity android:name=".ui.layout.MergeActivity" />
-    <activity android:name=".component.broadcast.StaticBroadcastActivity"/>
+    <activity android:name=".component.broadcast.StaticBroadcastActivity" />
+    <activity android:name=".thread.AsyncTaskActivity"/>
     <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
     <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
         <intent-filter>
