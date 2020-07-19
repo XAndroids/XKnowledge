@@ -1,5 +1,8 @@
 package com.java.xknowledge.design.singleton;
 
+/**
+ * 单例模式，参考：https://www.bilibili.com/video/BV1tK411W7xx?p=2&spm_id_from=333.788.b_6d756c74695f70616765.2
+ */
 public class Main {
     public static void main(String[] args) {
 //        Singleton01 singleton011 = Singleton01.getInstance();

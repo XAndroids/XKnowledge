@@ -1,6 +1,5 @@
 package com.android.xknowledge
 
-import com.android.xknowledge.aidl.AidlActivity
 import com.android.xknowledge.component.ComponentActivity
 import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity

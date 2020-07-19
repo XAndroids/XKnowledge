@@ -5,7 +5,8 @@ package com.java.xknowledge.design.singleton;
  * 双重检查，避免大部分对象锁的性能消耗
  */
 public class Singleton04 {
-    private static Singleton04 INSTANCE;
+    //JIT指令重排，在没有初始返回instance
+    private static volatile Singleton04 INSTANCE;
 
     private Singleton04() {
 
