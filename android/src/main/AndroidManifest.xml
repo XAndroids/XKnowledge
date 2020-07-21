@@ -25,6 +25,7 @@
     <!--声明使用危险自定义权限-->
     <uses-permission android:name="com.aimsio.android.READ_FORM_DATA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".XApplication"
@@ -131,7 +132,10 @@
         <activity android:name=".ui.layout.MergeActivity" />
         <activity android:name=".component.broadcast.StaticBroadcastActivity" />
         <activity android:name=".thread.AsyncTaskActivity" />
-        <activity android:name="com.android.xknowledge.framework.hotfix.MultidexActivity"></activity>
+        <activity android:name=".framework.hotfix.MultidexActivity" />
+        <activity android:name=".framework.plugin.PluginActivity" />
+        <!--插件化，主工程需要注册插件代理Activity-->
+        <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
             <intent-filter>

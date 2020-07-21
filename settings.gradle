@@ -7,3 +7,5 @@ include ':reactnative'
 project(":reactnative").projectDir = file("./reactnative/android/")
 include ':aidl_client'
 include ':aidl_server'
+include ':plugin_core'
+include ':plugin_apk'
