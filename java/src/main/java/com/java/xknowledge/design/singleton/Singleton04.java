@@ -6,6 +6,7 @@ package com.java.xknowledge.design.singleton;
  */
 public class Singleton04 {
     //JIT指令重排，在没有初始返回instance
+    //参考：https://juejin.im/post/5c92e5b45188252d64582700
     private static volatile Singleton04 INSTANCE;
 
     private Singleton04() {

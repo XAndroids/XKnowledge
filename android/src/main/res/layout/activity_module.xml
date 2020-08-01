@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".framework.module.ModuleActivity">
+
+    <Button
+        android:id="@+id/module_button_tomodule1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去module1" />
+
+    <Button
+        android:id="@+id/module_button_tomodule2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去module2" />
+</LinearLayout>
