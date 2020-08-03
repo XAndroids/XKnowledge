@@ -137,8 +137,9 @@
         <activity android:name=".framework.module.ModuleActivity" />
         <!--插件化，主工程需要注册插件代理Activity-->
         <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
-        <activity android:name=".jetpack.lifecycler.LifeCyclerActivity"></activity>
-        <activity android:name=".jetpack.viewmodel.ViewModelActivity"></activity>
+        <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
+        <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
+        <activity android:name=".ui.event.ontouch.ViewEventActivity" />
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
             <intent-filter>
