@@ -25,8 +25,8 @@ class EventActivity : ListActivity() {
                 "竖向RecyclerView，Item中嵌套横向RecyclerView",
                 RecyclerViewActivity::class.java
             ),
-            ListItem("ViewPager嵌套", "", ViewPagerActivity::class.java),
-            ListItem("onTouch/Click", "", ViewEventActivity::class.java)
+            ListItem("ViewPager嵌套", "ViewPager嵌套相关", ViewPagerActivity::class.java),
+            ListItem("ViewEvent", "View的事件分发流程", ViewEventActivity::class.java)
         )
     }
 }
