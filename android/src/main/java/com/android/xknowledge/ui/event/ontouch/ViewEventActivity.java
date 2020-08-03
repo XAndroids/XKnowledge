@@ -10,7 +10,7 @@ import com.android.xknowledge.R;
 import com.android.xknowledge.TitleActivity;
 
 /**
- * View事件分发机制
+ * View事件分发机制：OnTouch返回值决定onClick是否执行，dispatchTouchEvent分发事件
  * 参考：https://www.bilibili.com/video/BV1mE411j7YN?t=6171
  * https://juejin.im/post/6844904061410476039#heading-12
  */
