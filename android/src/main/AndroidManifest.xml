@@ -139,7 +139,9 @@ package="com.android.xknowledge">
     <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
     <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
     <activity android:name=".ui.event.ontouch.ViewEventActivity" />
-    <activity android:name=".ui.dialog.DialogBackgroundActivity"/>
+    <activity android:name=".ui.dialog.DialogBackgroundActivity" />
+    <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
+    <activity android:name=".optimize.leakcanary.TestActivity"/>
     <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
     <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
         <intent-filter>

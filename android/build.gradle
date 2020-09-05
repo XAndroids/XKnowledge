@@ -163,6 +163,9 @@ dependencies {
 
     //Robolectric框架构建配置
     testImplementation 'org.robolectric:robolectric:4.3'
+
+    //leakcanary相关
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }
 
 kapt {
