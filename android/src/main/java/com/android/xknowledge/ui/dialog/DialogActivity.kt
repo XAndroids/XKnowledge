@@ -19,6 +19,10 @@ class DialogActivity : ListActivity() {
                 "DialogTranslucent",
                 "实现Dialog有半透明蒙层和无蒙层样式",
                 DialogTranslucentActivity::class.java
+            ), ListItem(
+                "DialogBackground",
+                "实现Dialog背景颜色自定义",
+                DialogBackgroundActivity::class.java
             )
         )
     }

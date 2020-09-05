@@ -40,4 +40,10 @@
         <item name="android:textColor">#333333</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="Dialog.Background" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@drawable/dialog_background_transparency</item>
+    </style>
 </resources>
