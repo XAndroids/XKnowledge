@@ -7,6 +7,7 @@ import com.android.xknowledge.jetpack.JetpackActivity
 import com.android.xknowledge.optimize.OptimizeActivity
 import com.android.xknowledge.other.OtherActivity
 import com.android.xknowledge.security.SecurityActivity
+import com.android.xknowledge.storage.StorageActivity
 import com.android.xknowledge.test.TestActivity
 import com.android.xknowledge.thread.ThreadActivity
 import com.android.xknowledge.ui.UiActivity
@@ -18,6 +19,7 @@ class MainActivity : ListActivity() {
         return listOf(
             ListItem("UI", "页面展示和交互相关", UiActivity::class.java),
             ListItem("Compontent", "四大组件相关", ComponentActivity::class.java),
+            ListItem("Storage", "存储相关", StorageActivity::class.java),
             ListItem("Thread", "线程相关", ThreadActivity::class.java),
             ListItem("Sensor", "传感器功能现相关", SensorActivity::class.java),
             ListItem("Framework", "开源框架相关", FrameworkActivity::class.java),
