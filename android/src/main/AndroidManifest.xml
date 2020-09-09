@@ -66,7 +66,7 @@ package="com.android.xknowledge">
     <activity android:name=".framework.reactive.rxbinding.RecyclerActivity" />
     <activity android:name=".framework.reactive.rxbinding.PermissionActivity" />
     <activity android:name=".framework.aspectj.AspectJActivity" />
-    <activity android:name=".framework.aspectj.Login2Activity" />
+    <activity android:name=".framework.aspectj.LoginActivity" />
     <activity android:name=".framework.FrameworkActivity" />
     <activity android:name=".component.broadcast.LocalBroadcastActivity" />
     <activity android:name=".component.broadcast.BroadcastActivity" />
@@ -141,7 +141,9 @@ package="com.android.xknowledge">
     <activity android:name=".ui.event.ontouch.ViewEventActivity" />
     <activity android:name=".ui.dialog.DialogBackgroundActivity" />
     <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
-    <activity android:name=".optimize.leakcanary.TestActivity"/>
+    <activity android:name=".optimize.leakcanary.TestActivity" />
+    <activity android:name=".storage.StorageActivity" />
+    <activity android:name=".storage.sharedpreferences.SharedPreferencesActivity"/>
     <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
     <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
         <intent-filter>

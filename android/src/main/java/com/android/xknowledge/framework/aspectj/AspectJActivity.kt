@@ -11,6 +11,7 @@ import com.android.xknowledge.TitleActivity
 /**
  * AspectJ实现权限检查，登录和网络等切面编程
  * 参考：https://www.jianshu.com/p/9fb07b2596f7
+ * 注意！！！目前配置下，在Kotlin中无法生效
  */
 class AspectJActivity : TitleActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,7 @@ class AspectJActivity : TitleActivity(), View.OnClickListener {
         when (v.id) {
             R.id.aspectj_permission_button -> checkPermission()
             R.id.aspectj_network_button -> checkNetwork()
-            R.id.aspectj_login_button -> startActivity(Intent(this, Login2Activity::class.java))
+            R.id.aspectj_login_button -> startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }
