@@ -190,3 +190,7 @@ class CutomPlugin1 implements Plugin<Project> {
         }
     }
 }
+
+// 引入buildSrc里的自定义插件
+apply plugin: 'com.android.xknowledge'
+
