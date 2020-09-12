@@ -11,3 +11,5 @@
 /app/.classpath
 /app/.settings/
 android/.classpath
+/buildSrc/.gradle
+/buildSrc/build
