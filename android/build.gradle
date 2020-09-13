@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply from: 'customplugin1.gradle'
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -173,24 +174,8 @@ kapt {
         arg('eventBusIndex', 'com.android.xknowledge.MyEventBusIndex')
     }
 }
-
-//Gradle自定义插件
-//参考：https://juejin.im/post/6844903837992484872#heading-12
-//方法一：build.gradle中编写
-//自定义插件：实现Plugin类接口，重写apply方法
-apply plugin: CutomPlugin1
-
-class CutomPlugin1 implements Plugin<Project> {
-    @Override
-    void apply(Project project) {
-        project.task("CustomPlugin1") {
-            doLast {
-                println("CustomPlugin1")
-            }
-        }
-    }
-}
-
 // 引入buildSrc里的自定义插件
 apply plugin: 'com.android.xknowledge'
+// 引入comtomplugin3独立项目自定义插件
+apply plugin: 'com.android.xknowledge1'
 

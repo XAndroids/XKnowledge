@@ -13,3 +13,5 @@
 android/.classpath
 /buildSrc/.gradle
 /buildSrc/build
+/customplugin3/build
+/repo

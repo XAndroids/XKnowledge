@@ -1,0 +1,16 @@
+//Gradle自定义插件
+//参考：https://juejin.im/post/6844903837992484872#heading-12
+//方法一：build.gradle中编写
+//自定义插件：实现Plugin类接口，重写apply方法
+apply plugin: CutomPlugin1
+
+class CutomPlugin1 implements Plugin<Project> {
+    @Override
+    void apply(Project project) {
+        project.task("CustomPlugin1") {
+            doLast {
+                println("CustomPlugin1")
+            }
+        }
+    }
+}
