@@ -15,3 +15,4 @@ android/.classpath
 /buildSrc/build
 /customplugin3/build
 /repo
+/asmplugin/build
