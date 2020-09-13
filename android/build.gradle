@@ -3,7 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
-apply from: 'customplugin1.gradle'
+
+//应用ASM的插件
+apply plugin: 'com.android.xknowledge2'
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -174,6 +176,8 @@ kapt {
         arg('eventBusIndex', 'com.android.xknowledge.MyEventBusIndex')
     }
 }
+
+apply from: 'customplugin1.gradle'
 // 引入buildSrc里的自定义插件
 apply plugin: 'com.android.xknowledge'
 // 引入comtomplugin3独立项目自定义插件
