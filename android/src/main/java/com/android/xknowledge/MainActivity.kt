@@ -4,6 +4,7 @@ import com.android.xknowledge.component.ComponentActivity
 import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity
 import com.android.xknowledge.jetpack.JetpackActivity
+import com.android.xknowledge.ndk.NdkActivity
 import com.android.xknowledge.optimize.OptimizeActivity
 import com.android.xknowledge.other.OtherActivity
 import com.android.xknowledge.security.SecurityActivity
@@ -28,6 +29,7 @@ class MainActivity : ListActivity() {
             ListItem("Test", "自动化测试相关", TestActivity::class.java),
             ListItem("Optimize", "性能优化相关", OptimizeActivity::class.java),
             ListItem("Security", "安全相关", SecurityActivity::class.java),
+            ListItem("Ndk", "Ndk相关", NdkActivity::class.java),
             ListItem("ReactNative", "React Native相关", ReactNativeActivity::class.java),
             ListItem("Other", "其它相关", OtherActivity::class.java)
         )
