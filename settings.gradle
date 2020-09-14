@@ -16,3 +16,21 @@ include ':annotation'
 include ':annotation_compiler'
 include ':customplugin3'
 include ':asmplugin'
+
+//Gradle的生命周期监听
+//参考：https://coding.imooc.com/lesson/206.html#mid=13281
+//Gradle.beforeSettings
+// 报错：No signature of method: static org.gradle.api.invocation.Gradle.beforeSettings()
+//is applicable for argument types: (settings_1r290wys6yzuquf5wlny2sfen$_run_closure1) values:
+// [settings_1r290wys6yzuquf5wlny2sfen$_run_closure1@125a6dac]
+//解决：this.gradle.beforeSettings，获取gradle对象调用beforeSettings未成员方法
+this.gradle.beforeSettings {
+    println "开始执行settings.gradle ...."
+}
+
+println "执行settings.gradle ...."
+
+//在settings.gradle中调用this.gradle，调用的是Settings对象的getGradle()方法
+this.gradle.settingsEvaluated {
+    println "settings.gradle执行完毕 ...."
+}

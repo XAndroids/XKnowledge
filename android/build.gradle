@@ -191,3 +191,20 @@ apply plugin: 'com.android.xknowledge'
 // 引入comtomplugin3独立项目自定义插件
 apply plugin: 'com.android.xknowledge1'
 
+//gradle生命周期的监听
+//参考：https://coding.imooc.com/lesson/206.html#mid=13281
+println "android 配置阶段执行中...."
+
+//在项目的build.gradle中调用this.gradle，调用的是Project对象的getGradle()方法
+this.gradle.buildStarted {
+    println "构建开始执行...."
+}
+this.gradle.buildFinished {
+    println "构建执行完毕...."
+}
+this.beforeEvaluate {
+    println "android 配置阶段开始执行...."
+}
+this.afterEvaluate {
+    println "android 配置阶段完成执行...."
+}
