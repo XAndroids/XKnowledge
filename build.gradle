@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+//5.通过apply from引入ext.gradle定义的project属性
+apply from: this.file('ext.gradle')
+
 buildscript {
     ext{
         kotlin_version = '1.3.31'
@@ -42,9 +45,18 @@ allprojects {
     }
 }
 
-//为当前根project的子project进行配置
-subprojects {
+//3.使用ext{}闭包，在subprojects中为当前根project的子project进行配置
+subprojects { Project project ->
+    if (project.name == "aidl_server" || project.name == "aidl_client") {
+        ext {
+            libJUnit = 'junit:junit:4.12'
+        }
+    }
+}
 
+//4.使用ext{}闭包，在根project中定义属性，子project通过继承都能访问到
+ext {
+    libExtJunit = 'androidx.test.ext:junit:1.1.2-alpha02'
 }
 
 task clean(type: Delete) {

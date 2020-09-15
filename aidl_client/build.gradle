@@ -1,13 +1,19 @@
 apply plugin: 'com.android.application'
+//Project属性相关api
+//参考：https://coding.imooc.com/lesson/206.html#mid=13292
+//1.通过定义def变量，来替换配置中的数字和字符常量
+//表面build.gradle中导出都是"魔数"常量
+def mCompileSdkVersion = 29;
+def mBuildToolsVersion = "29.0.2"
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion mCompileSdkVersion
+    buildToolsVersion mBuildToolsVersion
 
     defaultConfig {
         applicationId "com.android.xknowledge.aidl.client"
         minSdkVersion 28
-        targetSdkVersion 29
+        targetSdkVersion this.rootProject.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -20,15 +26,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
 
+//2.使用ext闭包，定义project的扩展属性
+//只能在当前的project中使用
+//别的project无法访问：Could not get unknown property 'libAppcompat' for project ':aidl_server' of type
+//org.gradle.api.Project.
+ext {
+    libAppcompat = "androidx.appcompat:appcompat:1.1.0"
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation this.libAppcompat
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation this.libJUnit
+    androidTestImplementation this.rootProject.libExtJunit    //4.访问根project通过ext{}闭包定义的属性
+    androidTestImplementation this.rootProject.dependences.libEspressoCore    //5.子project访问根project apply from引入的ext成员
 }

@@ -1,0 +1,5 @@
+ext {
+    //5.单独在ext.gradle文件中抽离ext{}闭包定义的project属性，通过apply from引入
+    android = [targetSdkVersion: 29]
+    dependences = [libEspressoCore: 'androidx.test.espresso:espresso-core:3.2.0']
+}

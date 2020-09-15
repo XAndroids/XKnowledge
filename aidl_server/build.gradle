@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.android.xknowledge.aidl.server"
         minSdkVersion 28
-        targetSdkVersion 29
+        targetSdkVersion this.rootProject.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -27,7 +27,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation this.libJUnit    //3.访问根project的subprojects闭包中定义的子project共享属性
+    androidTestImplementation this.libExtJunit    //4.子project继承根project的属性，可直接通过子project(this)访问
+    androidTestImplementation this.rootProject.dependences.libEspressoCore
 }
