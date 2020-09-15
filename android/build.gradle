@@ -208,3 +208,20 @@ this.beforeEvaluate {
 this.afterEvaluate {
     println "android 配置阶段完成执行...."
 }
+
+//Gradle Project相关api讲解
+//参考：https://coding.imooc.com/lesson/206.html#mid=13287
+this.getParentProject()
+
+def getParentProject() {
+    println('getParentProject-------------')
+    //getSubprojects：获取所有的子Project
+    println('parentProject:' + this.getParent().name)
+}
+
+this.getMYRootProject()
+def getMYRootProject() {
+    println('getMYRootProject-------------')
+    //getSubprojects：获取所有的子Project
+    println('rootProject:' + this.getRootProject().name)
+}

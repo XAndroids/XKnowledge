@@ -69,3 +69,28 @@ this.gradle.beforeProject {
 this.gradle.afterProject {
     println "某个Project配置完毕...."
 }
+
+//Gradle Project相关api讲解
+//参考：https://coding.imooc.com/lesson/206.html#mid=13287
+this.getProjects()
+def getProjects() {
+    println('getAllprojects-------------')
+    //getAllprojects：获取所有的Project
+    this.getAllprojects().eachWithIndex { Project project, int index ->
+        if (index == 0) {
+            println('Root Projet:' + project.name)
+        } else {
+            println('child Projet:' + project.name)
+        }
+    }
+}
+
+this.getAllSubProjects()
+def getAllSubProjects() {
+    println('getAllSubProjects-------------')
+    //getSubprojects：获取所有的子Project
+    this.getSubprojects().eachWithIndex { Project project, int index ->
+        println('child Projet:' + project.name)
+    }
+}
+
