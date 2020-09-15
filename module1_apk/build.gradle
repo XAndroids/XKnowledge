@@ -1,5 +1,6 @@
 //组件化2：方便切换业务逻辑模块类型
-if (IS_APPLICATION.toBoolean()) {
+//访问gradle.properties中的IS_APPLICATION属性
+if (hasProperty('IS_APPLICATION') ? IS_APPLICATION.toBoolean() : false) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
