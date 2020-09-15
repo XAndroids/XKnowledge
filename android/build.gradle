@@ -220,3 +220,36 @@ def getMYRootProject() {
     //getSubprojects：获取所有的子Project
     println('rootProject:' + this.getRootProject().name)
 }
+
+//Gradle Project 文件属性相关api
+//参考：https://coding.imooc.com/lesson/206.html#mid=13295
+//文件路径相关api
+println 'the root file path is:' + getRootDir().absolutePath
+println 'the build file path is:' + getBuildDir().absolutePath
+println 'the project file path is:' + getProjectDir().absolutePath
+
+//文件定位相关api
+println getContent('build.gradle')
+def getContent(String path) {
+    try {
+        def file = file(path)    //file()路径相对路径：相对于project的根目录
+        return file.text
+    } catch (GradleException e) {
+        println 'file not fount...'
+    }
+}
+//文件拷贝api copy：复制文件
+copy {
+    from file('.gitignore')
+    into getRootProject().getBuildDir().path + "/copytest/"
+}
+//fileTree：遍历目录文件
+fileTree('build/outputs/apk/') { FileTree fileTree ->
+    fileTree.visit { FileTreeElement element ->
+        println 'this file name is:' + element.file.name
+        copy {
+            from element.file
+            into getRootProject().getBuildDir().path + "/copytest/"
+        }
+    }
+}
