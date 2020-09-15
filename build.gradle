@@ -25,6 +25,7 @@ buildscript {
     }
 }
 
+//为当前根project和所有子project进行配置
 allprojects {
     repositories {
         google()
@@ -39,6 +40,11 @@ allprojects {
             url("$rootDir/reactnative/node_modules/jsc-android/dist")
         }
     }
+}
+
+//为当前根project的子project进行配置
+subprojects {
+
 }
 
 task clean(type: Delete) {
@@ -94,3 +100,17 @@ def getAllSubProjects() {
     }
 }
 
+//project()方法，获取指定名称的project，并传递闭包进行配置
+//可以在任意位置，对指定名称的project进行配置
+//但一般不这么做，在每个project进行独立的配置
+project('android') { Project project ->
+    println(project.name);
+    apply plugin: 'com.android.application'
+
+    dependencies {
+        //Fresco框架
+        implementation 'com.facebook.fresco:fresco:2.0.0'
+        implementation 'com.facebook.fresco:animated-gif:2.0.0'
+        implementation 'com.facebook.fresco:animated-webp:2.0.0'
+    }
+}
