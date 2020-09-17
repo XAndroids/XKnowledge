@@ -3,24 +3,28 @@
 //5.通过apply from引入ext.gradle定义的project属性
 apply from: this.file('ext.gradle')
 
-buildscript {
-    ext{
+//Gradle依赖相关api
+//参考：https://coding.imooc.com/lesson/206.html#mid=13302
+buildscript { ScriptHandler scriptHandler ->
+    ext {
         kotlin_version = '1.3.31'
         navigationVersion = '2.1.0'
     }
-    repositories {
-        google()
-        jcenter()
-
+    //配置工程的仓库地址
+    scriptHandler.repositories { RepositoryHandler repositoryHandler ->
+        repositoryHandler.google()
+        repositoryHandler.jcenter()
         //引入本地仓库，CustomPlugin33等
-        maven {
+        repositoryHandler.maven {
             url 'repo'
         }
-        maven {
+        repositoryHandler.maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
-    dependencies {
+
+    //配置Gradle"插件"的依赖地址
+    scriptHandler.dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
