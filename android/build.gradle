@@ -256,3 +256,28 @@ fileTree('build/outputs/apk/') { FileTree fileTree ->
         }
     }
 }
+
+//Gradle执行外部命令
+//exec闭包
+//参考：https://coding.imooc.com/lesson/206.html#mid=13305
+task('apkcopy') {
+    doLast {
+        def sourcePath = this.buildDir.path + '/outputs/apk'
+        def destionPath = '/Users/qitmac0000562/'
+        def command = "mv -f ${sourcePath} ${destionPath}"
+        exec {
+            try {
+                executable 'bash'
+                args '-c', command
+                println 'the command is execute success.'
+            } catch (GradleException e) {
+                println 'the command is execute faild.'
+            }
+        }
+    }
+}
+
+//闭包的参数，可以省略小括号
+task apkcopy2 {
+    println 'apkcopy2'
+}
