@@ -2,7 +2,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
-
+//增加task依赖插件
+apply plugin: "com.dorongold.task-tree"
 //应用ASM的插件
 apply plugin: 'com.android.xknowledge2'
 
