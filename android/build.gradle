@@ -281,3 +281,16 @@ task('apkcopy') {
 task apkcopy2 {
     println 'apkcopy2'
 }
+
+//Gradle Task定义
+//参考：https://coding.imooc.com/lesson/206.html#mid=13286
+//1.通过task(name,Closure)创建任务
+task helloTask(group: 'test', description: 'test') {
+    println 'helloTask'
+}
+//2.通过taskContain.create()创建任务
+this.tasks.create('helloTask1') {
+    group('test1')
+    description('test1')
+    println 'helloTask1'
+}
