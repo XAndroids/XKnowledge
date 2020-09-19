@@ -285,12 +285,65 @@ task apkcopy2 {
 //Gradle Task定义
 //参考：https://coding.imooc.com/lesson/206.html#mid=13286
 //1.通过task(name,Closure)创建任务
+//Gradle Task执行顺序
+//参考：https://coding.imooc.com/lesson/206.html#mid=13288
 task helloTask(group: 'test', description: 'test') {
     println 'helloTask'
+    doFirst {
+        println 'helloTask doFirst1'
+    }
+    doLast {
+        println 'helloTask doLast1'
+    }
+    doLast {
+        println 'helloTask doLast2'
+    }
 }
+helloTask.doFirst {
+    println 'helloTask doFirst2'
+}
+
 //2.通过taskContain.create()创建任务
 this.tasks.create('helloTask1') {
     group('test1')
     description('test1')
     println 'helloTask1'
 }
+
+//Gradle Task依赖
+//参考：https://coding.imooc.com/lesson/206.html#mid=13291
+// taskX务必在依赖Task之前定义，不然会报错如下：
+// Could not get unknown property 'taskY' for project ':android' of type org.gradle.api.Project.
+task taskX {
+    doLast {
+        println 'taskX'
+    }
+}
+task taskY {
+    doLast {
+        println 'taskY'
+    }
+}
+
+//动态依赖的task也必须在依赖的task之前定义，否则依赖无法生效，也不报错
+task lib1 {
+    doLast {
+        println 'lib1'
+    }
+}
+
+task nolib {
+    doLast {
+        println 'nolib'
+    }
+}
+
+task taskZ(dependsOn: taskX) {
+    dependsOn this.tasks.findAll { task ->
+        return task.name.startsWith('lib')
+    }
+    doLast {
+        println 'taskZ'
+    }
+}
+taskZ.dependsOn(taskY)
