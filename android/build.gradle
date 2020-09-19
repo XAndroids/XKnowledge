@@ -7,6 +7,8 @@ apply plugin: "com.dorongold.task-tree"
 //应用ASM的插件
 apply plugin: 'com.android.xknowledge2'
 
+
+import groovy.xml.MarkupBuilder
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
 import org.aspectj.tools.ajc.Main
@@ -347,3 +349,91 @@ task taskZ(dependsOn: taskX) {
     }
 }
 taskZ.dependsOn(taskY)
+
+//Gradle Task的输入输出
+//参考：https://coding.imooc.com/lesson/206.html#mid=13294
+ext {
+    versionName = '1.1.0'
+    versionCode = '110'
+    versionInfo = 'App的第2个版本，上线了一些核心功能'
+
+    destFile = file('release.xml')
+    if (destFile != null && !destFile.exists()) {
+        destFile.createNewFile()
+    }
+}
+
+task writeFile {
+    //为task指定输入
+    inputs.property('versionName', this.versionName)
+    inputs.property('versionCode', this.versionCode)
+    inputs.property('versionInfo', this.versionInfo)
+    //为task指定输出
+    outputs.file this.destFile
+    doLast {
+        def data = inputs.getProperties()
+        File file = outputs.getFiles().getSingleFile()
+        //将map转化为实体对象
+        def versionMsg = new VersionMsg(data)
+        //将实体对象转换为xmo数据
+        def sw = new StringWriter()
+        def xmlBuilder = new MarkupBuilder(sw)
+        if (file.text != null && file.text.size() <= 0) {
+            //如果文件没有内容
+            xmlBuilder.releases {
+                release {
+                    versionCode(versionMsg.versionCode)
+                    versionName(versionMsg.versionName)
+                    versionInfo(versionMsg.versionInfo)
+                }
+            }
+            file.withWriter { writer -> writer.append(sw.toString()) }
+        } else {
+            //已经有版本信息
+            xmlBuilder.releases {
+                release {
+                    versionCode(versionMsg.versionCode)
+                    versionName(versionMsg.versionName)
+                    versionInfo(versionMsg.versionInfo)
+                }
+            }
+            def lines = file.readLines()
+            def lengths = lines.size() - 1
+            file.withWriter { writer ->
+                lines.eachWithIndex { String line, int index ->
+                    if (index != lengths) {
+                        //如果不是最后一行，写文件
+                        writer.append(line + '\r\n')
+                    } else {
+                        //如果是最后一行，插入新数据，并写入文件默认
+                        writer.append(sw.toString() + '\r\n')
+                        writer.append(lines.get(lengths))
+                    }
+                }
+            }
+        }
+    }
+}
+
+class VersionMsg {
+    String versionName;
+    String versionCode
+    String versionInfo
+}
+
+task readFile{
+    //通过readFile的input.file和writeFile的output.File关联，产生了依赖关系
+    inputs.file destFile
+    doLast{
+        def file =inputs.files.singleFile
+        println file.text
+    }
+}
+
+task testTask {
+    dependsOn writeFile, readFile
+    doLast {
+        println '输入输出任务结束'
+    }
+}
+
