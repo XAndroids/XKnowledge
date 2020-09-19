@@ -437,3 +437,44 @@ task testTask {
     }
 }
 
+//Gradle依赖API mustRunAfter和shouldRunAfter
+//参考：https://coding.imooc.com/lesson/206.html#mid=13296
+task TaskD {
+    doLast {
+        println 'TaskD'
+    }
+}
+
+task TaskE {
+    mustRunAfter TaskD
+    doLast {
+        println 'TaskE'
+    }
+}
+
+task TaskF {
+    mustRunAfter TaskE
+    doLast {
+        println 'TaskF'
+    }
+}
+
+//Gradle将自定义Task挂接到构建生命周期过程中
+//参考：https://coding.imooc.com/lesson/206.html#mid=13296
+this.project.afterEvaluate { project ->
+    def cleanTask = project.tasks.getByName('clean')
+    if (cleanTask == null) {
+        throw GradleException('ths build task is not found')
+    }
+
+    cleanTask.dependsOn TaskF
+    cleanTask.doLast {
+        //FIXME 实际测试没有execute()方法，包版本废弃？
+        //参考：https://stackoverflow.com/questions/50020011/how-to-call-gradle-task-execution-from-outside-task
+//        TaskF.execute()
+    }
+}
+
+
+
+
