@@ -188,6 +188,13 @@ kapt {
 apply from: 'customplugin1.gradle'
 // 引入buildSrc里的自定义插件
 apply plugin: 'com.android.xknowledge'
+//针对CustomPlugin2的自定义属性进行配置
+//参考：https://www.cnblogs.com/davenkin/p/3422009.html
+CustomPlugin2 {
+    timeFormat = 'HH:mm:ss.SSS'
+    dateFormat = 'MM/dd/yyyy'
+}
+
 // 引入comtomplugin3独立项目自定义插件
 apply plugin: 'com.android.xknowledge1'
 
