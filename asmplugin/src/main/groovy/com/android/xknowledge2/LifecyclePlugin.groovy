@@ -27,7 +27,9 @@ import java.util.zip.ZipEntry
 
 /**
  * 函数插桩：Gradle + ASM
- * 参考：https://www.jianshu.com/p/16ed4d233fd1
+ * 参考：
+ *使用简介：https://www.jianshu.com/p/16ed4d233fd1
+ *Transform API：https://www.jianshu.com/p/031b62d02607
  */
 class LifecyclePlugin extends Transform implements Plugin<Project> {
 
@@ -40,21 +42,26 @@ class LifecyclePlugin extends Transform implements Plugin<Project> {
 
     @Override
     String getName() {
+        //指定自定义的Transform的名字
         return "LifecyclePlugin"
     }
 
     @Override
     Set<QualifiedContent.ContentType> getInputTypes() {
+        //指明你自定义的这个Transform处理的输入类型，输入类型共有以下几种:即分为class文件或者java资源。class文件
+        //来自于jar或者文件夹。资源就是标准的java资源。
         return TransformManager.CONTENT_CLASS
     }
 
     @Override
     Set<? super QualifiedContent.Scope> getScopes() {
+        //自定的Transform的输入文件所属的范围,
         return TransformManager.SCOPE_FULL_PROJECT
     }
 
     @Override
     boolean isIncremental() {
+        //是否支持增量编译
         return false
     }
 
@@ -99,10 +106,12 @@ class LifecyclePlugin extends Transform implements Plugin<Project> {
                 def name = file.name
                 if (checkClassFile(name)) {
                     println '----------- deal with "class" file <' + name + '> -----------'
+                    //文件插桩
                     ClassReader classReader = new ClassReader(file.bytes)
                     ClassWriter classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
                     ClassVisitor cv = new LifecycleClassVisitor(classWriter)
                     classReader.accept(cv, org.objectweb.asm.ClassReader.EXPAND_FRAMES)
+                    //文件替换
                     byte[] code = classWriter.toByteArray()
                     FileOutputStream fos = new FileOutputStream(
                             file.parentFile.absolutePath + File.separator + name)
