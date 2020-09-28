@@ -37,7 +37,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
-        tools:replace="android:appComponentFactory">
+        tools:replace="android:appComponentFactory"
+        tools:targetApi="q">
         <activity
             android:name=".jetpack.navigation.NavigationActivity"
             android:theme="@style/NavigationTheme">
@@ -147,6 +148,7 @@
         <activity android:name=".storage.sharedpreferences.SharedPreferencesActivity" />
         <activity android:name=".ndk.NdkActivity" />
         <activity android:name=".ndk.BaseNdkActivity" />
+        <activity android:name=".storage.ExteralStorageActivity" />
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
             <intent-filter>

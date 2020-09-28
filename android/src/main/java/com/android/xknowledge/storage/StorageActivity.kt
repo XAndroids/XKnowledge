@@ -13,6 +13,10 @@ class StorageActivity : ListActivity(){
                 "SharedPreferences",
                 "SharedPreferences存储相关",
                 SharedPreferencesActivity::class.java
+            ), ListItem(
+                "ExteralStorage",
+                "外部存储相关",
+                ExteralStorageActivity::class.java
             )
         )
     }
