@@ -143,6 +143,9 @@
         <activity android:name=".open.reactive.rxbinding.VerifyActivity" />
         <activity android:name=".open.reactive.rxbinding.RecyclerActivity" />
         <activity android:name=".open.reactive.rxbinding.PermissionActivity" />
+        <activity android:name=".open.net.retrofit.RetrofitActivity" />
+        <activity android:name=".open.net.retrofit.GetRequestActivity" />
+        <activity android:name=".open.net.retrofit.PostRequestActivity" />
         <!--framework相关-->
         <activity android:name=".framework.aspectj.AspectJActivity" />
         <activity android:name=".framework.aspectj.LoginActivity" />
