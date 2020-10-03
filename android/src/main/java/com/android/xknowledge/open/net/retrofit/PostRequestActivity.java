@@ -11,8 +11,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Retrofit Post请求相关
+ * 参考：https://blog.csdn.net/carson_ho/article/details/73732076
+ */
 public class PostRequestActivity extends TitleActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
