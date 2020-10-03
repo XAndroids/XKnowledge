@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".framework.reactive.rxbinding.RxBindingActivity">
+    tools:context=".open.reactive.rxbinding.RxBindingActivity">
 
     <Button
         android:id="@+id/permission_phone_button"

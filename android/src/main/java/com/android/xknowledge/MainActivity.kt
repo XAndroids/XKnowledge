@@ -1,28 +1,22 @@
 package com.android.xknowledge
 
-import com.android.xknowledge.component.ComponentActivity
 import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity
 import com.android.xknowledge.jetpack.JetpackActivity
 import com.android.xknowledge.ndk.NdkActivity
+import com.android.xknowledge.open.OpenActivity
 import com.android.xknowledge.optimize.OptimizeActivity
 import com.android.xknowledge.other.OtherActivity
+import com.android.xknowledge.sdk.ui.UiActivity
 import com.android.xknowledge.security.SecurityActivity
-import com.android.xknowledge.storage.StorageActivity
 import com.android.xknowledge.test.TestActivity
-import com.android.xknowledge.thread.ThreadActivity
-import com.android.xknowledge.ui.UiActivity
-import com.android.xknowledge.ui.sensor.SensorActivity
 import com.reactnative.knowledge.ReactNativeActivity
 
 class MainActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
-            ListItem("UI", "页面展示和交互相关", UiActivity::class.java),
-            ListItem("Compontent", "四大组件相关", ComponentActivity::class.java),
-            ListItem("Storage", "存储相关", StorageActivity::class.java),
-            ListItem("Thread", "线程相关", ThreadActivity::class.java),
-            ListItem("Sensor", "传感器功能现相关", SensorActivity::class.java),
+            ListItem("Sdk", "Sdk相关", UiActivity::class.java),
+            ListItem("Open", "开源库相关", OpenActivity::class.java),
             ListItem("Framework", "开源框架相关", FrameworkActivity::class.java),
             ListItem("Jetpack", "Jetpack组件相关", JetpackActivity::class.java),
             ListItem("Hybrid", "Hybrid混合开发相关", HybridActivity::class.java),

@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.event.nested.RecyclerViewActivity">
+        tools:context=".sdk.ui.event.nested.RecyclerViewActivity">
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_recyclerview_parent"
             android:layout_width="match_parent"

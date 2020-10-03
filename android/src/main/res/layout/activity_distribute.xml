@@ -4,7 +4,7 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".component.activity.distribute.activity.DistributeActivity">
+        tools:context=".sdk.component.activity.distribute.activity.DistributeActivity">
 
     <RelativeLayout
             android:id="@+id/distribute_relativelayout_pagename"

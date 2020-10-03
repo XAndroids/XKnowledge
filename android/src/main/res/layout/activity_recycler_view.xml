@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.view.recyclerview.RecyclerViewActivity"
+        tools:context=".sdk.ui.view.recyclerview.RecyclerViewActivity"
         android:orientation="vertical">
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content">
@@ -23,7 +23,7 @@
     </LinearLayout>
 
 
-    <com.android.xknowledge.ui.view.recyclerview.MyRecyclerView
+    <com.android.xknowledge.sdk.ui.view.recyclerview.MyRecyclerView
             android:id="@+id/recyclerview_recyclerview"
             android:scrollbars="vertical"
             android:layout_width="match_parent"

@@ -4,7 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".framework.eventbus.EventbusActivity">
+        tools:context=".open.message.eventbus.EventbusActivity">
 
     <Button
             android:id="@+id/eventbus_postmainthread_button"

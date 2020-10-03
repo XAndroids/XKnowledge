@@ -3,7 +3,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".ui.view.viewpager.CacheFragment">
+                tools:context=".sdk.ui.view.viewpager.CacheFragment">
 <TextView
         android:id="@+id/cache_textview"
         android:layout_width="wrap_content"

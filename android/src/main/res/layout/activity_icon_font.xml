@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.view.textview.IconFontActivity">
+    tools:context=".sdk.ui.view.textview.IconFontActivity">
 
     <TextView
         android:id="@+id/iconfont_textview_1"

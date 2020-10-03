@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.view.textview.LineHeightActivity">
+    tools:context=".sdk.ui.view.textview.LineHeightActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

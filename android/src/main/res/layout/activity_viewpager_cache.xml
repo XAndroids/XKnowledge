@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/viewpagercache_viewpager_parent"
         android:layout_width="match_parent"
-        tools:context=".ui.event.nested.ViewPagerActivity"
+        tools:context=".sdk.ui.event.nested.ViewPagerActivity"
         android:layout_height="match_parent">
     <com.google.android.material.tabs.TabLayout
             android:id="@+id/viewpagercache_tablelayout_parent"

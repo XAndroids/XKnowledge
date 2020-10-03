@@ -39,52 +39,6 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory"
         tools:targetApi="q">
-        <activity
-            android:name=".jetpack.navigation.NavigationActivity"
-            android:theme="@style/NavigationTheme">
-            <!--添加<nav-graph> tag生成相应的IntentFilter，执行导航图中指定的Destination-->
-            <nav-graph android:value="@navigation/navigation_graph" />
-        </activity>
-        <activity android:name=".jetpack.paging.ui.PagingListActivity" />
-        <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
-        <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
-        <activity android:name=".jetpack.paging.ui.DbActivity" />
-        <activity android:name=".jetpack.paging.PagingActivity" />
-        <activity android:name=".jetpack.JetpackActivity" />
-        <activity android:name=".ui.dialog.translucent.DialogTranslucentActivity" />
-        <activity android:name=".framework.fresco.FrescoActivity" />
-        <activity android:name=".framework.fresco.ImageListActivity" />
-        <activity android:name=".framework.fresco.GifActivity" />
-        <activity android:name=".framework.fresco.GifListActivity" />
-        <activity android:name=".ui.view.viewstub.ViewStubActivity" />
-        <activity android:name=".component.activity.distribute.activity.DistributeActivity" />
-        <activity android:name=".framework.eventbus.StickyActivity" />
-        <activity android:name=".framework.eventbus.EventbusActivity" />
-        <activity android:name=".framework.reactive.ReactiveActivity" />
-        <activity android:name=".framework.reactive.rxbinding.RxBindingActivity" />
-        <activity android:name=".framework.reactive.rxbinding.ClickActivity" />
-        <activity android:name=".framework.reactive.rxbinding.FormActivity" />
-        <activity android:name=".framework.reactive.rxbinding.VerifyActivity" />
-        <activity android:name=".framework.reactive.rxbinding.RecyclerActivity" />
-        <activity android:name=".framework.reactive.rxbinding.PermissionActivity" />
-        <activity android:name=".framework.aspectj.AspectJActivity" />
-        <activity android:name=".framework.aspectj.LoginActivity" />
-        <activity android:name=".framework.FrameworkActivity" />
-        <activity android:name=".component.broadcast.LocalBroadcastActivity" />
-        <activity android:name=".component.broadcast.BroadcastActivity" />
-        <activity android:name=".ui.event.distribute.EventDistributeActivity" />
-        <activity android:name=".ui.dialog.DialogCheckActivity" />
-        <activity android:name=".ui.view.covered.CoveredActivity" />
-        <activity android:name=".ui.view.viewpager.ViewPagerCacheActivity" />
-        <activity android:name=".test.robolectric.LoginActivity" />
-        <activity android:name=".test.robolectric.RobolectricActivity" />
-        <activity android:name=".component.activity.lifecycler.ActivityOne">
-            <intent-filter>
-                <action android:name="com.android.xknowledge.component.activity.lifecycler.ActivityOne" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -92,63 +46,79 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity" />
-        <activity android:name=".hybrid.webview.WebviewActivity" />
-        <activity android:name=".hybrid.HybridActivity" />
-        <activity android:name=".ui.sensor.SensorActivity" />
-        <activity android:name=".ui.dialog.DialogActivity" />
-        <activity android:name=".ui.dialog.DialogWebviewActivity" />
-        <activity android:name=".ui.event.nested.RecyclerViewActivity" />
-        <activity android:name=".ui.UiActivity" />
-        <activity android:name=".ui.view.recyclerview.RecyclerViewActivity" />
-        <activity android:name=".ui.view.toast.ToastActivity" />
-        <activity android:name=".ui.view.ViewActivity" />
-        <activity android:name=".ui.view.textview.LineHeightActivity" />
-        <activity android:name=".ui.event.EventActivity" />
-        <activity android:name=".ui.event.nested.ViewPagerActivity" />
-        <activity android:name=".ui.event.nested.scrolling.NestedScrollingActivity" />
-        <activity android:name=".component.ComponentActivity" />
-        <activity android:name=".component.activity.ActivityActivity" />
-        <activity android:name=".component.activity.lifecycler.LifeCycleActivity" />
-        <activity android:name=".test.TestActivity" />
-        <activity android:name=".optimize.strictmode.StrictActivity" />
-        <activity android:name=".optimize.OptimizeActivity" />
-        <activity android:name=".security.SecurityActivity" />
-        <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
-        <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
-        <activity android:name=".security.permission.CustomPermissionActivity" />
-        <activity android:name=".ui.statusbar.StatusBarActivity" />
-        <activity android:name=".ui.statusbar.ImmersiveActivity" />
-        <activity android:name=".ui.listener.NavigationBarActivity" />
-        <activity android:name=".other.OtherActivity" />
-        <activity android:name=".other.AdbActivity" />
-        <activity android:name=".component.activity.task.TaskActivity" />
-        <activity android:name=".thread.ThreadActivity" />
-        <activity android:name=".thread.HandlerActivity" />
-        <activity android:name=".ui.view.textview.TextViewActivity" />
-        <activity android:name=".ui.view.textview.EllipsizeActivity" />
-        <activity android:name=".ui.view.textview.IconFontActivity" />
-        <activity android:name=".ui.layout.LayoutActivity" />
-        <activity android:name=".ui.layout.IncludeActivity" />
-        <activity android:name=".ui.layout.MergeActivity" />
-        <activity android:name=".component.broadcast.StaticBroadcastActivity" />
-        <activity android:name=".thread.AsyncTaskActivity" />
-        <activity android:name=".framework.hotfix.MultidexActivity" />
-        <activity android:name=".framework.plugin.PluginActivity" />
-        <activity android:name=".framework.module.ModuleActivity" />
-        <!--插件化，主工程需要注册插件代理Activity-->
-        <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
+        <!--sdk相关组件-->
+        <activity android:name=".sdk.SdkActivity" />
+        <activity android:name=".sdk.ui.dialog.translucent.DialogTranslucentActivity" />
+        <activity android:name=".sdk.ui.view.viewstub.ViewStubActivity" />
+        <activity android:name=".sdk.component.activity.distribute.activity.DistributeActivity" />
+        <activity android:name=".sdk.component.broadcast.LocalBroadcastActivity" />
+        <activity android:name=".sdk.component.broadcast.BroadcastActivity" />
+        <activity android:name=".sdk.ui.event.distribute.EventDistributeActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogCheckActivity" />
+        <activity android:name=".sdk.ui.view.covered.CoveredActivity" />
+        <activity android:name=".sdk.ui.view.viewpager.ViewPagerCacheActivity" />
+        <activity android:name=".sdk.sensor.SensorActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogWebviewActivity" />
+        <activity android:name=".sdk.ui.event.nested.RecyclerViewActivity" />
+        <activity android:name=".sdk.ui.UiActivity" />
+        <activity android:name=".sdk.ui.view.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".sdk.ui.view.toast.ToastActivity" />
+        <activity android:name=".sdk.ui.view.ViewActivity" />
+        <activity android:name=".sdk.ui.view.textview.LineHeightActivity" />
+        <activity android:name=".sdk.ui.event.EventActivity" />
+        <activity android:name=".sdk.ui.event.nested.ViewPagerActivity" />
+        <activity android:name=".sdk.ui.event.nested.scrolling.NestedScrollingActivity" />
+        <activity android:name=".sdk.component.ComponentActivity" />
+        <activity android:name=".sdk.component.activity.ActivityActivity" />
+        <activity android:name=".sdk.component.activity.lifecycler.LifeCycleActivity" />
+        <activity android:name=".sdk.ui.statusbar.StatusBarActivity" />
+        <activity android:name=".sdk.ui.statusbar.ImmersiveActivity" />
+        <activity android:name=".sdk.ui.listener.NavigationBarActivity" />
+        <activity android:name=".sdk.component.activity.task.TaskActivity" />
+        <activity android:name=".sdk.thread.ThreadActivity" />
+        <activity android:name=".sdk.thread.HandlerActivity" />
+        <activity android:name=".sdk.ui.view.textview.TextViewActivity" />
+        <activity android:name=".sdk.ui.view.textview.EllipsizeActivity" />
+        <activity android:name=".sdk.ui.view.textview.IconFontActivity" />
+        <activity android:name=".sdk.ui.layout.LayoutActivity" />
+        <activity android:name=".sdk.ui.layout.IncludeActivity" />
+        <activity android:name=".sdk.ui.layout.MergeActivity" />
+        <activity android:name=".sdk.component.broadcast.StaticBroadcastActivity" />
+        <activity android:name=".sdk.thread.AsyncTaskActivity" />
+        <activity android:name=".sdk.ui.event.ontouch.ViewEventActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogBackgroundActivity" />
+        <activity android:name=".sdk.storage.StorageActivity" />
+        <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
+        <activity android:name=".sdk.storage.ExteralStorageActivity" />
+        <activity android:name=".sdk.component.activity.lifecycler.ActivityOne">
+            <intent-filter>
+                <action android:name="com.android.xknowledge.sdk.component.activity.lifecycler.ActivityOne" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--注册静态广播-->
+        <receiver android:name=".sdk.component.broadcast.StaticBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.byread.static" />
+            </intent-filter>
+        </receiver>
+        <!--jetpack相关组件-->
+        <activity android:name=".jetpack.paging.ui.PagingListActivity" />
+        <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
+        <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
+        <activity android:name=".jetpack.paging.ui.DbActivity" />
+        <activity android:name=".jetpack.paging.PagingActivity" />
+        <activity android:name=".jetpack.JetpackActivity" />
         <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
         <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
-        <activity android:name=".ui.event.ontouch.ViewEventActivity" />
-        <activity android:name=".ui.dialog.DialogBackgroundActivity" />
-        <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
-        <activity android:name=".optimize.leakcanary.TestActivity" />
-        <activity android:name=".storage.StorageActivity" />
-        <activity android:name=".storage.sharedpreferences.SharedPreferencesActivity" />
-        <activity android:name=".ndk.NdkActivity" />
-        <activity android:name=".ndk.BaseNdkActivity" />
-        <activity android:name=".storage.ExteralStorageActivity" />
+        <activity
+            android:name=".jetpack.navigation.NavigationActivity"
+            android:theme="@style/NavigationTheme">
+            <!--添加<nav-graph> tag生成相应的IntentFilter，执行导航图中指定的Destination-->
+            <nav-graph android:value="@navigation/navigation_graph" />
+        </activity>
         <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
         <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
             <intent-filter>
@@ -158,12 +128,52 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_deeplink_info" />
         </receiver>
-
-        <!--注册静态广播-->
-        <receiver android:name="component.broadcast.StaticBroadcastReceiver">
-            <intent-filter>
-                <action android:name="com.byread.static" />
-            </intent-filter>
-        </receiver>
+        <!--开源库相关组件-->
+        <activity android:name=".open.OpenActivity" />
+        <activity android:name=".open.image.fresco.FrescoActivity" />
+        <activity android:name=".open.image.fresco.ImageListActivity" />
+        <activity android:name=".open.image.fresco.GifActivity" />
+        <activity android:name=".open.image.fresco.GifListActivity" />
+        <activity android:name=".open.message.eventbus.StickyActivity" />
+        <activity android:name=".open.message.eventbus.EventbusActivity" />
+        <activity android:name=".open.reactive.ReactiveActivity" />
+        <activity android:name=".open.reactive.rxbinding.RxBindingActivity" />
+        <activity android:name=".open.reactive.rxbinding.ClickActivity" />
+        <activity android:name=".open.reactive.rxbinding.FormActivity" />
+        <activity android:name=".open.reactive.rxbinding.VerifyActivity" />
+        <activity android:name=".open.reactive.rxbinding.RecyclerActivity" />
+        <activity android:name=".open.reactive.rxbinding.PermissionActivity" />
+        <!--framework相关-->
+        <activity android:name=".framework.aspectj.AspectJActivity" />
+        <activity android:name=".framework.aspectj.LoginActivity" />
+        <activity android:name=".framework.FrameworkActivity" />
+        <!--自动化测试相关-->
+        <activity android:name=".test.robolectric.LoginActivity" />
+        <activity android:name=".test.robolectric.RobolectricActivity" />
+        <activity android:name=".test.TestActivity" />
+        <!--hybrid相关-->
+        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity" />
+        <activity android:name=".hybrid.webview.WebviewActivity" />
+        <activity android:name=".hybrid.HybridActivity" />
+        <!--优化相关-->
+        <activity android:name=".optimize.strictmode.StrictActivity" />
+        <activity android:name=".optimize.OptimizeActivity" />
+        <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
+        <activity android:name=".optimize.leakcanary.TestActivity" />
+        <!--安全相关-->
+        <activity android:name=".security.SecurityActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
+        <activity android:name=".security.permission.CustomPermissionActivity" />
+        <activity android:name=".other.OtherActivity" />
+        <activity android:name=".other.AdbActivity" />
+        <activity android:name=".framework.hotfix.MultidexActivity" />
+        <activity android:name=".framework.plugin.PluginActivity" />
+        <activity android:name=".framework.module.ModuleActivity" />
+        <!--ndk相关-->
+        <activity android:name=".ndk.NdkActivity" />
+        <activity android:name=".ndk.BaseNdkActivity" />
+        <!--插件化，主工程需要注册插件代理Activity-->
+        <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
     </application>
 </manifest>

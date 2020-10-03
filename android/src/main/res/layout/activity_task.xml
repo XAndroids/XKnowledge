@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".component.activity.task.TaskActivity"
+    tools:context=".sdk.component.activity.task.TaskActivity"
     android:orientation="vertical">
 
-    <com.android.xknowledge.component.activity.task.RootView
+    <com.android.xknowledge.sdk.component.activity.task.RootView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/colorPrimary" />
