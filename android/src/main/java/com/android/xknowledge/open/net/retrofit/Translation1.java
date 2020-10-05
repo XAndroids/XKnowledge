@@ -2,9 +2,6 @@ package com.android.xknowledge.open.net.retrofit;
 
 import java.util.List;
 
-/**
- * Created by Carson_Ho on 17/3/21.
- */
 public class Translation1 {
 
     private String type;

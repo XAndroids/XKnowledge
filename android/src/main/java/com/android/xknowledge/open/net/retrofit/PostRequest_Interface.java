@@ -5,9 +5,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-/**
- * Created by Carson_Ho on 17/3/21.
- */
 public interface PostRequest_Interface {
 
 
