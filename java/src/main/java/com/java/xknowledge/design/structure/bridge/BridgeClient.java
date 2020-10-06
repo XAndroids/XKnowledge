@@ -19,8 +19,9 @@ class BridgeClient {
         //开始采摘
         bigBag.pick();
 
+        //BagAbstraction不同型号，组合Material不同材质，可以产生很多种类型的组合
         BagAbstraction midBag = new MidBag();
-        midBag.setMaterial(new Paper());
+        midBag.setMaterial(new Plastic());
         midBag.pick();
     }
 }
