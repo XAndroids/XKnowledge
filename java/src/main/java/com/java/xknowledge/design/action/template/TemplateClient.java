@@ -3,8 +3,8 @@ package com.java.xknowledge.design.action.template;
 import com.java.xknowledge.design.action.template.shoppingcart.CashShoppingCart;
 import com.java.xknowledge.design.action.template.shoppingcart.OnlineShoppingCart;
 import com.java.xknowledge.design.action.template.shoppingcart.ShoppingCart;
-import com.java.xknowledge.design.fruit.Apple;
-import com.java.xknowledge.design.fruit.Orange;
+import com.java.xknowledge.design.common.fruit.Apple;
+import com.java.xknowledge.design.common.fruit.Orange;
 
 /**
  * 模板方法设计模式

@@ -2,8 +2,8 @@ package com.java.xknowledge.design.action.strategy;
 
 import com.java.xknowledge.design.action.strategy.discount.FullDiscount;
 import com.java.xknowledge.design.action.strategy.discount.HolidayDiscount;
-import com.java.xknowledge.design.fruit.Apple;
-import com.java.xknowledge.design.fruit.Orange;
+import com.java.xknowledge.design.common.fruit.Apple;
+import com.java.xknowledge.design.common.fruit.Orange;
 
 /**
  * 策略模式

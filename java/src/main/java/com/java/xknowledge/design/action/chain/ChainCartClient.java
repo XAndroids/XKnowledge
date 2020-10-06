@@ -3,9 +3,9 @@ package com.java.xknowledge.design.action.chain;
 import com.java.xknowledge.design.action.chain.discount.FullMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.HolidayMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.MultyDiscount;
-import com.java.xknowledge.design.fruit.Apple;
-import com.java.xknowledge.design.fruit.Fruit;
-import com.java.xknowledge.design.fruit.Orange;
+import com.java.xknowledge.design.common.fruit.Apple;
+import com.java.xknowledge.design.common.fruit.Fruit;
+import com.java.xknowledge.design.common.fruit.Orange;
 
 import java.util.ArrayList;
 import java.util.List;

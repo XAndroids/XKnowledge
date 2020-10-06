@@ -1,6 +1,6 @@
 package com.java.xknowledge.design.action.chain.discount;
 
-import com.java.xknowledge.design.discount.Discount;
+import com.java.xknowledge.design.common.discount.Discount;
 
 /**
  * 责任链优惠

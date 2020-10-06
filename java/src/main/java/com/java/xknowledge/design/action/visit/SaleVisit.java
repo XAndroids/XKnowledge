@@ -1,8 +1,8 @@
 package com.java.xknowledge.design.action.visit;
 
-import com.java.xknowledge.design.fruit.Apple;
-import com.java.xknowledge.design.fruit.Fruit;
-import com.java.xknowledge.design.fruit.Orange;
+import com.java.xknowledge.design.common.fruit.Apple;
+import com.java.xknowledge.design.common.fruit.Fruit;
+import com.java.xknowledge.design.common.fruit.Orange;
 
 /**
  * 促销访问者，用于打折促销时，重新计算活动后的价格

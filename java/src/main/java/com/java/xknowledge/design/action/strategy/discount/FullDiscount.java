@@ -1,6 +1,6 @@
 package com.java.xknowledge.design.action.strategy.discount;
 
-import com.java.xknowledge.design.discount.Discount;
+import com.java.xknowledge.design.common.discount.Discount;
 
 /**
  * 满减优惠策略实现，实现满减优惠价格计算

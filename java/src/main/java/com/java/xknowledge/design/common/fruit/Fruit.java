@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.fruit;
+package com.java.xknowledge.design.common.fruit;
 import com.java.xknowledge.design.action.visit.SaleVisit;
 
 /**

@@ -1,7 +1,7 @@
 package com.java.xknowledge.design.action.chain;
 
-import com.java.xknowledge.design.discount.Discount;
-import com.java.xknowledge.design.fruit.Fruit;
+import com.java.xknowledge.design.common.discount.Discount;
+import com.java.xknowledge.design.common.fruit.Fruit;
 
 import java.util.List;
 

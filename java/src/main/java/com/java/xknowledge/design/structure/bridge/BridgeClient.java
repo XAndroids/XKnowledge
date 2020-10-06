@@ -6,6 +6,10 @@ import com.java.xknowledge.design.structure.bridge.bag.MidBag;
 import com.java.xknowledge.design.structure.bridge.meterial.Paper;
 import com.java.xknowledge.design.structure.bridge.meterial.Plastic;
 
+/**
+ * 桥接模式
+ * 参考：享学《设计模式-桥接模式》
+ */
 class BridgeClient {
     public static void main(String[] args) {
         //创建大号袋子
