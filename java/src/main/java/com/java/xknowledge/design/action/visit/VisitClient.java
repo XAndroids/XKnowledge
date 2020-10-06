@@ -1,8 +1,8 @@
 package com.java.xknowledge.design.action.visit;
 
-import com.java.xknowledge.design.action.visit.fruit.Apple;
-import com.java.xknowledge.design.action.visit.fruit.Fruit;
-import com.java.xknowledge.design.action.visit.fruit.Orange;
+import com.java.xknowledge.design.fruit.Apple;
+import com.java.xknowledge.design.fruit.Fruit;
+import com.java.xknowledge.design.fruit.Orange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ class VisitClient {
 
         System.out.println(fruitList.getClass());    //class java.util.ArrayList，fruitList泛型擦除
         for (Fruit fruit : fruitList) {
-            System.out.println(fruit.getClass());    //class com.java.xknowledge.design.action.visit.fruit.Orange/Apple，还是原有的类型
+            System.out.println(fruit.getClass());    //class com.java.xknowledge.design.fruit.Orange/Apple，还是原有的类型
             total += saleVisit.sell(fruit);    //由于Java多态方法重载是静态化（遍历集合声明为Fruit类型），saleVisit.sell()无法识别fruit真实类型！！！！
         }
         System.out.println("总价值1：" + total);

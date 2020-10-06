@@ -5,10 +5,9 @@ import com.java.xknowledge.design.action.chain.discount.HolidayMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.MultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.NewerMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.SecondMultyDiscount;
-import com.java.xknowledge.design.action.chain.fruit.Apple;
-import com.java.xknowledge.design.action.chain.fruit.Banana;
-import com.java.xknowledge.design.action.chain.fruit.Fruit;
-import com.java.xknowledge.design.action.chain.fruit.Orange;
+import com.java.xknowledge.design.fruit.Apple;
+import com.java.xknowledge.design.fruit.Fruit;
+import com.java.xknowledge.design.fruit.Orange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,6 @@ class ChainCartClient {
         List<Fruit> products = new ArrayList<>();
         products.add(new Apple());
         products.add(new Orange());
-        products.add(new Banana());
 
         //创建购物车
         ShoppingCart shoppingCart = new ShoppingCart(products);

@@ -1,6 +1,6 @@
 package com.java.xknowledge.design.action.template.shoppingcart;
 
-import com.java.xknowledge.design.action.strategy.fruit.Fruit;
+import com.java.xknowledge.design.fruit.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.visit.fruit;
+package com.java.xknowledge.design.fruit;
 
 import com.java.xknowledge.design.action.visit.SaleVisit;
 
@@ -12,7 +12,7 @@ public class Apple implements Fruit {
 
     @Override
     public void draw() {
-        System.out.print("苹果");
+        System.out.println("苹果红富士");
     }
 
     @Override
