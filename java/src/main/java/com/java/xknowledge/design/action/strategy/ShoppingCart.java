@@ -1,5 +1,6 @@
 package com.java.xknowledge.design.action.strategy;
 
+import com.java.xknowledge.design.action.strategy.discount.Discount;
 import com.java.xknowledge.design.action.strategy.fruit.Fruit;
 
 import java.util.ArrayList;

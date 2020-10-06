@@ -1,9 +1,9 @@
-package com.java.xknowledge.design.action.strategy;
+package com.java.xknowledge.design.action.strategy.discount;
 
 /**
  * 满减优惠策略实现，实现满减优惠价格计算
  */
-class FullDiscount implements Discount {
+public class FullDiscount implements Discount {
     @Override
     public int calculate(int money) {
         if (money > 200) {
