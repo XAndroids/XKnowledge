@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.chain.discount;
+package com.java.xknowledge.design.discount;
 
 /**
  * 优惠接口

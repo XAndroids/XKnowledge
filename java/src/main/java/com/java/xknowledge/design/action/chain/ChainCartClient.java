@@ -3,8 +3,6 @@ package com.java.xknowledge.design.action.chain;
 import com.java.xknowledge.design.action.chain.discount.FullMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.HolidayMultyDiscount;
 import com.java.xknowledge.design.action.chain.discount.MultyDiscount;
-import com.java.xknowledge.design.action.chain.discount.NewerMultyDiscount;
-import com.java.xknowledge.design.action.chain.discount.SecondMultyDiscount;
 import com.java.xknowledge.design.fruit.Apple;
 import com.java.xknowledge.design.fruit.Fruit;
 import com.java.xknowledge.design.fruit.Orange;
@@ -22,8 +20,6 @@ class ChainCartClient {
 
     static {
         //创建优惠责任链
-        multyDiscount = new NewerMultyDiscount(multyDiscount);
-        multyDiscount = new SecondMultyDiscount(multyDiscount);
         multyDiscount = new HolidayMultyDiscount(multyDiscount);
     }
 

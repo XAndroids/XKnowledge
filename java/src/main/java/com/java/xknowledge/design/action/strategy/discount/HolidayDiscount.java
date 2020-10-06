@@ -1,5 +1,7 @@
 package com.java.xknowledge.design.action.strategy.discount;
 
+import com.java.xknowledge.design.discount.Discount;
+
 /**
  * 假日优惠策略实现，实现加入优惠价格计算
  */
