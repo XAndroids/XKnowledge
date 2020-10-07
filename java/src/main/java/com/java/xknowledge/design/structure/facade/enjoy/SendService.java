@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.structure.facade;
+package com.java.xknowledge.design.structure.facade.enjoy;
 
 /**
  * 包装服务
