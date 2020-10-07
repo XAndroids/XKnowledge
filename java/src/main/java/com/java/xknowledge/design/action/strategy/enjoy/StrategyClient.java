@@ -1,7 +1,7 @@
-package com.java.xknowledge.design.action.strategy;
+package com.java.xknowledge.design.action.strategy.enjoy;
 
-import com.java.xknowledge.design.action.strategy.discount.FullDiscount;
-import com.java.xknowledge.design.action.strategy.discount.HolidayDiscount;
+import com.java.xknowledge.design.action.strategy.enjoy.discount.FullDiscount;
+import com.java.xknowledge.design.action.strategy.enjoy.discount.HolidayDiscount;
 import com.java.xknowledge.design.common.fruit.Apple;
 import com.java.xknowledge.design.common.fruit.Orange;
 

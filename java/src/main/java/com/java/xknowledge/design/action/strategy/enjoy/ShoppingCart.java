@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.strategy;
+package com.java.xknowledge.design.action.strategy.enjoy;
 
 import com.java.xknowledge.design.common.discount.Discount;
 import com.java.xknowledge.design.common.fruit.Fruit;
