@@ -2,6 +2,10 @@ package com.java.xknowledge.design.create.factory.headfirst.simple;
 
 import com.java.xknowledge.design.create.factory.headfirst.simple.pizza.Pizza;
 
+/**
+ * 简单工厂模式
+ * 参考《Head First 设计模式》
+ */
 public class PizzaTestDrive {
 
     public static void main(String[] args) {
