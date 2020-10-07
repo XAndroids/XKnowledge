@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.observer;
+package com.java.xknowledge.design.action.observer.enjoy;
 
 /**
  * 观察者模式

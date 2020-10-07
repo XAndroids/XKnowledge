@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.observer;
+package com.java.xknowledge.design.action.observer.enjoy;
 import java.util.ArrayList;
 import java.util.List;
 /**
