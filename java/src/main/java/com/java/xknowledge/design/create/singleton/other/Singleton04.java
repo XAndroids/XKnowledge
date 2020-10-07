@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.create.singleton;
+package com.java.xknowledge.design.create.singleton.other;
 
 /**
  * 饿汉式-对象锁，双重判断
