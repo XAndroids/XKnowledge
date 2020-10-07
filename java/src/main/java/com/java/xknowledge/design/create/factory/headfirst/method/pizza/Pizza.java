@@ -27,7 +27,7 @@ public abstract class Pizza {
 	}
   
 	public void box() {
-		System.out.println("Place pizza in official PizzaStore box");
+		System.out.println("Place pizza in official com.java.xknowledge.design.create.factory.headfirst.builder.store.PizzaStore box");
 	}
  
 	public String getName() {

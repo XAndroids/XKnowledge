@@ -2,12 +2,12 @@ package com.java.xknowledge.design.create.factory.headfirst.method.pizza;
 
 public class ChicagoStyleClamPizza extends Pizza {
 	public ChicagoStyleClamPizza() {
-		name = "Chicago Style Clam Pizza";
-		dough = "Extra Thick Crust Dough";
-		sauce = "Plum Tomato Sauce";
+		name = "Chicago Style Clam com.java.xknowledge.design.create.factory.headfirst.builder.pizza.Pizza";
+		dough = "Extra Thick Crust com.java.xknowledge.design.create.factory.headfirst.builder.dough.Dough";
+		sauce = "Plum Tomato com.java.xknowledge.design.create.factory.headfirst.builder.sauce.Sauce";
  
-		toppings.add("Shredded Mozzarella Cheese");
-		toppings.add("Frozen Clams from Chesapeake Bay");
+		toppings.add("Shredded Mozzarella com.java.xknowledge.design.create.factory.headfirst.builder.cheese.Cheese");
+		toppings.add("Frozen com.java.xknowledge.design.create.factory.headfirst.builder.clams.Clams from Chesapeake Bay");
 	}
  
 	public void cut() {
