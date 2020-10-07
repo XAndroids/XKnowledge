@@ -1,8 +1,8 @@
-package com.java.xknowledge.design.action.template;
+package com.java.xknowledge.design.action.template.enjoy;
 
-import com.java.xknowledge.design.action.template.shoppingcart.CashShoppingCart;
-import com.java.xknowledge.design.action.template.shoppingcart.OnlineShoppingCart;
-import com.java.xknowledge.design.action.template.shoppingcart.ShoppingCart;
+import com.java.xknowledge.design.action.template.enjoy.shoppingcart.CashShoppingCart;
+import com.java.xknowledge.design.action.template.enjoy.shoppingcart.OnlineShoppingCart;
+import com.java.xknowledge.design.action.template.enjoy.shoppingcart.ShoppingCart;
 import com.java.xknowledge.design.common.fruit.Apple;
 import com.java.xknowledge.design.common.fruit.Orange;
 

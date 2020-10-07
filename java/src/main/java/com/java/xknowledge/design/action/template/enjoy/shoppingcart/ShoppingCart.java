@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.template.shoppingcart;
+package com.java.xknowledge.design.action.template.enjoy.shoppingcart;
 
 import com.java.xknowledge.design.common.fruit.Fruit;
 
