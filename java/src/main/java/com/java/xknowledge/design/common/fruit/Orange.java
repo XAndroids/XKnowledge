@@ -1,6 +1,7 @@
 package com.java.xknowledge.design.common.fruit;
 
 import com.java.xknowledge.design.action.visit.SaleVisit;
+import com.java.xknowledge.design.structure.adapter.enjoy.bag.OrangeBag;
 
 public class Orange implements Fruit {
     private int price = 100;
@@ -18,5 +19,9 @@ public class Orange implements Fruit {
     @Override
     public double accept(SaleVisit saleVisit) {
         return saleVisit.sell(this);    //由于saleVisit.sell()无法识别fruit真实类型，故在fruit对象内部调用
+    }
+
+    public void pack(OrangeBag orangeBag) {
+        orangeBag.pack();
     }
 }
