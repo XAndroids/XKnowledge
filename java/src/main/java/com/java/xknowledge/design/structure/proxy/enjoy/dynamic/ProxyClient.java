@@ -1,8 +1,8 @@
-package com.java.xknowledge.design.structure.proxy.dynamic;
+package com.java.xknowledge.design.structure.proxy.enjoy.dynamic;
 
-import com.java.xknowledge.design.structure.proxy.OrderService;
-import com.java.xknowledge.design.structure.proxy.OrderServiceImpl;
-import com.java.xknowledge.design.structure.proxy.OutOrderServiceImpl;
+import com.java.xknowledge.design.structure.proxy.enjoy.service.OrderService;
+import com.java.xknowledge.design.structure.proxy.enjoy.service.OrderServiceImpl;
+import com.java.xknowledge.design.structure.proxy.enjoy.service.OutOrderServiceImpl;
 
 import java.lang.reflect.Proxy;
 
@@ -12,13 +12,15 @@ import java.lang.reflect.Proxy;
  */
 class ProxyClient {
     public static void main(String[] args) {
+        //初始化被代理类，类加载器、Class和动态代理类
         OrderServiceImpl orderServiceImpl = new OrderServiceImpl();
         ClassLoader classLoader = orderServiceImpl.getClass().getClassLoader();
         Class[] interfaces = orderServiceImpl.getClass().getInterfaces();
         OrderHandler orderHandler = new OrderHandler(orderServiceImpl);
+        //通过JDK Proxy.newProxyInstance创建代理对象
         OrderService proxyOrderService = (OrderService) Proxy.newProxyInstance(classLoader, interfaces,
                 orderHandler);
-        proxyOrderService.savaOrder();
+        proxyOrderService.savaOrder();    //通过代理对象调用被代理方法
 
 
         OutOrderServiceImpl outOrderServiceImpl = new OutOrderServiceImpl();

@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.structure.proxy;
+package com.java.xknowledge.design.structure.proxy.enjoy.service;
 
 /**
  * 海外订单
