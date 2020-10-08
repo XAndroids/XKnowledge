@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.command.handler;
+package com.java.xknowledge.design.action.command.enjoy.handler;
 
 /**
  * 打折Handler没有抽象接口

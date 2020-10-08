@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.action.command.command;
+package com.java.xknowledge.design.action.command.enjoy.command;
 
 /**
  * 执行Handler没有抽象接口，增加Command接口，包装Handler实体

@@ -1,6 +1,6 @@
-package com.java.xknowledge.design.action.command.command;
+package com.java.xknowledge.design.action.command.enjoy.command;
 
-import com.java.xknowledge.design.action.command.handler.DiscountHandler;
+import com.java.xknowledge.design.action.command.enjoy.handler.DiscountHandler;
 
 /**
  * 打折命令实现类：包装打折Handler实体

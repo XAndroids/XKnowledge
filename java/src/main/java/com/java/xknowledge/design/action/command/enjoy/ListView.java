@@ -1,6 +1,6 @@
-package com.java.xknowledge.design.action.command;
+package com.java.xknowledge.design.action.command.enjoy;
 
-import com.java.xknowledge.design.action.command.command.Command;
+import com.java.xknowledge.design.action.command.enjoy.command.Command;
 
 /**
  * ListView
