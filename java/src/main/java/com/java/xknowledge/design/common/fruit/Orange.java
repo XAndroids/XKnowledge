@@ -1,7 +1,7 @@
 package com.java.xknowledge.design.common.fruit;
 
 import com.java.xknowledge.design.action.visit.SaleVisit;
-import com.java.xknowledge.design.structure.adapter.enjoy.bag.OrangeBag;
+import com.java.xknowledge.design.common.bag.OrangeBag;
 
 public class Orange implements Fruit {
     private int price = 100;

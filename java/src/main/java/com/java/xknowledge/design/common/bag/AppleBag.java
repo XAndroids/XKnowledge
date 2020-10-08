@@ -1,4 +1,4 @@
-package com.java.xknowledge.design.structure.adapter.enjoy.bag;
+package com.java.xknowledge.design.common.bag;
 
 /**
  * 苹果包装实现类

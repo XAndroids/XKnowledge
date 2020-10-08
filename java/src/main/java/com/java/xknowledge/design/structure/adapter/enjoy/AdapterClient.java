@@ -1,7 +1,7 @@
 package com.java.xknowledge.design.structure.adapter.enjoy;
 
 import com.java.xknowledge.design.common.fruit.Orange;
-import com.java.xknowledge.design.structure.adapter.enjoy.bag.AppleBag;
+import com.java.xknowledge.design.common.bag.AppleBag;
 
 /**
  * 适配器模式
