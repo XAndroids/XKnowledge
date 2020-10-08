@@ -1,7 +1,5 @@
 package com.java.xknowledge.design.action.template.headfirst;
 
-import com.java.xknowledge.design.action.template.headfirst.coffee.Coffee;
-import com.java.xknowledge.design.action.template.headfirst.coffee.Tea;
 import com.java.xknowledge.design.action.template.headfirst.hook.CoffeeWithHook;
 import com.java.xknowledge.design.action.template.headfirst.hook.TeaWithHook;
 
