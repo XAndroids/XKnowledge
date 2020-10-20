@@ -1,8 +1,5 @@
 package com.xposed.xknowledge;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
-
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
