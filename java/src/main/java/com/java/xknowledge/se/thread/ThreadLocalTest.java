@@ -8,12 +8,19 @@ package com.java.xknowledge.se.thread;
  */
 class ThreadLocalTest {
     private static ThreadLocal<String> threadLocal;
+    private static ThreadLocal<String> threadLocal2;
 
     public static void main(String[] args) {
         threadLocal = new ThreadLocal<String>() {
             @Override
             protected String initialValue() {
                 return "初始化值";
+            }
+        };
+        threadLocal2 = new ThreadLocal<String>() {
+            @Override
+            protected String initialValue() {
+                return "初始化值2";
             }
         };
 
@@ -29,12 +36,14 @@ class ThreadLocalTest {
             String name = Thread.currentThread().getName();
             System.out.println(name + "的threadLocal" + ",设置为" + name);
             threadLocal.set(name);//多个不同的线程可以同时访问一个threadLocald对象
+            threadLocal2.set(name + "2");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println(name + ":" + threadLocal.get());//但是每个线程通过threadLocal只能获取自己保存的值
+            System.out.println(name + "2:" + threadLocal2.get());
         }
     }
 }
