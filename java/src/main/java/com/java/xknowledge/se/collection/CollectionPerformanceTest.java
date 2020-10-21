@@ -6,7 +6,20 @@ import java.util.LinkedList;
 
 /**
  * 集合性能测试
- */
+ * 需求存储10000个学生数据，ArrayList、LinkedList和HashMap数据结构的性能对比
+ * 1.从集合中间增加数据，linkedList>hashMap>arrayList
+ * arrayList insert time = 48
+ * linkedList insert time = 7
+ * hashMap insert time = 14
+ * 2.从集合中遍历获取数据，arrayList>hashMap>linkedList，hashMap最均衡
+ * arrayList get time = 3
+ * linkedList get time = 670
+ * hashMap get time = 8
+ * 结论：
+ * 中间插入数据较多，选择LinkedList
+ * 遍历访问数据较多，选择ArrayList
+ * 插入和访问都有，选择HashMap
+ **/
 class CollectionPerformanceTest {
     //顺序表
     static ArrayList<Student> arrayList = new ArrayList<>();
@@ -16,10 +29,7 @@ class CollectionPerformanceTest {
     static HashMap<Integer, Student> hashMap = new HashMap<>();
 
     public static void main(String[] args) {
-        //从集合中间增加数据，linkedList>hashMap>arrayList，hashMap最均衡
-        //arrayList insert time = 48
-        //linkedList insert time = 7
-        //hashMap insert time = 14
+        //从集合中间增加数据
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++) {
             Student student = new Student(i, "student" + i);
@@ -42,10 +52,7 @@ class CollectionPerformanceTest {
         System.out.println("hashMap insert time = " + (System.currentTimeMillis() - start2));
 
 
-        //从集合中遍历获取数据，arrayList>hashMap>linkedList，hashMap最均衡
-        //arrayList get time = 3
-        //linkedList get time = 670
-        //hashMap get time = 8
+        //从集合中遍历获取数据
         long start4 = System.currentTimeMillis();
         for (int i = 0; i < arrayList.size(); i++) {
             arrayList.get(i);
