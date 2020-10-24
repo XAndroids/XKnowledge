@@ -1,6 +1,6 @@
 package com.java.xknowledge.arithmetic.linearlist.linkedlist;
 
-class Main {
+class LinkedListTest {
     public static void main(String[] args) {
         //单向链表测试
         LinkedList<Integer> list = new LinkedList<>();

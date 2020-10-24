@@ -1,4 +1,4 @@
-package com.java.xknowledge.arithmetic.linearlist.tree;
+package com.java.xknowledge.arithmetic.tree.haffman;
 
 import java.util.ArrayList;
 import java.util.List;
