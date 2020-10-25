@@ -1,18 +1,12 @@
-package com.java.xknowledge.arithmetic.graph;
+package com.java.xknowledge.arithmetic.graph.cover;
 
-
-
-/*
+/**
  * 定义图的结构
  */
-public class Graph {
-    //节点数目
-    protected int size;
-    //定义数组，保存顶点信息
-    protected String[] nodes;
-
-    //定义矩阵保存顶点信息
-    protected int[][] edges;
+class Graph {
+    int size;//图中节点的个数
+    String[] nodes;//定义数组，保存图中节点信息
+    int[][] edges;//定义矩阵，保留图中边的信息
 
     /**
      *      A B C D E F G
@@ -24,13 +18,14 @@ public class Graph {
      *   F  1 0 0 0 0 0 1
      *   G  0 0 0 0 1 1 0
      */
-    public Graph(){
-        //初始化顶点
-        nodes = new String[]{"A","B","C","D","E","F","G"};
-        size=nodes.length;
+    public Graph() {
+        //初始化节点
+        nodes = new String[]{"A", "B", "C", "D", "E", "F", "G"};
+        //初始化节点个数
+        size =  nodes.length;
 
-        //初始化边---- 为了直观，做一个常量定义
-        final int A=0,B=1,C=2,D=3,E=4,F=5,G=6;
+        //初始化边
+        final int A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6;
         edges = new int[size][size];
         edges[A][C] = 1;
         edges[A][D] = 1;
@@ -47,5 +42,4 @@ public class Graph {
         edges[G][F] = 1;
         edges[G][E] = 1;
     }
-
 }
