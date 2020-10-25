@@ -32,14 +32,14 @@ class Graph {
         edges[A][F] = 1;
         edges[B][C] = 1;
         edges[C][A] = 1;
-        edges[C][D] = 1;
         edges[C][B] = 1;
+        edges[C][D] = 1;
         edges[D][A] = 1;
         edges[D][C] = 1;
         edges[E][G] = 1;
         edges[F][A] = 1;
         edges[F][G] = 1;
-        edges[G][F] = 1;
         edges[G][E] = 1;
+        edges[G][F] = 1;
     }
 }
