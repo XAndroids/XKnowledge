@@ -13,9 +13,11 @@ class GraphCoverTest {
         GraphCover graphCover = new GraphCover();
 //        graphCover.DeepFirst(0);
 
-        //广度遍历
-        List<Integer> startList = new ArrayList<>();
-        startList.add(0);
-        graphCover.BreadthFirst1(startList);
+        //广度遍历1
+//        List<Integer> startList = new ArrayList<>();
+//        startList.add(0);
+//        graphCover.BreadthFirst1(startList);
+        //广度遍历优化2
+        graphCover.BreadthFirst2(0);
     }
 }

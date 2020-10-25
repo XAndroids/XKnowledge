@@ -41,8 +41,8 @@ class GraphCover extends Graph {
     public void BreadthFirst1(List<Integer> tmpNodeList) {
         List<Integer> lastTmpNodeList = new ArrayList<>();
 
-        for (int node : tmpNodeList) {
-            visit[node] = 1;
+        for (int node : tmpNodeList) {//遍历当前"层次"集合
+            visit[node] = 1;//设置node节点已经被访问
             System.out.println("齐天大圣到—>" + this.nodes[node] + "一游"); //输出节点数据
 
             for (int i = 0; i < size; i++) {
@@ -58,7 +58,34 @@ class GraphCover extends Graph {
         }
     }
 
-    public void BreadthFirst2() {
+    /**
+     * 广度优先遍历2-优化
+     * queue不需要多次创建，且为固定长度数组
+     */
+    private int[] queue = new int[size];//遍历"层次"集合，用一个结合大小即为size，front-tail控制不同的层次
+    public void BreadthFirst21(int front, int tail) {
+        int last = tail;
 
+        for (int i = front; i <= tail; i++) {//遍历当前"层次"集合
+            int node = queue[i];
+            System.out.println("齐天大圣到—>" + this.nodes[node] + "一游");//输出节点数据
+            for (int j = 0; j < size; j++) {
+                if (edges[node][j] == 1 && visit[j] == 0) {
+                    visit[j] = 1;//设置node节点已经被访问，加入被访问集合后，就置为被访问了
+                    queue[++last] = j;
+                }
+            }
+        }
+
+        if (last > tail) {
+            BreadthFirst21(tail + 1, last);
+        }
     }
+
+    public void BreadthFirst2(int start) {
+        queue[0] = start;
+        visit[start] = 1;
+        BreadthFirst21(0, 0);
+    }
+
 }
