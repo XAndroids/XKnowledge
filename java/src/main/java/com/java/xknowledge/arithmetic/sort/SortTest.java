@@ -7,9 +7,11 @@ package com.java.xknowledge.arithmetic.sort;
 class SortTest {
     public static void main(String[] args) {
         PrintArray.print(PrintArray.SRC);
-        System.out.println("===================Bubble Sort=========================");
-        PrintArray.print(BubbleSort.sort(PrintArray.SRC));
-        System.out.println("===================Choice Sort=========================");
-        PrintArray.print(ChoiceSort.sort(PrintArray.SRC));
+//        System.out.println("===================Bubble Sort=========================");
+//        PrintArray.print(BubbleSort.sort(PrintArray.SRC));
+//        System.out.println("===================Choice Sort=========================");
+//        PrintArray.print(ChoiceSort.sort(PrintArray.SRC));
+        System.out.println("===================Insertion Sort=========================");
+        PrintArray.print(InsertionSort.sort(PrintArray.SRC));
     }
 }
