@@ -11,7 +11,10 @@ class SortTest {
 //        PrintArray.print(BubbleSort.sort(PrintArray.SRC));
 //        System.out.println("===================Choice Sort=========================");
 //        PrintArray.print(ChoiceSort.sort(PrintArray.SRC));
-        System.out.println("===================Insertion Sort=========================");
-        PrintArray.print(InsertionSort.sort(PrintArray.SRC));
+//        System.out.println("===================Insertion Sort=========================");
+//        PrintArray.print(InsertionSort.sort(PrintArray.SRC));
+
+        System.out.println("===================Shell Sort=========================");
+        PrintArray.print(ShellSort.sort(PrintArray.SRC));
     }
 }
