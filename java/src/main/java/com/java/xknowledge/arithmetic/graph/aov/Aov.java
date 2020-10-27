@@ -17,6 +17,8 @@ class Aov {
 
     //每个顶点入度数据
     private int[] eSize;
+    private int[] fast;//最早时间
+    private int[] last;//最晚时间
 
     public Aov() {
         init();
@@ -46,6 +48,9 @@ class Aov {
         edges[H][M] = 3;
         edges[K][N] = 2;
         edges[M][N] = 3;
+
+        fast = new int[size];
+        last = new int[size];
     }
 
     /**
@@ -140,5 +145,57 @@ class Aov {
         }
 
         return path;
+    }
+
+    /**
+     * 计算图从node节点开始，各个节点的最早执行时间
+     *
+     * @param node 图的开始节点node
+     */
+    private void exeFast(int node) {
+        for (int i = 0; i < size; i++) {
+            if (edges[node][i] > 0) {//如果i是邻接节点
+                int cost = fast[node] + edges[node][i];//到i节点最短路径为到node的最短路径+node到i节点的路径长度
+                if (cost > fast[i]) {//如果达到i节点的时间更大，则保留为i节点最早执行时间
+                    fast[i] = cost;
+                    exeFast(i);//递归查找i节点邻接节点的最早执行时间
+                }
+            }
+        }
+    }
+
+    /**
+     * 计算图从node节点开始，各个节点最晚执行时间，从结尾推断
+     *
+     * @param node 图的开始节点node
+     */
+    private void exeLast(int node) {
+        for (int i = 0; i < size; i++) {
+            if (edges[i][node] > 0) {
+                int cost = last[node] - edges[i][node];
+                if (cost < last[i]) {
+                    last[i] = cost;
+                    exeLast(i);
+                }
+            }
+        }
+    }
+
+    public void exeKey() {
+        int[] path = getPath();
+        int start = path[0], end = path[size - 1];
+
+        exeFast(start);
+        for (int i = 0; i < size; i++) {//初始化成工程最大值
+            last[i] = fast[end];
+        }
+        exeLast(end);
+
+        for (int i = 0; i < size; i++) {
+            int node = path[i];
+            if (fast[node] == last[node]) {
+                System.out.print("--->" + nodes[node]);
+            }
+        }
     }
 }

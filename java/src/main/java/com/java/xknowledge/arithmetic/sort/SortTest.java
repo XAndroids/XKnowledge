@@ -9,5 +9,7 @@ class SortTest {
         PrintArray.print(PrintArray.SRC);
         System.out.println("===================Bubble Sort=========================");
         PrintArray.print(BubbleSort.sort(PrintArray.SRC));
+        System.out.println("===================Choice Sort=========================");
+        PrintArray.print(ChoiceSort.sort(PrintArray.SRC));
     }
 }
