@@ -1,6 +1,7 @@
 package com.android.xknowledge.sdk.component.activity.lifecycler
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -62,5 +63,14 @@ class LifeCycleActivity : TitleActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         Log.i("LifeCycle", "LifeCycleActivity_onRestoreInstanceState")
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        //在折叠屏，或者多窗口适配时，通过给Activity清单添加android:configChanges="screenSize|smallestScreenSize|screenLayout"
+        //避免Activity的重建
+        //参考：https://developer.android.com/guide/topics/resources/runtime-changes?hl=zh-cn
+        Log.i("LifeCycle", "LifeCycleActivity_onConfigurationChanged" + newConfig.screenHeightDp
+                + ", newConfig.screenWidthDp" + newConfig.screenWidthDp);
     }
 }

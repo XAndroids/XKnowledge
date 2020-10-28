@@ -7,7 +7,7 @@ import com.android.xknowledge.ndk.NdkActivity
 import com.android.xknowledge.open.OpenActivity
 import com.android.xknowledge.optimize.OptimizeActivity
 import com.android.xknowledge.other.OtherActivity
-import com.android.xknowledge.sdk.ui.UiActivity
+import com.android.xknowledge.sdk.SdkActivity
 import com.android.xknowledge.security.SecurityActivity
 import com.android.xknowledge.test.TestActivity
 import com.reactnative.knowledge.ReactNativeActivity
@@ -15,7 +15,7 @@ import com.reactnative.knowledge.ReactNativeActivity
 class MainActivity : ListActivity() {
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
-            ListItem("Sdk", "Sdk相关", UiActivity::class.java),
+            ListItem("Sdk", "Sdk相关", SdkActivity::class.java),
             ListItem("Open", "开源库相关", OpenActivity::class.java),
             ListItem("Framework", "开源框架相关", FrameworkActivity::class.java),
             ListItem("Jetpack", "Jetpack组件相关", JetpackActivity::class.java),
