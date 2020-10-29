@@ -15,7 +15,10 @@ class SortTest {
 //        PrintArray.print(InsertionSort.sort(PrintArray.SRC));
 //        System.out.println("===================Shell Sort=========================");
 //        PrintArray.print(ShellSort.sort(PrintArray.SRC));
-        System.out.println("===================Merge Sort=========================");
-        PrintArray.print(MergeSort.sort(PrintArray.SRC));
+//        System.out.println("===================Merge Sort=========================");
+//        PrintArray.print(MergeSort.sort(PrintArray.SRC));
+
+        System.out.println("===================Rasix Sort=========================");
+        PrintArray.print(RadixSort.sort(PrintArray.SRC));
     }
 }

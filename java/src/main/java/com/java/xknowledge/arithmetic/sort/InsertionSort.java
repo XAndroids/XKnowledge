@@ -2,6 +2,7 @@ package com.java.xknowledge.arithmetic.sort;
 
 /**
  * 插入排序
+ * 参考：《享学1：14、排序算法的实现总结及性能对比，应用场景》
  */
 class InsertionSort {
     public static int[] sort(int[] array) {
