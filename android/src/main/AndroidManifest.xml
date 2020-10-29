@@ -93,6 +93,8 @@
         <activity android:name=".sdk.thread.AsyncTaskActivity" />
         <activity android:name=".sdk.ui.event.ontouch.ViewEventActivity" />
         <activity android:name=".sdk.ui.dialog.DialogBackgroundActivity" />
+        <activity android:name=".sdk.ui.notification.NotificationActivity" />
+        <activity android:name=".sdk.ui.theme.ThemeActivity" />
         <activity android:name=".sdk.storage.StorageActivity" />
         <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
         <activity android:name=".sdk.storage.ExteralStorageActivity" />

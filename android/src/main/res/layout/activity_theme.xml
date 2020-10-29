@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sdk.ui.theme.ThemeActivity">
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="不设置任何属性，随着系统变化" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬编码设置系统资源@android:color，不随系统变化"
+            android:textColor="@android:color/primary_text_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="?android:attr/colorBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬编码设置系统资源?android:attr，随系统变化"
+            android:textColor="?android:attr/textColorPrimary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/daynight_backgroundColor">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬编码@color/colorPrimary，存在value-night，随系统变化"
+            android:textColor="@color/daynight_textColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#ffffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬编码固定颜色#ff000000，不随系统变化"
+            android:textColor="#ff000000" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/theme_button_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变主题，脱离系统" />
+</LinearLayout>

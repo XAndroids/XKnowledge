@@ -6,7 +6,9 @@ import com.android.xknowledge.sdk.ui.event.EventActivity
 import com.android.xknowledge.sdk.ui.layout.LayoutActivity
 import com.android.xknowledge.sdk.ui.link.LinkActivity
 import com.android.xknowledge.sdk.ui.listener.NavigationBarActivity
+import com.android.xknowledge.sdk.ui.notification.NotificationActivity
 import com.android.xknowledge.sdk.ui.statusbar.StatusBarActivity
+import com.android.xknowledge.sdk.ui.theme.ThemeActivity
 import com.android.xknowledge.sdk.ui.view.ViewActivity
 
 class UiActivity : ListActivity() {
@@ -18,7 +20,9 @@ class UiActivity : ListActivity() {
             ListItem("Event", "点击和滑动等交互相关", EventActivity::class.java),
             ListItem("Link", "跳转链接相关", LinkActivity::class.java),
             ListItem("StatusBar", "状态栏相关", StatusBarActivity::class.java),
-            ListItem("NavigationBar", "导航栏相关", NavigationBarActivity::class.java)
+            ListItem("NavigationBar", "导航栏相关", NavigationBarActivity::class.java),
+            ListItem("Notification", "通知相关", NotificationActivity::class.java),
+            ListItem("Theme", "主题相关", ThemeActivity::class.java)
         )
     }
 }

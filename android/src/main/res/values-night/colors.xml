@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--night-quality深色主题颜色-->
+<resources>
+    <color name="daynight_textColor">#ffffff</color>
+    <color name="daynight_backgroundColor">#000000</color>
+</resources>
