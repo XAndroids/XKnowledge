@@ -13,7 +13,6 @@ class CountingSort {
         }
 
         //寻找数组中的最大值，最小值
-
         int min = array[0], max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
