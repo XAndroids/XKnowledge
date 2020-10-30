@@ -23,20 +23,22 @@ class SortTest {
 //        PrintArray.print(MergeSort.sort(PrintArray.SRC));
 //        System.out.println("===================Rasix Sort=========================");
 //        PrintArray.print(RadixSort.sort(PrintArray.SRC));
-        System.out.println("===================BucketSort Sort=========================");
-        ArrayList<Integer> array = new ArrayList<>();
-        array.add(86);
-        array.add(11);
-        array.add(77);
-        array.add(23);
-        array.add(32);
-        array.add(45);
-        array.add(58);
-        array.add(63);
-        array.add(93);
-        array.add(4);
-        array.add(37);
-        array.add(22);
-        PrintArray.printObject(BucketSort.sort(array, 2));
+//        System.out.println("===================Bucket Sort=========================");
+//        ArrayList<Integer> array = new ArrayList<>();
+//        array.add(86);
+//        array.add(11);
+//        array.add(77);
+//        array.add(23);
+//        array.add(32);
+//        array.add(45);
+//        array.add(58);
+//        array.add(63);
+//        array.add(93);
+//        array.add(4);
+//        array.add(37);
+//        array.add(22);
+//        PrintArray.printObject(BucketSort.sort(array, 2));
+        System.out.println("===================Counting Sort=========================");
+        PrintArray.print(CountingSort.sort(PrintArray.SRC));
     }
 }
