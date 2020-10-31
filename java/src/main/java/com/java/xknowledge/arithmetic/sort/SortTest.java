@@ -20,8 +20,8 @@ class SortTest {
 //        PrintArray.print(InsertionSort.sort(PrintArray.SRC));
 //        System.out.println("===================Shell Sort=========================");
 //        PrintArray.print(ShellSort.sort(PrintArray.SRC));
-//        System.out.println("===================Merge Sort=========================");
-//        PrintArray.print(MergeSort.sort(PrintArray.SRC));
+        System.out.println("===================Merge Sort=========================");
+        PrintArray.print(MergeSort.sort(PrintArray.SRC));
 //        System.out.println("===================Rasix Sort=========================");
 //        PrintArray.print(RadixSort.sort(PrintArray.SRC));
 //        System.out.println("===================Bucket Sort=========================");
@@ -43,8 +43,7 @@ class SortTest {
 //        PrintArray.print(CountingSort.sort(PrintArray.SRC));
 //        System.out.println("===================Heap Sort=========================");
 //        PrintArray.print(HeapSort.sort(PrintArray.SRC));
-
-        System.out.println("===================Quick Sort=========================");
-        PrintArray.print(Objects.requireNonNull(QuickSort.sort(PrintArray.SRC, 0, PrintArray.SRC.length - 1)));
+//        System.out.println("===================Quick Sort=========================");
+//        PrintArray.print(Objects.requireNonNull(QuickSort.sort(PrintArray.SRC, 0, PrintArray.SRC.length - 1)));
     }
 }
