@@ -3,6 +3,7 @@ package com.java.xknowledge.arithmetic.sort;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 排序测试类
@@ -40,7 +41,10 @@ class SortTest {
 //        PrintArray.printObject(BucketSort.sort(array, 2));
 //        System.out.println("===================Counting Sort=========================");
 //        PrintArray.print(CountingSort.sort(PrintArray.SRC));
-        System.out.println("===================Heap Sort=========================");
-        PrintArray.print(HeapSort.sort(PrintArray.SRC));
+//        System.out.println("===================Heap Sort=========================");
+//        PrintArray.print(HeapSort.sort(PrintArray.SRC));
+
+        System.out.println("===================Quick Sort=========================");
+        PrintArray.print(Objects.requireNonNull(QuickSort.sort(PrintArray.SRC, 0, PrintArray.SRC.length - 1)));
     }
 }
