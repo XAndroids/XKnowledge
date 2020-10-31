@@ -38,7 +38,9 @@ class SortTest {
 //        array.add(37);
 //        array.add(22);
 //        PrintArray.printObject(BucketSort.sort(array, 2));
-        System.out.println("===================Counting Sort=========================");
-        PrintArray.print(CountingSort.sort(PrintArray.SRC));
+//        System.out.println("===================Counting Sort=========================");
+//        PrintArray.print(CountingSort.sort(PrintArray.SRC));
+        System.out.println("===================Heap Sort=========================");
+        PrintArray.print(HeapSort.sort(PrintArray.SRC));
     }
 }

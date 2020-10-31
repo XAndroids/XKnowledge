@@ -10,7 +10,12 @@ class QuickSort {
             return null;
         }
 
-
+        //数组分割成两部分，从哪儿分区指示器
+        int zooeIndex = partition(array,start,end);
         return array;
+    }
+
+    private static int partition(int[] array, int start, int end) {
+        return 0;
     }
 }
