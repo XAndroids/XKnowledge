@@ -1,12 +1,9 @@
-package com.java.xknowledge.arithmetic.string.bf;
+package com.java.xknowledge.arithmetic.string.kmp;
 
-/**
- * 字符串暴力查找
- */
-class BFTest {
+class KMPTest {
     public static void main(String[] args) {
         String s = "BBC ABCDAB ABCDABCDABDE";
         String p = "ABCDABD";
-        BF.bruteForce(s, p);
+        KMP.kmp(s, p);
     }
 }
