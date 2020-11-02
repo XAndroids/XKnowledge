@@ -5,12 +5,9 @@ package com.java.xknowledge.arithmetic.string.bf;
  * 参考：《享学1：19.字符串》
  */
 class BF {
-
     public static void bruteForce(String s, String p) {
-        int index = -1;//成功匹配的位置
         int sLength = s.length();//主串长度
         int pLength = p.length();//子串长度
-
         if (sLength < pLength) {
             System.out.println("Error.The main string is greater than the sub string length.");
             return;
@@ -28,6 +25,7 @@ class BF {
             }
         }
 
+        int index = -1;//成功匹配的位置
         if (j >= pLength) {//如果匹配成功
             index = i - j;
             System.out.println("Successful math index is :" + index);
