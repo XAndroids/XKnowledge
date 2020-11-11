@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sdk.ui.setting.SettingActivity">
+
+    <RadioGroup
+        android:id="@+id/setting_radio_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/setting_radio_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_INTERNET_CONNECTIVITY" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_WIFI" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_nfc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_NFC" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_VOLUME" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/setting_button_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开Settings.Panel" />
+
+    <RadioGroup
+        android:id="@+id/setting_radio_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/setting_radio_wireless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_WIRELESS_SETTINGS" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_wifi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_WIFI_SETTINGS" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_nfc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_NFC_SETTINGS" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_SOUND_SETTINGS" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_wifiadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_WIFI_ADD_NETWORKS" />
+
+        <RadioButton
+            android:id="@+id/setting_radio_wifiip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION_WIFI_IP_SETTINGS" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/setting_button_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开Settings页面" />
+</LinearLayout>

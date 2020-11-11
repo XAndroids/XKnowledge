@@ -18,7 +18,7 @@ class WebviewDialog : DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return WebView(context).apply {
+        return WebView(context!!).apply {
             //WebView的透明背景
             setBackgroundColor(Color.parseColor("#00000000"))
             loadUrl("file:///android_asset/web/transport.html")

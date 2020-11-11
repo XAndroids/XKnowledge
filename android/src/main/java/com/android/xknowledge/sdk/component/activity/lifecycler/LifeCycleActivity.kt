@@ -60,10 +60,10 @@ class LifeCycleActivity : TitleActivity() {
         Log.i("LifeCycle", "LifeCycleActivity_onSaveInstanceState " + TaskTools.geStaskToptActivity(this))
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        Log.i("LifeCycle", "LifeCycleActivity_onRestoreInstanceState")
-    }
+//    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+//        super.onRestoreInstanceState(savedInstanceState)
+//        Log.i("LifeCycle", "LifeCycleActivity_onRestoreInstanceState")
+//    }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

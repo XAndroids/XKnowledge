@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!-- Force Dark 功能：会分析应用的每个视图，并在相应视图在屏幕上显示之前，自动应用深色主题背景。只在API 29生效-->
         <!-- 参考：https://developer.android.com/guide/topics/ui/look-and-feel/darktheme#%E6%9B%B4%E6%94%B9%E5%BA%94%E7%94%A8%E5%86%85%E4%B8%BB%E9%A2%98%E8%83%8C%E6%99%AF-->
-<!--        <item name="android:forceDarkAllowed">false</item>-->
+        <!--        <item name="android:forceDarkAllowed">false</item>-->
+        <!--手势导航适配，设置透明系统栏-->
+        <!--参考：https://developer.android.com/training/gestures/gesturenav-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Optional, but recommended for full edge-to-edge rendering -->
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
 </resources>

@@ -64,7 +64,7 @@ class HandlerActivity : TitleActivity() {
         }
     }
 
-    class ThreadHandler(myLooper: Looper?) : Handler(myLooper) {
+    class ThreadHandler(myLooper: Looper?) : Handler(myLooper!!) {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             Log.i(
