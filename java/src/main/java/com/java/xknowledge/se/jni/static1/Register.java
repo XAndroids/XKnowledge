@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.jni;
+package com.java.xknowledge.se.jni.static1;
 
 /**
  * JNI静态注册
