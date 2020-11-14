@@ -176,6 +176,7 @@
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
         <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
         <activity android:name=".security.permission.CustomPermissionActivity" />
+        <activity android:name=".security.danger.DangerActivity" />
         <activity android:name=".other.OtherActivity" />
         <activity android:name=".other.AdbActivity" />
         <activity android:name=".framework.hotfix.MultidexActivity" />
@@ -183,7 +184,7 @@
         <activity android:name=".framework.module.ModuleActivity" />
         <!--ndk相关-->
         <activity android:name=".ndk.NdkActivity" />
-        <activity android:name=".ndk.BaseNdkActivity" />
+        <activity android:name=".ndk.base.BaseNdkActivity" />
         <!--插件化，主工程需要注册插件代理Activity-->
         <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
     </application>
