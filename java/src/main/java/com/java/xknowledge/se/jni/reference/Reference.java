@@ -13,9 +13,16 @@ class Reference {
 
     public native void callJavaInstanceMethod();
 
+    public native String newString(int len);
+
+    public native String JCallC();
+
     public static void main(String[] args) {
         Reference reference = new Reference();
         reference.callJavaInstanceMethod();
         reference.callJavaStaticMethod();
+
+        reference.JCallC();
+        reference.JCallC();
     }
 }
