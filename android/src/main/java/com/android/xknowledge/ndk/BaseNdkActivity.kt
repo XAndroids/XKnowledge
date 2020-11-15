@@ -13,6 +13,7 @@ class BaseNdkActivity : TitleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_ndk)
+        //调用原生库得到字符串
         Log.i("BaseNdkActivity", "ndk success:" + NativeLib().stringFromJNI())
 
         //写 使用 mmap 映射文件 在内存当中 并操作这块内存 往这块内存中写入一块数据
@@ -116,6 +117,7 @@ class BaseNdkActivity : TitleActivity() {
 
     companion object {
         init {
+            //运行时加载原生库
             System.loadLibrary("native-lib")
         }
     }

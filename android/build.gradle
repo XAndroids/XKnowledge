@@ -80,12 +80,56 @@ android {
         versionCode VERSION_CODE.toInteger()
         versionName VERSION_NAME
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //用于配置Cmake构建参数
+        externalNativeBuild {
+            cmake {
+                //将参数传递给变量
+                //arguments "-DVAR_NAME=ARGUMENT".
+                arguments ""
+                //为C编译器设置可选标志
+                //cFlags "-D_EXAMPLE_C_FLAG1", "-D_EXAMPLE_C_FLAG2"
+                cFlags ""
+                //为C++编译器设置可选标志
+                //cppFlags "-D__STDC_FORMAT_MACROS"s
+                cppFlags ""
+                abiFilters "armeabi-v7a", "x86_64"
+            }
+        }
+
     }
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        demo {
+            dimension "version"
+            ndk {
+                abiFilters "x86_64"
+            }
+            //为demo flavor指定要构建和打包的本地库
+            externalNativeBuild {
+                cmake {
+                    targets "native-lib"
+                }
+            }
+        }
+        pad {
+            dimension "version"
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+            externalNativeBuild {
+                cmake {
+                    targets "native-lib"
+                }
+            }
         }
     }
 
@@ -109,6 +153,7 @@ android {
 
     //ndk构建文件配置
     externalNativeBuild {
+        //path指定CMakeList.txt文件所在路径，version指定CMake版本
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
             version "3.10.2"

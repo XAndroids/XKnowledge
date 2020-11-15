@@ -2,14 +2,23 @@
 # documentation: https://d.android.com/studio/projects/add-native-code.html
 
 # Sets the minimum version of CMake required to build the native library.
-
+#设置cmake要求饿最低版本号
 cmake_minimum_required(VERSION 3.4.1)
+
+#开启输出详细和链接信息
+set(CMAKE_VERBOSE_MAKEFILE on)
+message(STATUS "要打印的信息")
+set(DIR ${CMAKE_SOURCE_DIR}/../jniLibs)
+message(STATUS ${DIR})
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
-
+#将native-lib.cpp编译到共享对象库中，并将其命名为libnative-lib.so，随后打包到apk中
+#第一个参数，决定最终生成的共享库名称
+#第二个参数，指定根据源文件斌阿姨出来是静态库，还是共享库，分别是STATIC/SHARED关键字
+#第三个参数，指定源文件
 add_library( # Sets the name of the library.
         native-lib
 
@@ -24,7 +33,9 @@ add_library( # Sets the name of the library.
 # default, you only need to specify the name of the public NDK library
 # you want to add. CMake verifies that the library exists before
 # completing its build.
-
+#指定系统库中搜索你需要的log库
+#第一个参数：和Android NDK某个库建立关联关系
+#第二个参数：Android NDK对应的库名称
 find_library( # Sets the name of the path variable.
         log-lib
 
@@ -35,7 +46,7 @@ find_library( # Sets the name of the path variable.
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
-
+#把NDK库和我们自己的原生库进行关联
 target_link_libraries( # Specifies the target library.
         native-lib
 

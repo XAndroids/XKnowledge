@@ -46,7 +46,7 @@ Java_com_android_xknowledge_ndk_NativeLib_writeTest(JNIEnv *env, jobject instanc
     //将 data 的 data.size() 个数据 拷贝到 m_ptr
     memcpy(m_ptr, data.data(), data.size());
 
-    __android_log_print(ANDROID_LOG_ERROR, "mmap", "写入数据:%s", data.c_str());
+//    __android_log_print(ANDROID_LOG_ERROR, "mmap", "写入数据:%s", data.c_str());
 }
 
 extern "C"
@@ -58,7 +58,7 @@ Java_com_android_xknowledge_ndk_NativeLib_readTest(JNIEnv *env, jobject instance
     memcpy(buf, m_ptr, 100);
 
     std::string result(buf);
-    __android_log_print(ANDROID_LOG_ERROR, "MMKV", "读取数据:%s", result.c_str());
+//    __android_log_print(ANDROID_LOG_ERROR, "MMKV", "读取数据:%s", result.c_str());
 
     //取消映射
     munmap(m_ptr, m_size);
