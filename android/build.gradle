@@ -93,7 +93,7 @@ android {
                 //为C++编译器设置可选标志
                 //cppFlags "-D__STDC_FORMAT_MACROS"s
                 cppFlags ""
-                abiFilters "armeabi-v7a", "x86_64"
+                abiFilters "armeabi-v7a", "x86"
             }
         }
 
@@ -111,7 +111,7 @@ android {
         demo {
             dimension "version"
             ndk {
-                abiFilters "x86_64"
+                abiFilters "x86", "armeabi-v7a"
             }
             //为demo flavor指定要构建和打包的本地库
             externalNativeBuild {
@@ -212,7 +212,7 @@ dependencies {
     kapt 'org.greenrobot:eventbus-annotation-processor:3.1.1'
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation  this.libExtJunit
+    androidTestImplementation this.libExtJunit
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
@@ -273,6 +273,7 @@ def getParentProject() {
 }
 
 this.getMYRootProject()
+
 def getMYRootProject() {
     println('getMYRootProject-------------')
     //getSubprojects：获取所有的子Project
@@ -288,6 +289,7 @@ println 'the project file path is:' + getProjectDir().absolutePath
 
 //文件定位相关api
 println getContent('build.gradle')
+
 def getContent(String path) {
     try {
         def file = file(path)    //file()路径相对路径：相对于project的根目录
@@ -474,11 +476,11 @@ class VersionMsg {
     String versionInfo
 }
 
-task readFile{
+task readFile {
     //通过readFile的input.file和writeFile的output.File关联，产生了依赖关系
     inputs.file destFile
-    doLast{
-        def file =inputs.files.singleFile
+    doLast {
+        def file = inputs.files.singleFile
         println file.text
     }
 }

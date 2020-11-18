@@ -43,13 +43,22 @@ find_library( # Sets the name of the path variable.
         # you want CMake to locate.
         log)
 
+#添加自己编译的ffmped库的AVUTILS so包
+add_library(AVUTILS SHARED IMPORTED)
+#More than one file was found with OS independent path 'lib/armeabi-v7a/libdlib.so'.
+#移动至新文件夹cmakeLibs
+#参考：https://stackoverflow.com/questions/62088079/error-when-building-project-with-ndk-support-after-updating-to-android-studio-4
+set_target_properties(AVUTILS PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/libavutil.so)
+
+include_directories(include)
+
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
 #把NDK库和我们自己的原生库进行关联
 target_link_libraries( # Specifies the target library.
         native-lib
-
+        AVUTILS
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})

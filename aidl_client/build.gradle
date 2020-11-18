@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 //参考：https://coding.imooc.com/lesson/206.html#mid=13292
 //1.通过定义def变量，来替换配置中的数字和字符常量
 //表面build.gradle中导出都是"魔数"常量
-def mCompileSdkVersion = 29;
-def mBuildToolsVersion = "29.0.2"
+def mCompileSdkVersion = 30;
+def mBuildToolsVersion = "30.0.2"
 
 android {
     compileSdkVersion mCompileSdkVersion

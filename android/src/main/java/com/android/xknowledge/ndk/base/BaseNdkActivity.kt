@@ -1,9 +1,11 @@
-package com.android.xknowledge.ndk
+package com.android.xknowledge.ndk.base
 
 import android.os.Bundle
 import android.util.Log
 import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
+import com.android.xknowledge.ndk.NativeLib
+import kotlinx.android.synthetic.main.activity_base_ndk.*
 
 /**
  * Ndk基本的环境搭建和调用
@@ -14,7 +16,11 @@ class BaseNdkActivity : TitleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_ndk)
         //调用原生库得到字符串
-        Log.i("BaseNdkActivity", "ndk success:" + NativeLib().stringFromJNI())
+        ndk_textview_base.text = NativeLib().stringFromJNI();
+        Log.i(
+            "BaseNdkActivity", "ndk success:" + NativeLib()
+                .stringFromJNI()
+        )
 
         //写 使用 mmap 映射文件 在内存当中 并操作这块内存 往这块内存中写入一块数据
         //错误：已经在设置页面授权了，还是报错。todo... ... 后续进一步研究问题
@@ -40,7 +46,7 @@ class BaseNdkActivity : TitleActivity() {
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #06 pc 0032c19c  /apex/com.android.runtime/lib/libart.so (bool art::interpreter::DoCall<false, false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, art::JValue*)+988) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #07 pc 006818dd  /apex/com.android.runtime/lib/libart.so (MterpInvokeVirtual+989) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #08 pc 00138821  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_virtual+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
-        //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #09 pc 00306232  [anon:dalvik-classes.dex extracted in memory from /data/app/com.android.xknowledge-uxBDCfP9rVCn4dH2Jet8iw==/base.apk] (com.android.xknowledge.ndk.BaseNdkActivity.onCreate+90)
+        //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #09 pc 00306232  [anon:dalvik-classes.dex extracted in memory from /data/app/com.android.xknowledge-uxBDCfP9rVCn4dH2Jet8iw==/base.apk] (com.android.xknowledge.ndk.base.BaseNdkActivity.onCreate+90)
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #10 pc 00681b4c  /apex/com.android.runtime/lib/libart.so (MterpInvokeVirtual+1612) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #11 pc 00138821  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_virtual+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
         //2020-09-14 17:34:26.315 1231-1231/? A/DEBUG:       #12 pc 0019175e  /system/framework/framework.jar (android.app.Activity.performCreate+30)
@@ -111,14 +117,7 @@ class BaseNdkActivity : TitleActivity() {
         //2020-09-14 17:34:26.317 1231-1231/? A/DEBUG:       #77 pc 00003632  /system/bin/app_process32 (main+1490) (BuildId: b7a60bc7d078521421fd5a8d201915ae)
         //2020-09-14 17:34:26.317 1231-1231/? A/DEBUG:       #78 pc 000898e8  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+120) (BuildId: 471745f0fbbcedb3db1553d5bd6fcd8b)
         //2020-09-14 17:34:26.509 1921-1921/? E//system/bin/tombstoned: Tombstone written to: /data/tombstones/tombstone_11
-        NativeLib().writeTest()
-        NativeLib().readTest()
-    }
-
-    companion object {
-        init {
-            //运行时加载原生库
-            System.loadLibrary("native-lib")
-        }
+//        NativeLib().writeTest()
+//        NativeLib().readTest()
     }
 }
