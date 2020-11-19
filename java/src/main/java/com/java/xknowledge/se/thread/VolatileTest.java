@@ -15,6 +15,7 @@ class VolatileTest {
     //并通知其它线程的工作内存无效，读取时重新从主内存读取最新值
     public volatile int inc = 0;
     public AtomicInteger atomInc = new AtomicInteger(0);
+    public static volatile boolean isInit;
 
     Lock lock = new ReentrantLock();
 
@@ -45,6 +46,19 @@ class VolatileTest {
     //使用AtomicInteger类型保证原子性
     public void increase3() {
         atomInc.getAndIncrement();
+    }
+
+    public void init() {
+        if (!isInit) {
+            //模拟初始化耗时操作
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Thread = " + Thread.currentThread().getName() + ", isInit = " + isInit);
+            isInit = true;
+        }
     }
 
     public static void main(String[] args) {
@@ -80,25 +94,42 @@ class VolatileTest {
         //虽然volatile修饰inc，但是由于它无法保证原子性，故在多个线程进行该变量的非原子性操作如，inc++,inc = inc+1;等，即存在多线程安全-原子性问题;
         //volatileTest2 = 9856
         //可以采用AtomicInteger类型，或加锁如：synchronized关键字和ReentrantLock对象锁
-        long start = System.currentTimeMillis();
-        final VolatileTest volatileTest2 = new VolatileTest();
+//        long start = System.currentTimeMillis();
+//        final VolatileTest volatileTest2 = new VolatileTest();
+//        for (int i = 0; i < 10; i++) {
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (int j = 0; j < 1000; j++) {
+//                        volatileTest2.increase3();
+//                    }
+//                }
+//            }).start();
+//        }
+//
+//        //保证前面的线程都执行完
+//        while (Thread.activeCount() > 1) {
+//            Thread.yield();
+//        }
+//        System.out.println("volatileTest2 = " + volatileTest2.atomInc.get());
+//        long end = System.currentTimeMillis();
+//        System.out.println("over time = " + (end - start));
+
+        //volatile关键字修饰isInit，并不能保证线程安全-原子性，在符合操作情况下如isinit()还是无法保证线程安全
+        //Thread = Thread-0, isInit = false
+        //Thread = Thread-5, isInit = true
+        //Thread = Thread-7, isInit = true
+        //Thread = Thread-1, isInit = false
+        //Thread = Thread-2, isInit = false
+        //Thread = Thread-3, isInit = false
+        final VolatileTest volatileTest3 = new VolatileTest();
         for (int i = 0; i < 10; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 1000; j++) {
-                        volatileTest2.increase3();
-                    }
+                    volatileTest3.init();
                 }
             }).start();
         }
-
-        //保证前面的线程都执行完
-        while (Thread.activeCount() > 1) {
-            Thread.yield();
-        }
-        System.out.println("volatileTest2 = " + volatileTest2.atomInc.get());
-        long end = System.currentTimeMillis();
-        System.out.println("over time = " + (end - start));
     }
 }
