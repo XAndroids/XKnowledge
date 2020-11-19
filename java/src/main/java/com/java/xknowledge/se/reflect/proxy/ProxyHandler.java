@@ -1,4 +1,4 @@
-package com.java.xknowledge.reflect.proxy;
+package com.java.xknowledge.se.reflect.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

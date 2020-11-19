@@ -1,4 +1,4 @@
-package com.java.xknowledge.reflect.proxy;
+package com.java.xknowledge.se.reflect.proxy;
 
 public interface Subject {
     void doSomeThings();

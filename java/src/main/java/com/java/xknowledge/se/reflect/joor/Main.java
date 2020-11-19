@@ -1,4 +1,4 @@
-package com.java.xknowledge.reflect.joor;
+package com.java.xknowledge.se.reflect.joor;
 
 import org.joor.Reflect;
 
