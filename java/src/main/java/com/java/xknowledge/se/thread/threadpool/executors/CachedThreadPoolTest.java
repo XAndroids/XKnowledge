@@ -9,9 +9,9 @@ import java.util.concurrent.Executors;
  * CachedThreadPool线程池：
  * 源码：ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>())
  * 可缓存线程池：核心线程数：corePoolSize = 0、最大线程数：maximumPoolSize = Integer.MAX_VALUE、非核心线程生命时间：keepAliveTime = 60s、阻塞队列：SynchronousQueue
- *   1.不对线程池大小做限制（Integer.MAX_VALUE）
- *   2.任务增加时，当前线程数量无法满足时，会立即添加（同步队列不阻塞立即交付）新线程来处理任务（corPoolSize = 0,SynchronousQueue：没有存储功能，直接交付工作，降低将数据从生产者移动到消费者延迟）
- *   3.超过60S，空闲线程就会回收；
+ * 1.不对线程池大小做限制（Integer.MAX_VALUE）
+ * 2.任务增加时，当前线程数量无法满足时，会立即添加（同步队列不阻塞立即交付）新线程来处理任务（corPoolSize = 0,SynchronousQueue：没有存储功能，直接交付工作，降低将数据从生产者移动到消费者延迟）
+ * 3.超过60S，空闲线程就会回收；
  * 参考：
  * SynchronousQueue：https://www.jianshu.com/p/b7f7eb2bc778
  * https://blog.csdn.net/GS_MY/article/details/38677661
@@ -21,7 +21,7 @@ class CachedThreadPoolTest {
     public static void main(String[] args) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool(new MyThreadFactory());
         for (int i = 0; i < 60; i++) {
-            cachedThreadPool.execute(new MyRunnable(i));
+            cachedThreadPool.execute(new MyRunnable(i, 1000));
             //第一次执行前20个任务，创建线程1、2、3、4、5、6
             //currentTime = 1605811439948，第 1 Runnable，使用线程pool-1-thread-2正在执行
             //currentTime = 1605811439948，第 0 Runnable，使用线程pool-1-thread-1正在执行
