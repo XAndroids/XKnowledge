@@ -9,8 +9,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * LinkedBlockingQueue实践：
- *
+ * LinkedBlockingQueue测试实践：
+ * 大小不固定的BlockingQueue，若其构造时指定大小，生成的BlockingQueue有大小限制，不指定大小，其大小有Integer.MAX_VALUE来决定。其所含的对象是FIFO顺序排序的。
  */
 class LinkedBlockingQueueTest {
 
