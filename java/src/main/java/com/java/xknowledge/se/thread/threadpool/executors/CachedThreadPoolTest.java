@@ -1,5 +1,8 @@
 package com.java.xknowledge.se.thread.threadpool.executors;
 
+import com.java.xknowledge.se.thread.threadpool.MyRunnable;
+import com.java.xknowledge.se.thread.threadpool.MyThreadFactory;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -12,6 +15,7 @@ import java.util.concurrent.Executors;
  * 1.不对线程池大小做限制（Integer.MAX_VALUE）
  * 2.任务增加时，当前线程数量无法满足时，会立即添加（同步队列不阻塞立即交付）新线程来处理任务（corPoolSize = 0,SynchronousQueue：没有存储功能，直接交付工作，降低将数据从生产者移动到消费者延迟）
  * 3.超过60S，空闲线程就会回收；
+ *
  * 参考：
  * SynchronousQueue：https://www.jianshu.com/p/b7f7eb2bc778
  * https://blog.csdn.net/GS_MY/article/details/38677661

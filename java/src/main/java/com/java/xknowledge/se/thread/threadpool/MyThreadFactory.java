@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.threadpool.executors;
+package com.java.xknowledge.se.thread.threadpool;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 线程池工厂，主要用于新建线程的命名
  * 参考：https://blog.csdn.net/liuxiao723846/article/details/79667432
  */
-class MyThreadFactory implements ThreadFactory {
+public class MyThreadFactory implements ThreadFactory {
     //线程池的索引，用于唯一标识线程池
     private static final AtomicInteger poolIndex = new AtomicInteger(1);
     //线程的索引，用于唯一标识线程

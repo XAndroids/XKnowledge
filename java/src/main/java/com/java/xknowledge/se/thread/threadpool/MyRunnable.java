@@ -1,10 +1,10 @@
-package com.java.xknowledge.se.thread.threadpool.executors;
+package com.java.xknowledge.se.thread.threadpool;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-class MyRunnable implements Runnable {
+public class MyRunnable implements Runnable {
     private int i;
     private int simulateTime;
     private SimpleDateFormat simpleDateFormat;

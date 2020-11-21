@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.threadpool.executors;
+package com.java.xknowledge.se.thread.threadpool;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,7 +15,7 @@ import java.util.concurrent.Callable;
  * 6.加入线程池，Runnable使用ExecutorService的execute()方法，Callable使用submit()方法
  * 参考：https://blog.csdn.net/qfikh/article/details/77645054
  */
-class MyCallable implements Callable<String> {
+public class MyCallable implements Callable<String> {
     private int i;
     private int simulateTime;
     private SimpleDateFormat simpleDateFormat;
