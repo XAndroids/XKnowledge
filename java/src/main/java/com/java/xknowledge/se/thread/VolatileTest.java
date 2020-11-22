@@ -14,10 +14,6 @@ class VolatileTest {
     //带有volatile关键字，在多个线程同时进行读写时，轻质将修改不的值立即写入主内存；
     //并通知其它线程的工作内存无效，读取时重新从主内存读取最新值
     public volatile int inc = 0;
-    public AtomicInteger atomInc = new AtomicInteger(0);
-    public static volatile boolean isInit;
-
-    Lock lock = new ReentrantLock();
 
     public int getInc() {
         return inc;
@@ -26,6 +22,41 @@ class VolatileTest {
     public void setInc(int inc) {
         this.inc = inc;
     }
+
+    public static void main(String[] args) {
+        //volatile关键字保证可见性问题：
+        //第0、5、10....线程进行共享成员变量i进行写入，其它线程进行读取
+        //如果不加volatile关键字，由于Java内存模型，线程-10在工作内容修改10的内容，并没有立即写回主内存，此时线程-11读取的还是5。即存在多线程安全-可见性问题
+        //Thread = Thread-8, getinc = 5
+        //Thread = Thread-10, setInc = 10  ---------
+        //Thread = Thread-11, getinc = 5
+        //Thread = Thread-12, getinc = 10
+        final VolatileTest volatileTest = new VolatileTest();
+        for (int i = 0; i < 100; i++) {
+            if (i % 5 == 0) {
+                final int finalI = i;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Thread = " + Thread.currentThread().getName() + ", setInc = "
+                                + finalI + "  ---------");
+                        volatileTest.setInc(finalI);
+                    }
+                }).start();
+            } else {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Thread = " + Thread.currentThread().getName() + ", getinc = "
+                                + volatileTest.getInc());
+                    }
+                }).start();
+            }
+        }
+    }
+
+    public AtomicInteger atomInc = new AtomicInteger(0);
+    Lock lock = new ReentrantLock();
 
     //除了x = 10直接复制操作是原子性操作，inc++，inc = inc + 1等都不是原子性操作，volatile无法保证该操作的线程安全！！
     //私用synchronized关键字保证原子性
@@ -46,49 +77,6 @@ class VolatileTest {
     //使用AtomicInteger类型保证原子性
     public void increase3() {
         atomInc.getAndIncrement();
-    }
-
-    public void init() {
-        if (!isInit) {
-            //模拟初始化耗时操作
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("Thread = " + Thread.currentThread().getName() + ", isInit = " + isInit);
-            isInit = true;
-        }
-    }
-
-    public static void main0(String[] args) {
-        //volatile关键字保证可见性问题：
-        //第0、5、10....线程进行共享成员变量i进行写入，其它线程进行读取
-        //如果不加volatile关键字，由于Java内存模型，线程-10在工作内容修改10的内容，并没有立即写回主内存，此时线程-11读取的还是5。即存在多线程安全-可见性问题
-        //Thread = Thread-8, getinc = 5
-        //Thread = Thread-10, setInc = 10  ---------
-        //Thread = Thread-11, getinc = 5
-        //Thread = Thread-12, getinc = 10
-        final VolatileTest volatileTest = new VolatileTest();
-        for (int i = 0; i < 100; i++) {
-            if (i % 5 == 0) {
-                final int finalI = i;
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        System.out.println("Thread = " + Thread.currentThread().getName() + ", setInc = " + finalI + "  ---------");
-                        volatileTest.setInc(finalI);
-                    }
-                }).start();
-            } else {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        System.out.println("Thread = " + Thread.currentThread().getName() + ", getinc = " + volatileTest.getInc());
-                    }
-                }).start();
-            }
-        }
     }
 
     public static void main1(String[] args) {
@@ -118,6 +106,21 @@ class VolatileTest {
         System.out.println("over time = " + (end - start));
     }
 
+    public static volatile boolean isInit;
+
+    public void init() {
+        if (!isInit) {
+            //模拟初始化耗时操作
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Thread = " + Thread.currentThread().getName() + ", isInit = " + isInit);
+            isInit = true;
+        }
+    }
+
     public static void main2(String[] args){
         //volatile关键字修饰isInit，并不能保证线程安全-原子性，在符合操作情况下如isinit()还是无法保证线程安全
         //Thread = Thread-0, isInit = false
@@ -136,6 +139,4 @@ class VolatileTest {
             }).start();
         }
     }
-
-
 }
