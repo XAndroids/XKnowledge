@@ -23,7 +23,7 @@ class UploadExitActivity : TitleActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             //package：可空的参数，指定你想获取哪个应用退出的原因，传递null为当前应用；获取其它包名需要dump全新，不提供给第三方应用
             //pid：这个包名进程退出前的进程ID。0忽略这个参数返回所有匹配的记录；
-            //maxNum：返回结果的最大数量，0忽略这个参数返回所有匹配的记录；FIXME 次参数无效？？？
+            //maxNum：返回结果的最大数量，0忽略这个参数返回所有匹配的记录；
             val exitReasons = activityManager.getHistoricalProcessExitReasons(null, 0, 1)
             //ApplicationExitInfo(
             // timestamp=2020/6/3 上午6:55 进程退出的时间，从1970...开始
