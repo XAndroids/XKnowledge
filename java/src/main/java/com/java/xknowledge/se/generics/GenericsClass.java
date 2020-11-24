@@ -1,7 +1,8 @@
 package com.java.xknowledge.se.generics;
 
 /**
- * 泛型类实践：
+ * 泛型类实践
+ * 参考:https://blog.csdn.net/s10461/article/details/53941091
  */
 //泛型类的基本写法
 // class 类名称 <泛型标识：可以随便写任意标识号，标识指定的泛型的类型>{
