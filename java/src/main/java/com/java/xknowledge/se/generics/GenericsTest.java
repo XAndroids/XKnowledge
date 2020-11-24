@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 泛型作用时间类：
+ * 泛型作用实践类：
  * 1.避免类型转换；
  * 2.运行时异常提前到编译期；
  * 参考：https://zhuanlan.zhihu.com/p/28242753
