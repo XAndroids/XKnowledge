@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.generics;
+package com.java.xknowledge.se.generics.class1;
 
 /**
  * 泛型类实践
