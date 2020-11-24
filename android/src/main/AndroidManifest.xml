@@ -112,6 +112,9 @@
                 <action android:name="com.byread.static" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".sdk.other.UploadExitActivity" />
+        <activity android:name=".sdk.other.MockExitActivity" />
         <!--jetpack相关组件-->
         <activity android:name=".jetpack.paging.ui.PagingListActivity" />
         <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />

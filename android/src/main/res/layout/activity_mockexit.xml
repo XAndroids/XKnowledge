@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sdk.other.MockExitActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_anr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANR" />
+
+        <Button
+            android:id="@+id/mockexit_button_crash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CRASH" />
+
+        <Button
+            android:id="@+id/mockexit_button_nativecrash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NativeCrash" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_dependedcy_died"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEPENDEDCY_DIED" />
+
+        <Button
+            android:id="@+id/mockexit_button_excessiveresourceusage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXCESSIVE_RESOURCE_USAGE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_exitself"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXIT_SELF" />
+
+        <Button
+            android:id="@+id/mockexit_button_initializationfailure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INITIALIZATION_FAILURE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_lowmemory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOW_MEMORY" />
+
+        <Button
+            android:id="@+id/mockexit_button_reasonother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REASON_OTHER" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_permissionchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PERMISSION_CHANGE" />
+
+        <Button
+            android:id="@+id/mockexit_button_singnaled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGNALED" />
+
+        <Button
+            android:id="@+id/mockexit_button_unknown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UNKNOWN" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mockexit_button_requested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USER_REQUESTED" />
+
+        <Button
+            android:id="@+id/mockexit_button_userstop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USER_STOPPED" />
+    </LinearLayout>
+</LinearLayout>

@@ -9,9 +9,9 @@
 #include <sys/mman.h>
 #include <android/log.h>
 
-extern "C" {
-#include <libavutil/avutil.h>
-}
+//extern "C" {
+//#include <libavutil/avutil.h>
+//}
 
 
 extern "C" JNIEXPORT jstring JNICALL
@@ -22,13 +22,13 @@ Java_com_android_xknowledge_ndk_NativeLib_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
-extern "C" JNIEXPORT jint JNICALL
-Java_com_android_xknowledge_ndk_NativeLib_getFFmpegVersion(
-        JNIEnv *env,
-        jobject /* this */) {
-    int version = avutil_version();
-    return version;
-}
+//extern "C" JNIEXPORT jint JNICALL
+//Java_com_android_xknowledge_ndk_NativeLib_getFFmpegVersion(
+//        JNIEnv *env,
+//        jobject /* this */) {
+//    int version = avutil_version();
+//    return version;
+//}
 
 
 //int8_t *m_ptr;
