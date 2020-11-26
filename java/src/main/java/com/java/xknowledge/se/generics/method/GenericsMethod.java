@@ -2,6 +2,7 @@ package com.java.xknowledge.se.generics.method;
 
 /**
  * 泛型方法实践
+ * 参考：https://blog.csdn.net/hxllhhy/article/details/80670357
  */
 //泛型类GenericsMethod
 class GenericsMethod<T> {
