@@ -6,7 +6,7 @@ import android.os.Build
 /**
  * 进程退出原因，按照退出时间排序
  */
-class ExitReasonComparator : Comparator<ApplicationExitInfo> {
+class ExitComparator : Comparator<ApplicationExitInfo> {
     override fun compare(p0: ApplicationExitInfo, p1: ApplicationExitInfo): Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             when {
