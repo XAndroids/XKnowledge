@@ -26,6 +26,9 @@ class GenericsMethod<T> {
     /**
      * 这个才是真正的泛型方法，首先在public与返回值之间的<E>比不可少，表明这是一个泛型方法，并且声明一个泛型E
      * 这个E可以用在泛型方法的任意位置，泛型的数量也可以任意多
+     * public <T,K> K showKeyName(Generic<T> container){
+     *     ...
+     * }
      */
     public <E> E showKeyName(GenericsMethod<E> genericsMethod) {
         return genericsMethod.key;
