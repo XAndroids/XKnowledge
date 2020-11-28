@@ -33,6 +33,20 @@ class WildcardTest {
         }
     }
 
+    public static void main(String[] args) {
+        WildcardTest childTest = new WildcardTest();
+        List<String> stringList = new ArrayList<>();
+        stringList.add("aa");
+        stringList.add("bb");
+
+        //1.List<Object>可以被正常执行，但是会有警告信息
+        childTest.test(stringList);
+
+        //2.List<String>并不是List<Object>子类！！！
+        //Required type:List<Object>，Provided:List<String>
+//        childTest.test2(stringList);
+    }
+
     //3.为了表示各种泛型List的父类，需要使用通配符(?)，写作List<?>，它的元素类型可以匹配任何类型
     public void test3(List<?> list) {
         for (int i = 0; i < list.size(); i++) {
@@ -48,18 +62,11 @@ class WildcardTest {
         list.add(null);
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         WildcardTest childTest = new WildcardTest();
         List<String> stringList = new ArrayList<>();
         stringList.add("aa");
         stringList.add("bb");
-
-        //1.List<Object>可以被正常执行，但是会有警告信息
-        childTest.test(stringList);
-
-        //2.List<String>并不是List<Object>子类！！！
-        //Required type:List<Object>，Provided:List<String>
-//        childTest.test2(stringList);
 
         //3.List<?>通配符，表示任意类型List的父类
         childTest.test3(stringList);
