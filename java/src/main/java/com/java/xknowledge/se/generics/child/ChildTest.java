@@ -10,20 +10,6 @@ import java.util.List;
  * 参考：《疯狂Java讲义》
  */
 class ChildTest {
-    //泛型警告：Raw use of parameterized class 'List'
-    public void test(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
-    }
-
-    //为了消除静态，又想保存任意类型
-    public void test2(List<Object> list) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
-    }
-
     public static void main1(String[] args) {
         Integer[] integers = new Integer[5];
         //Integer[]是Number[]的子类
@@ -39,15 +25,6 @@ class ChildTest {
         List<Integer> integerList = new ArrayList<>();
         //Required type:List<Number> Provided:List<Integer>
 //        List<Number> numbers = integerList;
-    }
-
-    public static void main0(String[] args) {
-        ChildTest childTest = new ChildTest();
-        List<String> list = new ArrayList<>();
-        childTest.test(list);
-        //List<String>并不是List<Object>子类！！！
-        //Required type:List<Object>，Provided:List<String>
-//        childTest.test2(list);
     }
 
     static class ClassA<T> {
