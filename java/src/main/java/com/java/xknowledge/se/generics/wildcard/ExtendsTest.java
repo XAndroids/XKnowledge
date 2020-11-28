@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 通配符上界
+ * 类型通配符，通配符上界，类型形参上限
  * 1.List<Shape>不是List<Circle>和List<Rectangle>的父类；
  * 2.故List<?>代表List<Circle>等的父类，但是需要类型转换；
  * 3.List<? exntends Shape>通配符上界表示List<Circle>和List<Rectangle>的父类，但是无法add()，因为也不知道具体

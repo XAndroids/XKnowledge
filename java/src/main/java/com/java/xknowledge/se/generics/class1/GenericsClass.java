@@ -1,5 +1,7 @@
 package com.java.xknowledge.se.generics.class1;
 
+import java.io.Serializable;
+
 /**
  * 泛型类实践
  * 参考:https://blog.csdn.net/s10461/article/details/53941091
@@ -45,3 +47,23 @@ class GenericsClass<T> {
         System.out.println("genericsClass3 = " + genericsClass3.getKey());
     }
 }
+
+//设置类型形参的上限
+class Apple<T extends Number> {
+    T col;
+
+    public static void main(String[] args) {
+        Apple<Integer> ai = new Apple<>();
+        Apple<Double> ad = new Apple<>();
+
+        //4.编译异常：错误: 类型参数String不是Number子类，引起编译错误
+        //Type parameter 'java.lang.String' is not within its bound; should extend 'java.lang.Number'
+//        Apple<String> as = new Apple<>();
+    }
+}
+
+//5.极端情况下，为类型形参设定多个上限Number和Serializable
+class Orange<T extends Number & Serializable> {
+
+}
+
