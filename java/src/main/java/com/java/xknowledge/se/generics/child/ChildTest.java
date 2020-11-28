@@ -24,16 +24,7 @@ class ChildTest {
         }
     }
 
-    public static void main0(String[] args) {
-        ChildTest childTest = new ChildTest();
-        List<String> list = new ArrayList<>();
-        childTest.test(list);
-        //List<String>并不是List<Object>子类！！！
-        //Required type:List<Object>，Provided:List<String>
-//        childTest.test2(list);
-    }
-
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Integer[] integers = new Integer[5];
         //Integer[]是Number[]的子类
         //Java允许Integer[]赋值给Number[]是不安全的设计！！！
@@ -49,4 +40,31 @@ class ChildTest {
         //Required type:List<Number> Provided:List<Integer>
 //        List<Number> numbers = integerList;
     }
+
+    public static void main0(String[] args) {
+        ChildTest childTest = new ChildTest();
+        List<String> list = new ArrayList<>();
+        childTest.test(list);
+        //List<String>并不是List<Object>子类！！！
+        //Required type:List<Object>，Provided:List<String>
+//        childTest.test2(list);
+    }
+
+    static class ClassA<T> {
+
+    }
+
+    static class ClassB<T> extends ClassA<T> {
+
+    }
+
+    public static void main(String[] args) {
+        //ClassA和ClassB是继承关系，ClassA<A>和ClassB<A>也是继承关系
+        ClassB<String> stringClassB = new ClassB<>();
+        ClassA<String> stringClassA = stringClassB;
+        //Required type:ClassA<Integer> Provided: ClassB<String>
+//        ClassA<Integer> integerClassA = stringClassB;
+        System.out.print(stringClassA);
+    }
 }
+
