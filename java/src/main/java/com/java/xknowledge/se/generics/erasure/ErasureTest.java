@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * 3.泛型方法擦除，为上界类型；
  * 参考：https://www.bilibili.com/video/BV1xJ411n77R?p=11
  */
-class Erasure<T, K extends Number> {
+class ErasureTest<T, K extends Number> {
     private T key;//无限制类型泛型，
     private K value;//有限制类型泛型
 
@@ -36,8 +36,8 @@ class Erasure<T, K extends Number> {
     }
 
     public static void main(String[] args) {
-        Erasure<Integer, Number> integerErasure = new Erasure<>();
-        Class<? extends Erasure> clz = integerErasure.getClass();
+        ErasureTest<Integer, Number> integerErasureTest = new ErasureTest<>();
+        Class<? extends ErasureTest> clz = integerErasureTest.getClass();
         Field[] declaredField = clz.getDeclaredFields();
         //类型擦除后，key无限制类型擦除为Object，value为有限制类型擦除为上界
         //key:Object
