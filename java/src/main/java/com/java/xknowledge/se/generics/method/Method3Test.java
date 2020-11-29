@@ -24,9 +24,12 @@ class Method3Test {
 //    }
 
     public static <T> T copy(Collection<? super T> dest, Collection<T> src) {
+        T last = null;
         for (T t : src) {
             dest.add(t);
+            last = t;
         }
+        return last;
     }
 
     public static void main(String[] args) {
