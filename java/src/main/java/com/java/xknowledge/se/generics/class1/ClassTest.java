@@ -41,7 +41,7 @@ class ClassTest {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main0(String[] args) {
         //1.5、泛型的类型参数只能是类类型（包括自定义类），不能是简单类型
         //传入T为String后，构造器必须是String类型
         Apple<String> apple = new Apple<>("苹果");
@@ -68,7 +68,7 @@ class ClassTest {
 //    }
 
     //2.2、可以指定具体类型或者不传入类型参数
-    class A2 extends Apple<String> {
+    static class A2 extends Apple<String> {
 
         //2.3、从Apple<String>派生子类，Apple的所有T类型参数都替换成String
         @Override
@@ -83,8 +83,22 @@ class ClassTest {
     }
 
     //2.4、如果未传入具体类型，则会有泛型警告：Raw use of parameterized class 'Apple'
-    class A3 extends Apple {
+    static class A3 extends Apple {
 
+    }
+
+    public static void main(String[] args) {
+        A2 a2 = new A2();
+        a2.setInfo("abc");
+        //Required type: String Provided: int
+//        a2.setInfo(1234);
+        System.out.println(a2.getInfo());
+        A3 a3 = new A3();
+        //Unchecked call to 'setInfo(T)' as a member of raw type 'com.java.xknowledge.se.generics
+        //.class1.ClassTest.Apple'
+        a3.setInfo("abc");
+        a3.setInfo(123);
+        System.out.println(a3.getInfo());
     }
 }
 
