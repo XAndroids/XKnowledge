@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.generics;
+package com.java.xknowledge.se.generics.effect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
  * 2.运行时异常提前到编译期；
  * 参考：https://zhuanlan.zhihu.com/p/28242753
  */
-class GenericsTest {
+class EffectTest {
     public static void main0(String[] args) {
         //泛型作用1：避免强制转换
         //Raw use of parameterized class 'ArrayList'
@@ -30,7 +30,7 @@ class GenericsTest {
         //泛型作用2：将运行时错误提前到编译时
         //string = abctest
         //Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
-        //	at com.java.xknowledge.se.generics.GenericsTest.main(GenericsTest.java:33)
+        //	at com.java.xknowledge.se.generics.effect.GenericsTest.main(GenericsTest.java:33)
         //因为没有使用泛型，object都可以保存在list中，但后续运行时强制类型转换会抛异常
 //        List list = new ArrayList();
 //        list.add("abc");
