@@ -26,7 +26,7 @@ class EffectTest {
         System.out.println("s2 = " + s2);
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         //泛型作用2：将运行时错误提前到编译时
         //string = abctest
         //Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
@@ -52,5 +52,63 @@ class EffectTest {
             string2.append("test");
             System.out.println("string = " + string2);
         }
+    }
+
+    //泛型作用3：代码复用，参考：https://juejin.cn/post/6844903601106583565
+    //存储String类型数据
+    static class ContainerString {
+        private String object;
+
+        public String getObject() {
+            return object;
+        }
+
+        public void setObject(String object) {
+            this.object = object;
+        }
+    }
+
+    //如果要存储Integer数据，需要再创建ContainerInteger类
+    static class ContainerInteger {
+        private Integer object;
+
+        public Integer getObject() {
+            return object;
+        }
+
+        public void setObject(Integer object) {
+            this.object = object;
+        }
+    }
+
+    //使用泛型类Container<T>可以存储各种类型的数据
+    static class Container<T> {
+        private T object;
+
+        public T getObject() {
+            return object;
+        }
+
+        public void setObject(T object) {
+            this.object = object;
+        }
+    }
+
+    public static void main(String[] args) {
+        //存储String类型数据
+        ContainerString containerString = new ContainerString();
+        containerString.setObject("aaa");
+        //存储Integer类型数据
+        ContainerInteger containerInteger = new ContainerInteger();
+        containerInteger.setObject(234);
+
+        //泛型类既可以存储String也可以存储Integer数据，还可以存储其它数据
+        Container<String> container1 = new Container<>();
+        container1.setObject("abc");
+        System.out.println(container1.getObject());
+        Container<Integer> container2 = new Container<>();
+        container2.setObject(123);
+        System.out.println(container2.getObject());
+
     }
 }
