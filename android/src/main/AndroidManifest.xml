@@ -160,6 +160,10 @@
         <!--framework相关-->
         <activity android:name=".framework.aspectj.AspectJActivity" />
         <activity android:name=".framework.aspectj.LoginActivity" />
+        <activity android:name=".framework.inject.InjectActivity" />
+        <activity android:name=".framework.hotfix.MultidexActivity" />
+        <activity android:name=".framework.plugin.PluginActivity" />
+        <activity android:name=".framework.module.ModuleActivity" />
         <activity android:name=".framework.FrameworkActivity" />
         <!--自动化测试相关-->
         <activity android:name=".test.robolectric.LoginActivity" />
@@ -182,9 +186,6 @@
         <activity android:name=".security.danger.DangerActivity" />
         <activity android:name=".other.OtherActivity" />
         <activity android:name=".other.AdbActivity" />
-        <activity android:name=".framework.hotfix.MultidexActivity" />
-        <activity android:name=".framework.plugin.PluginActivity" />
-        <activity android:name=".framework.module.ModuleActivity" />
         <!--ndk相关-->
         <activity android:name=".ndk.NdkActivity" />
         <activity android:name=".ndk.base.BaseNdkActivity" />
