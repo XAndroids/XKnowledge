@@ -4,14 +4,16 @@ import android.app.Activity
 import android.view.View
 import java.lang.reflect.Field
 
+/**
+ * 注入工具类，通过反射获取注解的信息，然后执行findById()
+ */
 object InjectUtils {
-    //反射是基于CLASS
+
     fun injectView(activity: Activity) {
+        //反射是基于CLASS,获得此类所有的成员变量,遍历
         val cls: Class<out Activity?> = activity::class.java
-        //获得此类所有的成员变量
         val fields: Array<Field> = cls.declaredFields
 
-        //遍历
         for (field in fields) {
             //判断属性是否被InjetView注解声明
             val ret: Boolean = field.isAnnotationPresent(InjectView::class.java)
@@ -21,8 +23,7 @@ object InjectUtils {
                 //获取注解中设置的id值
                 val id = injectView.value
                 val view: View = activity.findViewById(id)
-                //反射设置属性的值
-                //设置访问权限，允许操作私有成员private属性，
+                //反射设置属性的值，设置访问权限，允许操作私有成员private属性，
                 field.setAccessible(true)
 
                 //设置(反射赋值)

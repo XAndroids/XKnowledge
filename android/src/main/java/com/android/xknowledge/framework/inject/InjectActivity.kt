@@ -5,6 +5,10 @@ import android.widget.TextView
 import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
 
+/**
+ * 运行时注解实现注入
+ * 参考：https://blog.csdn.net/qinyunying/article/details/108629015
+ */
 class InjectActivity : TitleActivity() {
     @InjectView(R.id.inject_textview)
     private val textView: TextView? = null
