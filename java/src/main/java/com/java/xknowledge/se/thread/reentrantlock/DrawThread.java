@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.synchro2;
+package com.java.xknowledge.se.thread.reentrantlock;
 
 /**
  * 取款线程
