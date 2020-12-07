@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.communication;
+package com.java.xknowledge.se.thread.communication.wait;
 
 class Account {
     //封装账户编号、账户余额

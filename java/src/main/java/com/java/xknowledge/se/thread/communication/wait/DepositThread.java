@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.communication;
+package com.java.xknowledge.se.thread.communication.wait;
 
 /**
  * 取款线程

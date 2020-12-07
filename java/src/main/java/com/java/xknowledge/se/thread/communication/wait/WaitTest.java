@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.communication;
+package com.java.xknowledge.se.thread.communication.wait;
 
 /**
  * 线程通信实践-wait()/notify()/notifyAll()
@@ -18,7 +18,7 @@ package com.java.xknowledge.se.thread.communication;
  * ......
  * 参考：《疯狂Java讲义》线程
  */
-class CommunicationTest {
+class WaitTest {
     public static void main(String[] args) {
         Account account = new Account("1235", 0);
         new DepositThread("取钱者", account, 600).start();
