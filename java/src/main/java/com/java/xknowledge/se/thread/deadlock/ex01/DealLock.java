@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.deadlock;
+package com.java.xknowledge.se.thread.deadlock.ex01;
 
 /**
  * 线程死锁实践

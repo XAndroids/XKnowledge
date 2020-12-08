@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.deadlock;
+package com.java.xknowledge.se.thread.deadlock.ex01;
 
 class A {
     //调用a.foo()方法，获取a对象为线程锁

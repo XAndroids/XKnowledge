@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.deadlock;
+package com.java.xknowledge.se.thread.deadlock.ex01;
 
 class B {
     //调用b.bar()方法，获取b对象为线程锁
