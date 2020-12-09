@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread;
+package com.java.xknowledge.se.thread.volatile1;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
