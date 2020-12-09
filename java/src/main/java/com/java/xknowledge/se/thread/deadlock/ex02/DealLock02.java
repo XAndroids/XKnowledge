@@ -27,7 +27,6 @@ class DealLock02 {
                     System.out.println(threadName + "尝试获取object2锁.");
                     if (object2.tryLock()) {
                         try {
-                            Thread.sleep(100);
                             System.out.println(threadName + "获取object2锁!!!!!");
                         } finally {
                             System.out.println(threadName + "释放object2锁.");
@@ -39,7 +38,7 @@ class DealLock02 {
                     object1.unlock();
                 }
             }
-//            Thread.sleep(random.nextInt(3));//随机睡眠，避免活锁问题！！！
+            Thread.sleep(random.nextInt(3));//随机睡眠，避免活锁问题！！！
         }
     }
 
@@ -47,15 +46,14 @@ class DealLock02 {
     public static void method2() throws InterruptedException {
         String threadName = Thread.currentThread().getName();
         Random random = new Random();
-        System.out.println(threadName + "尝试获取object2锁.");
         while (true) {
+            System.out.println(threadName + "尝试获取object2锁.");
             if (object2.tryLock()) {
                 try {
                     System.out.println(threadName + "获取object2锁.");
                     System.out.println(threadName + "尝试获取object1锁.");
                     if (object1.tryLock()) {
                         try {
-                            Thread.sleep(100);
                             System.out.println(threadName + "获取object1锁!!!!!!");
                         } finally {
                             System.out.println(threadName + "释放object1锁.");
@@ -67,7 +65,7 @@ class DealLock02 {
                     object2.unlock();
                 }
             }
-//            Thread.sleep(random.nextInt(3));//随机睡眠，避免活锁问题！！！
+            Thread.sleep(random.nextInt(3));//随机睡眠，避免活锁问题！！！
         }
     }
 
