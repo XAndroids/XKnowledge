@@ -4,6 +4,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Atomic更新基本类型类使用
+ * 运行：
+ * getAndDecrement = 3
+ * compareAndSet = true
+ * getAndIncrement = 4
+ * getAndSet = 5
  * 参考《享学2《Java 筑基-06并发基础知识补全和CAS基本原理》》
  */
 class AtomicIntTest {
