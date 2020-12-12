@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * compareAndSet = true
  * getAndIncrement = 4
  * getAndSet = 5
- * 参考《享学2《Java 筑基-06并发基础知识补全和CAS基本原理》》
+ * 参考：享学2《Java 筑基-06并发基础知识补全和CAS基本原理》
  */
 class AtomicIntTest {
     static AtomicInteger atomicInteger = new AtomicInteger(1);
