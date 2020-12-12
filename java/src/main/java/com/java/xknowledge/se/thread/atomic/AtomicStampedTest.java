@@ -13,7 +13,8 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  */
 class AtomicStampedTest {
     //初始化引用"Mark"，初始版本为0
-    static AtomicStampedReference<String> atomicStampedReference = new AtomicStampedReference<>("Mark", 0);
+    static AtomicStampedReference<String> atomicStampedReference = new AtomicStampedReference<>(
+            "Mark", 0);
 
     public static void main(String[] args) throws InterruptedException {
         //获取当前的版本（旧版本）
@@ -23,22 +24,26 @@ class AtomicStampedTest {
         Thread rightThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName() + ",当前变量 = " + atomicStampedReference.getReference() +
-                        ",当前版本:" + atomicStampedReference.getStamp() + ",compareAndSet = " + atomicStampedReference
-                        .compareAndSet(oldReference, oldReference + "java", oldStamp, oldStamp + 1));
+                System.out.println(Thread.currentThread().getName() + ",当前变量 = "
+                        + atomicStampedReference.getReference() + ",当前版本:" + atomicStampedReference
+                        .getStamp() + ",compareAndSet = " + atomicStampedReference
+                        .compareAndSet(oldReference, oldReference + "java", oldStamp,
+                                oldStamp + 1));
             }
         });
         Thread leftThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName() + ",当前变量 = " + atomicStampedReference.getReference() +
-                        ",当前版本:" + atomicStampedReference.getStamp() + ",compareAndSet = " + atomicStampedReference
-                        .compareAndSet(oldReference, oldReference + "", oldStamp, oldStamp + 1));
+                System.out.println(Thread.currentThread().getName() + ",当前变量 = "
+                        + atomicStampedReference.getReference() + ",当前版本:" + atomicStampedReference
+                        .getStamp() + ",compareAndSet = " + atomicStampedReference
+                        .compareAndSet(oldReference, oldReference + "C", oldStamp,
+                                oldStamp + 1));
             }
         });
         rightThread.join();//等待rithtThread执行完毕
         rightThread.start();
-        leftThread.join();//等待leftThread执行完毕
+        leftThread.join();//等待leftThread执行完毕，Main线程再退出
         leftThread.start();
 
         System.out.println("oldStamp = " + oldStamp + ",oldReference = " + oldReference);
