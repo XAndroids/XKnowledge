@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.synchronized1.block;
+package com.java.xknowledge.se.thread.synchro.block;
 
 /**
  * 取款线程

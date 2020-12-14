@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.thread.synchronized1.block;
+package com.java.xknowledge.se.thread.synchro.block;
 
 public class Account {
     private String accountNo;
