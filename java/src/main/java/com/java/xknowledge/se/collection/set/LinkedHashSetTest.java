@@ -7,7 +7,7 @@ import java.util.LinkedHashSet;
  * 使用链表保存了元素插入的顺序
  * 运行：
  * [疯狂Java讲义, 轻量级Java EE企业应用实战]//元素的插入顺序保存顺序一致
- * [轻量级Java EE企业应用实战, 疯狂Java讲义]
+ * [轻量级Java EE企业应用实战, 疯狂Java讲义]//删除后在添加，就在末尾了！！
  *
  * Process finished with exit code 0
  * 参考：
