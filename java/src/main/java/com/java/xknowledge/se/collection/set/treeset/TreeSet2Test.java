@@ -3,7 +3,7 @@ package com.java.xknowledge.se.collection.set.treeset;
 import java.util.TreeSet;
 
 /**
- * TreeSet实践：equals和compareTo要同步
+ * TreeSet实践：equals和compareTo相等和比较大小
  * 运行：
  * true//equals一直返回false，compareTo一直返回1，同一个对象z1会被认为不同，故能重复添加
  * [com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3, com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3]
