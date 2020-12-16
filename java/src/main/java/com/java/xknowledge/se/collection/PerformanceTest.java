@@ -20,7 +20,7 @@ import java.util.LinkedList;
  * 遍历访问数据较多，选择ArrayList
  * 插入和访问都有，选择HashMap
  **/
-class CollectionPerformanceTest {
+class PerformanceTest {
     //顺序表
     static ArrayList<Student> arrayList = new ArrayList<>();
     //链表
