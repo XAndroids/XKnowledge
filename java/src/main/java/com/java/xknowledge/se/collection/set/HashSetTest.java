@@ -3,7 +3,7 @@ package com.java.xknowledge.se.collection.set;
 import java.util.HashSet;
 
 /**
- * HashSet实践：
+ * HashSet实践：存储不同的元素
  * equals和hashCode判断相等
  * 不保证加入顺序
  * 线程不安全
