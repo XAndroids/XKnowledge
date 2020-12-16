@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.collection.set;
+package com.java.xknowledge.se.collection.set.treeset;
 
 import java.util.TreeSet;
 

@@ -1,15 +1,15 @@
-package com.java.xknowledge.se.collection.set;
+package com.java.xknowledge.se.collection.set.treeset;
 
 import java.util.TreeSet;
 
 /**
  * TreeSet：添加元素必须时间Comparable接口
  * 运行：
- * Exception in thread "main" java.lang.ClassCastException: com.java.xknowledge.se.collection.set.Err cannot be cast to java.lang.Comparable
+ * Exception in thread "main" java.lang.ClassCastException: com.java.xknowledge.se.collection.set.treeset.Err cannot be cast to java.lang.Comparable
  * 	at java.util.TreeMap.compare(TreeMap.java:1294)
  * 	at java.util.TreeMap.put(TreeMap.java:538)
  * 	at java.util.TreeSet.add(TreeSet.java:255)
- * 	at com.java.xknowledge.se.collection.set.TreeSetErrorTest.main(TreeSetErrorTest.java:9)
+ * 	at com.java.xknowledge.se.collection.set.treeset.TreeSetErrorTest.main(TreeSetErrorTest.java:9)
  * 参考：
  * 《疯狂Java讲义》
  */

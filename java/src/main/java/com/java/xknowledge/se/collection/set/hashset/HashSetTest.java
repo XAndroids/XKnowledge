@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.collection.set;
+package com.java.xknowledge.se.collection.set.hashset;
 
 import java.util.HashSet;
 
@@ -8,9 +8,9 @@ import java.util.HashSet;
  * 不保证加入顺序
  * 线程不安全
  * 运行：equlas和hashCode是都相同，才认为是相同对象，故A和B可以重复添加，C会被认为是同一个对象
- * [com.java.xknowledge.se.collection.set.A@2503dbd3, com.java.xknowledge.se.collection.set.B@1,
- * com.java.xknowledge.se.collection.set.B@1, com.java.xknowledge.se.collection.set.C@2,
- * com.java.xknowledge.se.collection.set.A@4b67cf4d]/元素的顺序和插入顺序不一致
+ * [com.java.xknowledge.se.collection.set.hashset.A@2503dbd3, com.java.xknowledge.se.collection.set.hashset.B@1,
+ * com.java.xknowledge.se.collection.set.hashset.B@1, com.java.xknowledge.se.collection.set.hashset.C@2,
+ * com.java.xknowledge.se.collection.set.hashset.A@4b67cf4d]/元素的顺序和插入顺序不一致
  *
  * Process finished with exit code 0
  */

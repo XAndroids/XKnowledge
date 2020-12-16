@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.collection.set;
+package com.java.xknowledge.se.collection.set.hashset;
 
 import java.util.HashSet;
 import java.util.Iterator;
