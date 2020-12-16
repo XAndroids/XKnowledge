@@ -12,6 +12,8 @@ import java.util.TreeSet;
  * [R[count:20], R[count:-2], R[count:5], R[count:-2]]
  * true//删除未修改过的元素，成功！
  * [R[count:20], R[count:-2], R[count:-2]]
+ * true//执行remove之后，会进行索引重排序故又可以删除修改过的-2元素
+ * [R[count:20], R[count:-2]]
  *
  * Process finished with exit code 0
  * 参考：
@@ -44,6 +46,10 @@ public class TreeSet3Test {
 
         //删除Field没有改变的元素，删除成功
         System.out.println(ts.remove(new R(5)));   //④
+        System.out.println(ts);
+
+        //执行4之后，会进行重新的索引排序，之后又可以删除修改过的-2元素了
+        System.out.println(ts.remove(new R(-2)));
         System.out.println(ts);
     }
 }
