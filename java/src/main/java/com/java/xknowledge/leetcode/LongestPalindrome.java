@@ -1,4 +1,4 @@
-package com.java.xknowledge.arithmetic.other;
+package com.java.xknowledge.leetcode;
 
 /**
  * 题目：

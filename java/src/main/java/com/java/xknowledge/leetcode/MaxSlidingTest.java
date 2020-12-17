@@ -1,4 +1,4 @@
-package com.java.xknowledge.arithmetic.queue;
+package com.java.xknowledge.leetcode;
 
 import java.util.ArrayDeque;
 import java.util.Comparator;
