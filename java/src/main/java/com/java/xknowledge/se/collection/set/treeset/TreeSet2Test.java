@@ -6,7 +6,8 @@ import java.util.TreeSet;
  * TreeSet实践：equals和compareTo相等和比较大小
  * 运行：
  * true//equals一直返回false，compareTo一直返回1，同一个对象z1会被认为不同，故能重复添加
- * [com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3, com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3]
+ * [com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3,
+ * com.java.xknowledge.se.collection.set.treeset.Z@2503dbd3]
  * 9//但其实添加的是同一个对象，故修改第1个值，把第二个2值也修改了
  *
  * Process finished with exit code 0
