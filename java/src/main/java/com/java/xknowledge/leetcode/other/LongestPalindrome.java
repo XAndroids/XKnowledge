@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode;
+package com.java.xknowledge.leetcode.other;
 
 /**
  * 题目：

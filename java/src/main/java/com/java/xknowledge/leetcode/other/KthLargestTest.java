@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode;
+package com.java.xknowledge.leetcode.other;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
