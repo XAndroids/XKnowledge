@@ -3,7 +3,7 @@ package com.java.xknowledge.se.net;
 import java.net.InetAddress;
 
 /**
- * InetAddress实践：InetAddress提供是否可达，获取ip地址等方法，代表IP地址
+ * InetAddress实践：代表IP地址，包含Inet4Addreses、Inet6Address，提供getByName()、getByAddress()和isReachable()等方法；
  * 运行：
  * crazyit是否可达：false
  * 185.199.111.153
