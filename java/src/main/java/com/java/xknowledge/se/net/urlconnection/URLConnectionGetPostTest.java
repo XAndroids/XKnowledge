@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net;
+package com.java.xknowledge.se.net.urlconnection;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
