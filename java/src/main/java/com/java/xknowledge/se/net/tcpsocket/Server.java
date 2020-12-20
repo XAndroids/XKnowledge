@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket;
+package com.java.xknowledge.se.net.tcpsocket;
 
 import java.io.IOException;
 import java.io.PrintStream;

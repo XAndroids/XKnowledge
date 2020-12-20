@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket.halfclose;
+package com.java.xknowledge.se.net.tcpsocket.halfclose;
 
 import java.io.PrintStream;
 import java.net.ServerSocket;

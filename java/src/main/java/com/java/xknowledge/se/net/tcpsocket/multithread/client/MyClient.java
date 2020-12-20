@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket.multithread.client;
+package com.java.xknowledge.se.net.tcpsocket.multithread.client;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket.nio;
+package com.java.xknowledge.se.net.tcpsocket.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

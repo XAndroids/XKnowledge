@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket.senior.client;
+package com.java.xknowledge.se.net.tcpsocket.senior.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
