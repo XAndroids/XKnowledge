@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.net.socket.multithread;
+package com.java.xknowledge.se.net.socket.multithread.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
