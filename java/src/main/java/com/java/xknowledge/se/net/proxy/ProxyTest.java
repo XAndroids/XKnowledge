@@ -10,17 +10,18 @@ import java.net.URLConnection;
 import java.util.Scanner;
 
 /**
- * Proxy代理实践
+ * Proxy代理实现
  * 参考：
+ * http://www.xiladaili.com/
  * 《疯狂的Java讲义》
  */
 public class ProxyTest {
     // 下面是代理服务器的地址和端口，
     // 换成实际有效的代理服务器的地址和端口
-    final String PROXY_ADDR = "129.82.12.188";
-    final int PROXY_PORT = 3124;
+    final String PROXY_ADDR = "100.20.24.227";
+    final int PROXY_PORT = 13414;
     // 定义需要访问的网站地址
-    String urlStr = "http://www.crazyit.org";
+    String urlStr = "https://www.baidu.com";
 
     public void init() throws IOException, MalformedURLException {
         URL url = new URL(urlStr);
