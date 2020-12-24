@@ -24,7 +24,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-public final class AsynchronousGet {
+public final class GetExample {
   private final OkHttpClient client = new OkHttpClient();
 
   public void run() throws Exception {
@@ -53,6 +53,6 @@ public final class AsynchronousGet {
   }
 
   public static void main(String... args) throws Exception {
-    new AsynchronousGet().run();
+    new GetExample().run();
   }
 }
