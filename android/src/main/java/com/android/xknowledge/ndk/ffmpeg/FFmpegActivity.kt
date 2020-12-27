@@ -14,6 +14,6 @@ class FFmpegActivity : TitleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ffmpeg)
-//        ndk_ffmpeg_textview.text = "FFmpeg Vsersion = ${NativeLib().getFFmpegVersion()}"
+        ndk_ffmpeg_textview.text = "FFmpeg Vsersion = ${NativeLib().getFFmpegVersion()}"
     }
 }
