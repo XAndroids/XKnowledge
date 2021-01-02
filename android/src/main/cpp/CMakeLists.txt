@@ -11,6 +11,10 @@ message(STATUS "要打印的信息")
 set(DIR ${CMAKE_SOURCE_DIR}/../jniLibs)
 message(STATUS ${DIR})
 
+aux_source_directory(. SOURCE)
+
+message(STATUS ${SOURCE})
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
@@ -26,7 +30,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp)
+        ${SOURCE})
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -44,11 +48,14 @@ find_library( # Sets the name of the path variable.
         log)
 
 #添加自己编译的ffmped库的AVUTILS so包
-add_library(AVUTILS SHARED IMPORTED)
-#More than one file was found with OS independent path 'lib/armeabi-v7a/libdlib.so'.
+#add_library(AVUTILS SHARED IMPORTED)
+#More tha#n one file was found with OS independent path 'lib/armeabi-v7a/libdlib.so'.
 #移动至新文件夹cmakeLibs
 #参考：https://stackoverflow.com/questions/62088079/error-when-building-project-with-ndk-support-after-updating-to-android-studio-4
-set_target_properties(AVUTILS PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/libavutil.so)
+#set_target_properties(AVUTILS PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/libavutil.so)
+
+set(libs ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${libs}")
 
 include_directories(include)
 
@@ -58,7 +65,8 @@ include_directories(include)
 #把NDK库和我们自己的原生库进行关联
 target_link_libraries( # Specifies the target library.
         native-lib
-        AVUTILS
+        avfilter avformat avcodec avutil swresample swscale rtmp android z
+        OpenSLES
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})

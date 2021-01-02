@@ -8,11 +8,18 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <android/log.h>
+#include "Player.h"
+#include "JavaCallHelper.h"
+#include "Log.h"
+
+//FIXME 为什么案例里面不需要include
+//参考：https://stackoverflow.com/questions/43926204/android-undefined-reference-with-ndk
+#include <android/native_window.h>
+#include <android/native_window_jni.h>
 
 extern "C" {
 #include <libavutil/avutil.h>
 }
-
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_android_xknowledge_ndk_NativeLib_stringFromJNI(
@@ -53,7 +60,7 @@ Java_com_android_xknowledge_ndk_NativeLib_writeTest(JNIEnv *env, jobject instanc
     ftruncate(m_fd, m_size); // 100  1000 10000
 
     // m_size:映射区的长度。 需要是整数页个字节    byte[]
-    m_ptr = (int8_t *) mmap(0, m_size, PROT_READ | PROT_WRITE, MAP_SHARED, m_fd,0);
+    m_ptr = (int8_t *) mmap(0, m_size, PROT_READ | PROT_WRITE, MAP_SHARED, m_fd, 0);
 
     std::string data("asdsadasdasd");
     //将 data 的 data.size() 个数据 拷贝到 m_ptr
@@ -77,4 +84,66 @@ Java_com_android_xknowledge_ndk_NativeLib_readTest(JNIEnv *env, jobject instance
     munmap(m_ptr, m_size);
     //关闭文件
     close(m_fd);
+}
+
+//JNI OnLoad方法
+//参考：https://blog.csdn.net/fireroll/article/details/50102009
+JavaVM *javaVM = 0;
+
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
+    javaVM = vm;
+    return JNI_VERSION_1_4;
+}
+
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_nativeInit(JNIEnv *env, jobject thiz) {
+    //将Native的Player传递给Java
+    Player *player = new Player(new JavaCallHelper(javaVM, env, thiz));
+    return (jlong) player;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_setDataSource(JNIEnv *env, jobject thiz,
+                                                            jlong nativeHandle, jstring path_) {
+    const char *path = env->GetStringUTFChars(path_, 0);
+    Player *player = reinterpret_cast<Player *>(nativeHandle);
+    player->setDataSource(path);
+
+    env->ReleaseStringUTFChars(path_, path);
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_prepare(JNIEnv *env, jobject thiz,
+                                                      jlong nativeHandle) {
+    LOGE("Java_com_android_xknowledge_ndk_ffmpeg_Player_prepare");
+    Player *player = reinterpret_cast<Player *>(nativeHandle);
+    player->prepare();
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_start(JNIEnv *env, jobject thiz,
+                                                    jlong nativeHandle) {
+    Player *player = reinterpret_cast<Player *>(nativeHandle);
+    player->start();
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_setSurface(JNIEnv *env, jobject thiz,
+                                                         jlong nativeHandle, jobject surface) {
+    Player *player = reinterpret_cast<Player *>(nativeHandle);
+    ANativeWindow *window = ANativeWindow_fromSurface(env, surface);
+    player->setWindow(window);
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_ndk_ffmpeg_Player_stop(JNIEnv *env, jobject thiz, jlong nativeHandle) {
+    Player *player = reinterpret_cast<Player *>(nativeHandle);
+    player->stop();
+    delete player;
 }

@@ -190,6 +190,7 @@
         <activity android:name=".ndk.NdkActivity" />
         <activity android:name=".ndk.base.BaseNdkActivity" />
         <activity android:name=".ndk.ffmpeg.FFmpegActivity" />
+        <activity android:name=".ndk.ffmpeg.PlayerActivity" />
         <!--插件化，主工程需要注册插件代理Activity-->
         <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
     </application>
