@@ -1,4 +1,4 @@
-package com.java.xknowledge.arithmetic.stack;
+package com.java.xknowledge.leetcode.other;
 
 import java.util.Stack;
 
