@@ -2,7 +2,7 @@ package com.java.xknowledge.arithmetic.queue.linked;
 
 /**
  * 队列链表实现
- * 参考：
+ * 参考：https://blog.csdn.net/ljxbbss/article/details/78141632
  */
 class Queue {
     Node front;//队头指针，指向队头节点
