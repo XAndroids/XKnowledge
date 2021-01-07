@@ -89,6 +89,7 @@
         <activity android:name=".sdk.ui.layout.LayoutActivity" />
         <activity android:name=".sdk.ui.layout.IncludeActivity" />
         <activity android:name=".sdk.ui.layout.MergeActivity" />
+        <activity android:name=".sdk.ui.height.HeightActivity" />
         <activity android:name=".sdk.component.broadcast.StaticBroadcastActivity" />
         <activity android:name=".sdk.thread.AsyncTaskActivity" />
         <activity android:name=".sdk.ui.event.ontouch.ViewEventActivity" />

@@ -3,6 +3,7 @@ package com.android.xknowledge.sdk.ui
 import com.android.xknowledge.ListActivity
 import com.android.xknowledge.sdk.ui.dialog.DialogActivity
 import com.android.xknowledge.sdk.ui.event.EventActivity
+import com.android.xknowledge.sdk.ui.height.HeightActivity
 import com.android.xknowledge.sdk.ui.layout.LayoutActivity
 import com.android.xknowledge.sdk.ui.link.LinkActivity
 import com.android.xknowledge.sdk.ui.listener.NavigationBarActivity
@@ -24,7 +25,8 @@ class UiActivity : ListActivity() {
             ListItem("NavigationBar", "导航栏相关", NavigationBarActivity::class.java),
             ListItem("Notification", "通知相关", NotificationActivity::class.java),
             ListItem("Theme", "主题相关", ThemeActivity::class.java),
-            ListItem("Setting", "设置相关", SettingActivity::class.java)
+            ListItem("Setting", "设置相关", SettingActivity::class.java),
+            ListItem("Height", "屏幕高度", HeightActivity::class.java)
         )
     }
 }
