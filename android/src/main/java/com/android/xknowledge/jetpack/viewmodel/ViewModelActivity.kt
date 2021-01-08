@@ -7,6 +7,7 @@ import com.android.xknowledge.TitleActivity
 import kotlinx.android.synthetic.main.activity_viewmodel.*
 
 /**
+ * ViewModel实践，
  * 参考：https://chiclaim.blog.csdn.net/article/details/104200091
  */
 class ViewModelActivity : TitleActivity() {
