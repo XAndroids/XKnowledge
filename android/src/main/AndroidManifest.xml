@@ -125,6 +125,7 @@
         <activity android:name=".jetpack.JetpackActivity" />
         <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
         <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
+        <activity android:name=".jetpack.livedata.LiveDataActivity" />
         <activity
             android:name=".jetpack.navigation.NavigationActivity"
             android:theme="@style/NavigationTheme">
