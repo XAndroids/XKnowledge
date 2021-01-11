@@ -181,6 +181,7 @@
         <activity android:name=".optimize.OptimizeActivity" />
         <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
         <activity android:name=".optimize.leakcanary.TestActivity" />
+        <activity android:name=".optimize.gc.GcActivity" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
