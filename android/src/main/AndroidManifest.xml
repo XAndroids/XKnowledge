@@ -182,6 +182,16 @@
         <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
         <activity android:name=".optimize.leakcanary.TestActivity" />
         <activity android:name=".optimize.gc.GcActivity" />
+        <activity android:name=".optimize.leakmemory.LeakMemoryActivity" />
+        <activity android:name=".optimize.leakmemory.BroadcastReceiverLeakActivity" />
+        <activity android:name=".optimize.leakmemory.StaticReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.SingletonLeakActivity" />
+        <activity android:name=".optimize.leakmemory.InnerClassReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.AnonymousClassReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.AsyncTaskReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.HandlersReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.ThreadReferenceLeakActivity" />
+        <activity android:name=".optimize.leakmemory.TimerTaskReferenceLeakActivity" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
