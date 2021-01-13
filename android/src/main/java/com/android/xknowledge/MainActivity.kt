@@ -1,5 +1,6 @@
 package com.android.xknowledge
 
+import android.os.Bundle
 import com.android.xknowledge.framework.FrameworkActivity
 import com.android.xknowledge.hybrid.HybridActivity
 import com.android.xknowledge.jetpack.JetpackActivity
@@ -13,6 +14,13 @@ import com.android.xknowledge.test.TestActivity
 import com.reactnative.knowledge.ReactNativeActivity
 
 class MainActivity : ListActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        //优化启动白屏
+        //参考：享学2《性能优化-启动优化》
+        setTheme(R.style.AppTheme)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun getMyListItemList(): List<ListItem> {
         return listOf(
             ListItem("Sdk", "Sdk相关", SdkActivity::class.java),

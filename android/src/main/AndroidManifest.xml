@@ -42,7 +42,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory"
         tools:targetApi="q">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

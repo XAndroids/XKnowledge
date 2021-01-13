@@ -9,6 +9,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--定义启动Activity的启动主题，用于优化启动白屏问题，在Activity启动后替换-->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/dialog_background_progress</item>
+    </style>
+
 
     <style name="Dialog.FullScreen" parent="Theme.AppCompat.Dialog">
         <!--全透明相关样式-->
