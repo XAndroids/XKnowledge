@@ -52,4 +52,11 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@drawable/dialog_background_transparency</item>
     </style>
+
+    <style name="Dialog.FullScreen2" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@drawable/dialog_background_transparency</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
 </resources>

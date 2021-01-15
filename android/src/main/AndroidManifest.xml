@@ -65,6 +65,7 @@
         <activity android:name=".sdk.sensor.SensorActivity" />
         <activity android:name=".sdk.ui.dialog.DialogActivity" />
         <activity android:name=".sdk.ui.dialog.DialogWebviewActivity" />
+        <activity android:name=".sdk.ui.dialog.FullScreenActivity" />
         <activity android:name=".sdk.ui.event.nested.RecyclerViewActivity" />
         <activity android:name=".sdk.ui.UiActivity" />
         <activity android:name=".sdk.ui.view.recyclerview.RecyclerViewActivity" />

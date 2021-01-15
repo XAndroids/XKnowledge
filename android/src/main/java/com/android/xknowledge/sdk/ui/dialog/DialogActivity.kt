@@ -23,6 +23,10 @@ class DialogActivity : ListActivity() {
                 "DialogBackground",
                 "实现Dialog背景颜色自定义",
                 DialogBackgroundActivity::class.java
+            ), ListItem(
+                "FullScreen",
+                "实现全屏Dialog",
+                FullScreenActivity::class.java
             )
         )
     }
