@@ -1,4 +1,4 @@
-package com.android.xknowledge.optimize.leakcanary;
+package com.android.xknowledge.optimize.leak.leakcanary;
 
 import androidx.appcompat.app.AppCompatActivity;
 

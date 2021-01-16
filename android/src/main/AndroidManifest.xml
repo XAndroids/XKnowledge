@@ -182,21 +182,21 @@
         <!--优化相关-->
         <activity android:name=".optimize.strictmode.StrictActivity" />
         <activity android:name=".optimize.OptimizeActivity" />
-        <activity android:name=".optimize.leakcanary.LeakcanaryActivity" />
-        <activity android:name=".optimize.leakcanary.TestActivity" />
+        <activity android:name=".optimize.leak.leakcanary.LeakcanaryActivity" />
+        <activity android:name=".optimize.leak.leakcanary.TestActivity" />
         <activity android:name=".optimize.gc.GcActivity" />
-        <activity android:name=".optimize.leakmemory.LeakMemoryActivity" />
-        <activity android:name=".optimize.leakmemory.BroadcastReceiverLeakActivity" />
-        <activity android:name=".optimize.leakmemory.StaticReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.SingletonLeakActivity" />
-        <activity android:name=".optimize.leakmemory.InnerClassReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.AnonymousClassReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.AsyncTaskReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.HandlersReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.ThreadReferenceLeakActivity" />
-        <activity android:name=".optimize.leakmemory.TimerTaskReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.LeakMemoryActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.BroadcastReceiverLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.StaticReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.SingletonLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.InnerClassReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.AnonymousClassReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.AsyncTaskReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.HandlersReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.ThreadReferenceLeakActivity" />
+        <activity android:name="com.android.xknowledge.optimize.leak.leakmemory.TimerTaskReferenceLeakActivity" />
         <activity android:name=".optimize.systrace.SystraceActivity" />
-        <activity android:name=".optimize.blockcanary.BlockCanaryActivity" />
+        <activity android:name=".optimize.block.blockcanary.BlockCanaryActivity" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />

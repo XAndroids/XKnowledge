@@ -2,7 +2,8 @@ package com.android.xknowledge
 
 import android.app.*
 import android.util.Log
-import com.android.xknowledge.optimize.blockcanary.BlockCanary
+import com.android.xknowledge.optimize.block.choreographer.ChoreographerHelper
+import com.android.xknowledge.optimize.block.blockcanary.BlockCanary
 import com.android.xknowledge.router.ARouter
 import com.android.xknowledge.sdk.other.MyExceptionHandler
 import com.facebook.common.logging.FLog
@@ -56,6 +57,7 @@ class XApplication : Application() {
         myUncaughtExceptionHandler.init()
 
         //卡顿检测
-        BlockCanary.install();
+        BlockCanary.install()
+        ChoreographerHelper.start()
     }
 }

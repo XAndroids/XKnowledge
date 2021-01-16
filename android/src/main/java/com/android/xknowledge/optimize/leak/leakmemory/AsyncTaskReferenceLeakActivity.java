@@ -1,4 +1,4 @@
-package com.android.xknowledge.optimize.leakmemory;
+package com.android.xknowledge.optimize.leak.leakmemory;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

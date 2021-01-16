@@ -1,4 +1,4 @@
-package com.android.xknowledge.optimize.leakmemory;
+package com.android.xknowledge.optimize.leak.leakmemory;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

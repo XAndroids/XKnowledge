@@ -1,4 +1,4 @@
-package com.android.xknowledge.optimize.leakcanary;
+package com.android.xknowledge.optimize.leak.leakcanary;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,10 +1,10 @@
 package com.android.xknowledge.optimize
 
 import com.android.xknowledge.ListActivity
-import com.android.xknowledge.optimize.blockcanary.BlockCanaryActivity
+import com.android.xknowledge.optimize.block.blockcanary.BlockCanaryActivity
 import com.android.xknowledge.optimize.gc.GcActivity
-import com.android.xknowledge.optimize.leakcanary.LeakcanaryActivity
-import com.android.xknowledge.optimize.leakmemory.LeakMemoryActivity
+import com.android.xknowledge.optimize.leak.leakcanary.LeakcanaryActivity
+import com.android.xknowledge.optimize.leak.leakmemory.LeakMemoryActivity
 import com.android.xknowledge.optimize.strictmode.StrictActivity
 import com.android.xknowledge.optimize.systrace.SystraceActivity
 

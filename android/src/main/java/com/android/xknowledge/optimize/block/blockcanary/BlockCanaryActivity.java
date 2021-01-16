@@ -1,4 +1,4 @@
-package com.android.xknowledge.optimize.blockcanary;
+package com.android.xknowledge.optimize.block.blockcanary;
 
 import android.os.Bundle;
 

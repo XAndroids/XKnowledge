@@ -1,7 +1,6 @@
-package com.android.xknowledge.optimize.leakmemory;
+package com.android.xknowledge.optimize.leak.leakmemory;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.xknowledge.R;
