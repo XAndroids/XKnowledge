@@ -1,6 +1,7 @@
 package com.android.xknowledge.optimize.systrace;
 
 import android.os.Bundle;
+
 import androidx.core.os.TraceCompat;
 
 import com.android.xknowledge.R;
@@ -8,6 +9,7 @@ import com.android.xknowledge.TitleActivity;
 
 /**
  * Systrace API实践
+ * FIXME 在Systrace中并没有看到相关的标记
  * 参考：
  * 享学2《性能优化-卡顿和布局优化》
  */
@@ -28,7 +30,7 @@ public class SystraceActivity extends TitleActivity {
                         e.printStackTrace();
                     }
                 }
-            },"SystraceThread").start();
+            }, "SystraceThread").start();
         }
         TraceCompat.endSection();
     }

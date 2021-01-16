@@ -196,6 +196,7 @@
         <activity android:name=".optimize.leakmemory.ThreadReferenceLeakActivity" />
         <activity android:name=".optimize.leakmemory.TimerTaskReferenceLeakActivity" />
         <activity android:name=".optimize.systrace.SystraceActivity" />
+        <activity android:name=".optimize.blockcanary.BlockCanaryActivity" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />

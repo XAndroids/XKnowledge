@@ -2,6 +2,7 @@ package com.android.xknowledge
 
 import android.app.*
 import android.util.Log
+import com.android.xknowledge.optimize.blockcanary.BlockCanary
 import com.android.xknowledge.router.ARouter
 import com.android.xknowledge.sdk.other.MyExceptionHandler
 import com.facebook.common.logging.FLog
@@ -53,5 +54,8 @@ class XApplication : Application() {
         //设置自定义的异常处理器，捕获Java未处理异常崩溃
         val myUncaughtExceptionHandler = MyExceptionHandler(applicationContext)
         myUncaughtExceptionHandler.init()
+
+        //卡顿检测
+        BlockCanary.install();
     }
 }
