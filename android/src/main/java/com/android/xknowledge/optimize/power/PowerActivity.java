@@ -24,5 +24,8 @@ public class PowerActivity extends TitleActivity {
                 BatteryUtils.checkBattery(PowerActivity.this));
         findViewById(R.id.power_button_batterysttus).setOnClickListener(v ->
                 BatteryUtils.register(PowerActivity.this));
+        findViewById(R.id.power_button_workmanager).setOnClickListener(v -> {
+            BatteryUtils.doWork(PowerActivity.this);
+        });
     }
 }

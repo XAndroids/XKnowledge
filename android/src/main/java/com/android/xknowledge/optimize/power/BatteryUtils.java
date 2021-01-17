@@ -9,6 +9,12 @@ import android.os.PowerManager;
 import android.provider.Settings;
 import android.util.Log;
 
+import androidx.work.Constraints;
+import androidx.work.ExistingWorkPolicy;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
+
 public class BatteryUtils {
 
     private static final String TAG = "BatteryUtils";
@@ -76,4 +82,23 @@ public class BatteryUtils {
         context.registerReceiver(powerConnectionReceiver, ifilter);
         return powerConnectionReceiver;
     }
+
+    public static void doWork(Context context) {
+        Constraints constraints = new Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.UNMETERED)  //Wi-Fi
+                .setRequiresCharging(true) //在设备充电时运行
+                .setRequiresBatteryNotLow(true) //电量不足不会运行
+                .build();
+
+        OneTimeWorkRequest uploadWorkRequest =
+                new OneTimeWorkRequest.Builder(UploadWorker.class)
+                        .setConstraints(constraints)
+                        .build();
+        WorkManager
+                .getInstance(context)
+                .enqueueUniqueWork("upload",
+                        ExistingWorkPolicy.KEEP, uploadWorkRequest);
+
+    }
+
 }

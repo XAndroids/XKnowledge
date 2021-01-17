@@ -30,4 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="监控充电状态变化" />
+
+    <Button
+        android:id="@+id/power_button_workmanager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用WorkManager" />
 </LinearLayout>
