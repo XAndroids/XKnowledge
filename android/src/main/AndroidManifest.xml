@@ -19,6 +19,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
 
     <!--声明使用普通自定义权限-->
     <uses-permission android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER" />
@@ -198,6 +200,7 @@
         <activity android:name=".optimize.systrace.SystraceActivity" />
         <activity android:name=".optimize.block.blockcanary.BlockCanaryActivity" />
         <activity android:name=".optimize.layout.AsyncLayoutActivity" />
+        <activity android:name=".optimize.power.PowerActivity" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />

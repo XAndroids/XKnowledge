@@ -6,6 +6,7 @@ import com.android.xknowledge.optimize.gc.GcActivity
 import com.android.xknowledge.optimize.layout.AsyncLayoutActivity
 import com.android.xknowledge.optimize.leak.leakcanary.LeakcanaryActivity
 import com.android.xknowledge.optimize.leak.leakmemory.LeakMemoryActivity
+import com.android.xknowledge.optimize.power.PowerActivity
 import com.android.xknowledge.optimize.strictmode.StrictActivity
 import com.android.xknowledge.optimize.systrace.SystraceActivity
 
@@ -18,7 +19,8 @@ class OptimizeActivity : ListActivity() {
             ListItem("LeakMemoryActivity", "内存泄露相关", LeakMemoryActivity::class.java),
             ListItem("SystraceActivity", "Systrace相关", SystraceActivity::class.java),
             ListItem("BlockCanaryActivity", "BlockCanary相关", BlockCanaryActivity::class.java),
-            ListItem("AsyncLayoutActivity", "AsyncLayout相关", AsyncLayoutActivity::class.java)
+            ListItem("AsyncLayoutActivity", "AsyncLayout相关", AsyncLayoutActivity::class.java),
+            ListItem("PowerActivity", "电量白名单相关", PowerActivity::class.java)
         )
     }
 }
