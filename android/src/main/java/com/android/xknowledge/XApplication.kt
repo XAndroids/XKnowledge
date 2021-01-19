@@ -4,8 +4,9 @@ import android.app.*
 import android.util.Log
 import com.android.xknowledge.optimize.block.choreographer.ChoreographerHelper
 import com.android.xknowledge.optimize.block.blockcanary.BlockCanary
+import com.android.xknowledge.optimize.crash.CrashHandler
+import com.android.xknowledge.optimize.crash.CrashReport
 import com.android.xknowledge.router.ARouter
-import com.android.xknowledge.sdk.other.MyExceptionHandler
 import com.facebook.common.logging.FLog
 import com.facebook.drawee.backends.pipeline.Fresco
 
@@ -52,12 +53,11 @@ class XApplication : Application() {
 //            appOpsManager.setOnOpNotedCallback(mainExecutor, appOpsCallback)
 //        }
 
-        //设置自定义的异常处理器，捕获Java未处理异常崩溃
-        val myUncaughtExceptionHandler = MyExceptionHandler(applicationContext)
-        myUncaughtExceptionHandler.init()
-
         //卡顿检测
         BlockCanary.install()
         ChoreographerHelper.start()
+
+        //捕获Java异常
+        CrashReport.init(this)
     }
 }
