@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.collection.map;
+package com.java.xknowledge.se.collection.map.hashmap;
 
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -8,7 +8,7 @@ import java.util.Hashtable;
  *{null=null, a=null}//HashMap key值允许一个null
  * Exception in thread "main" java.lang.NullPointerException//Hashtable不允许null
  * 	at java.util.Hashtable.put(Hashtable.java:459)
- * 	at com.java.xknowledge.se.collection.map.HashMapNullTest.main(HashMapNullTest.java:30)
+ * 	at com.java.xknowledge.se.collection.map.hashmap.HashMapNullTest.main(HashMapNullTest.java:30)
  *
  * Process finished with exit code 1
  * 参考：

@@ -1,17 +1,17 @@
-package com.java.xknowledge.se.collection.map;
+package com.java.xknowledge.se.collection.map.hashtable;
 
 import java.util.Hashtable;
 
 /**
  * Hashtable实践类：
  * 运行：
- *{com.java.xknowledge.se.collection.map.A@ea60=疯狂Java讲义,
- * com.java.xknowledge.se.collection.map.A@1560b=轻量级Java EE企业应用实战,
- * com.java.xknowledge.se.collection.map.A@4d0=com.java.xknowledge.se.collection.map.B@2503dbd3}
+ *{com.java.xknowledge.se.collection.map.hashtable.A@ea60=疯狂Java讲义,
+ * com.java.xknowledge.se.collection.map.hashtable.A@1560b=轻量级Java EE企业应用实战,
+ * com.java.xknowledge.se.collection.map.hashtable.A@4d0=com.java.xknowledge.se.collection.map.hashtable.B@2503dbd3}
  * true
  * true
- * com.java.xknowledge.se.collection.map.A@ea60---->疯狂Java讲义
- * com.java.xknowledge.se.collection.map.A@1560b---->轻量级Java EE企业应用实战
+ * com.java.xknowledge.se.collection.map.hashtable.A@ea60---->疯狂Java讲义
+ * com.java.xknowledge.se.collection.map.hashtable.A@1560b---->轻量级Java EE企业应用实战
  *
  * Process finished with exit code 0
  * 参考：

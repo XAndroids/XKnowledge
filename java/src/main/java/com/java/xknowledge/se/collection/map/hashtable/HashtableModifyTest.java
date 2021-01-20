@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.collection.map;
+package com.java.xknowledge.se.collection.map.hashtable;
 
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -6,8 +6,8 @@ import java.util.Iterator;
 /**
  * Hashtable/HashMap实践：动态修改作为key的可变对象，引入key相同场景，无法准确访问修改过的key对象
  * 运行：
- * {com.java.xknowledge.se.collection.map.A@1560b=疯狂Java讲义,com.java.xknowledge.se.collection.map.A@1560b=轻量级Java EE企业应用实战}
- * {com.java.xknowledge.se.collection.map.A@1560b=疯狂Java讲义}
+ * {com.java.xknowledge.se.collection.map.hashtable.A@1560b=疯狂Java讲义,com.java.xknowledge.se.collection.map.hashtable.A@1560b=轻量级Java EE企业应用实战}
+ * {com.java.xknowledge.se.collection.map.hashtable.A@1560b=疯狂Java讲义}
  * null
  * null
  *
