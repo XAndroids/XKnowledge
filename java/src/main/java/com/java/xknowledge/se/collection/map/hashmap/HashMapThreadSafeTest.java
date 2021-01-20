@@ -1,6 +1,10 @@
 package com.java.xknowledge.se.collection.map.hashmap;
 
-import java.util.HashMap;
+//import java.util.Collections;
+//import java.util.HashMap;
+//import java.util.Hashtable;
+//import java.util.Map;
+//import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +21,13 @@ import java.util.concurrent.TimeUnit;
  * https://cloud.tencent.com/developer/article/1120823
  */
 class HashMapThreadSafeTest {
-    private static HashMap<Integer, String> mHashMap = new HashMap<>();
+    //    private static Map<Integer, String> mHashMap = new HashMap<>();
+    //方案1：使用hashTable线程安全
+    //    private static Map<Integer, String> mHashMap = new Hashtable<>();
+    //方案2：使用Collections.synchronizedMap返回线程安全Map
+    //    private static Map<Integer, String> mHashMap = Collections.synchronizedMap(new HashMap<>());
+    //方案3：使用ConcurrentHashMap线程安全
+    //    private static Map<Integer, String> mHashMap = new ConcurrentHashMap<>();
     private static ExecutorService executorService = Executors.newFixedThreadPool(20);
 
     // * 运行：
@@ -32,7 +42,7 @@ class HashMapThreadSafeTest {
     // * thread = Thread[pool-1-thread-9,5,main],put= 9
     // * thread = Thread[pool-1-thread-10,5,main],put= 10
     // * {2=test:2, 3=test:3, 4=test:4, 5=test:5, 6=test:6, 7=test:7, 8=test:8, 9=test:9, 10=test:10}
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) {
             int finalI = i;
             executorService.submit(() -> {
