@@ -6,28 +6,33 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * HashMap线程安全问题：多线程put数据丢失
- * 运行：
- * thread = Thread[pool-1-thread-1,5,main],put= 1
- * thread = Thread[pool-1-thread-2,5,main],put= 2
- * thread = Thread[pool-1-thread-3,5,main],put= 3
- * thread = Thread[pool-1-thread-4,5,main],put= 4
- * thread = Thread[pool-1-thread-5,5,main],put= 5
- * thread = Thread[pool-1-thread-6,5,main],put= 6
- * thread = Thread[pool-1-thread-7,5,main],put= 7
- * thread = Thread[pool-1-thread-8,5,main],put= 8
- * thread = Thread[pool-1-thread-9,5,main],put= 9
- * thread = Thread[pool-1-thread-10,5,main],put= 10
- * {2=test:2, 3=test:3, 4=test:4, 5=test:5, 6=test:6, 7=test:7, 8=test:8, 9=test:9, 10=test:10}
+ * HashMap线程安全问题：
+ * 1.多线程Put操作，导致元素丢失；
+ * 2.多线程Put非Null元素后，Get操作得到Null值；
+ * 3.多线程Put操作后，Get操作导致死循环（resize死循环），JDK8红黑树已修复；
  * 参考：
+ * https://juejin.cn/post/6844903796225605640#heading-0
  * https://www.jianshu.com/p/59a2d8e6f296
  * https://www.jianshu.com/p/e28792ee30ab
+ * https://cloud.tencent.com/developer/article/1120823
  */
 class HashMapThreadSafeTest {
     private static HashMap<Integer, String> mHashMap = new HashMap<>();
     private static ExecutorService executorService = Executors.newFixedThreadPool(20);
 
-    public static void main(String[] args) {
+    // * 运行：
+    // * thread = Thread[pool-1-thread-1,5,main],put= 1
+    // * thread = Thread[pool-1-thread-2,5,main],put= 2
+    // * thread = Thread[pool-1-thread-3,5,main],put= 3
+    // * thread = Thread[pool-1-thread-4,5,main],put= 4
+    // * thread = Thread[pool-1-thread-5,5,main],put= 5
+    // * thread = Thread[pool-1-thread-6,5,main],put= 6
+    // * thread = Thread[pool-1-thread-7,5,main],put= 7
+    // * thread = Thread[pool-1-thread-8,5,main],put= 8
+    // * thread = Thread[pool-1-thread-9,5,main],put= 9
+    // * thread = Thread[pool-1-thread-10,5,main],put= 10
+    // * {2=test:2, 3=test:3, 4=test:4, 5=test:5, 6=test:6, 7=test:7, 8=test:8, 9=test:9, 10=test:10}
+    public static void main1(String[] args) {
         for (int i = 1; i <= 10; i++) {
             int finalI = i;
             executorService.submit(() -> {
@@ -51,5 +56,37 @@ class HashMapThreadSafeTest {
             e.printStackTrace();
         }
         System.out.println(mHashMap);
+    }
+
+    // * 运行：
+    // * thread = Thread[main,5,main],get= 334278,value =test:334278
+    // * thread = Thread[main,5,main],get= 334279,value =null
+    // * thread = Thread[main,5,main],get= 334280,value =test:334280
+    // * thread = Thread[main,5,main],get= 334281,value =test:334281
+    // * thread = Thread[main,5,main],get= 334282,value =test:334282
+    // * thread = Thread[main,5,main],get= 334283,value =null
+    // * thread = Thread[main,5,main],get= 334284,value =test:334284
+    // * thread = Thread[main,5,main],get= 334285,value =test:334285
+    // * thread = Thread[main,5,main],get= 334286,value =test:334286
+    // * thread = Thread[main,5,main],get= 334287,value =null
+    public static void main2(String[] args) {
+        for (int i = 1; i <= 1000000; i++) {
+            int finalI = i;
+            executorService.submit(() -> {
+//                System.out.println("thread = " + Thread.currentThread() + ",put= " + finalI);
+                mHashMap.put(finalI, "test:" + finalI);
+            });
+        }
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 1; i <= 1000000; i++) {
+            String value = mHashMap.get(i);
+            System.out.println("thread = " + Thread.currentThread() + ",get= " + i + ",value =" + value);
+        }
     }
 }
