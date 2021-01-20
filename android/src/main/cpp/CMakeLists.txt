@@ -16,6 +16,7 @@ message(STATUS ${SOURCE})
 
 
 include_directories(ffmpeg)
+#引入breakpad的头文件(api的定义)
 include_directories(breakpad/src breakpad/src/common/android/include)
 
 # Creates and names a library, sets it as either STATIC
@@ -59,7 +60,7 @@ find_library( # Sets the name of the path variable.
 set(libs ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${libs}")
 
-#增加导入/breakpad/CMakeLists.txt
+#引入breakpad的cmakelist，执行并生成libbreakpad.a (api的实现，类似java的jar包)
 add_subdirectory(breakpad)
 
 # Specifies libraries CMake should link to your target library. You
@@ -70,7 +71,7 @@ target_link_libraries( # Specifies the target library.
         native-lib
         avfilter avformat avcodec avutil swresample swscale rtmp android z
         OpenSLES
-        breakpad
+        breakpad #引入breakpad的库文件(api的实现)
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})

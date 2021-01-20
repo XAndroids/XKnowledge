@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-
+#对应android.mk中的 LOCAL_C_INCLUDES
 include_directories(src src/common/android/include)
 
-#存在breakpad_getcontext.S，启动汇编支持
+#开启arm汇编支持，因为在源码中有 .S文件(汇编源码)
 enable_language(ASM)
 
+#生成 libbreakpad.a 并指定源码，对应android.mk中 LOCAL_SRC_FILES+LOCAL_MODULE
 add_library(breakpad STATIC
         src/client/linux/crash_generation/crash_generation_client.cc
         src/client/linux/dump_writer_common/thread_info.cc
@@ -30,4 +31,5 @@ add_library(breakpad STATIC
         src/common/linux/safe_readlink.cc)
 
 
+#链接 log库，对应android.mk中 LOCAL_EXPORT_LDLIBS
 target_link_libraries(breakpad log)

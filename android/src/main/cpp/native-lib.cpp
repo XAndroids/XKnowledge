@@ -155,8 +155,7 @@ Java_com_android_xknowledge_ndk_ffmpeg_Player_stop(JNIEnv *env, jobject thiz, jl
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_android_xknowledge_optimize_crash_CrashReport_testNativeCrash(JNIEnv *env, jclass clazz) {
-    //FIXME /Users/qitmac0000562/XCodeProjects/XProjects/XKnowledge/android/src/main/cpp/crash-handler.cpp:10: error: undefined reference to '__android_log_print'
-    //引入了log库为什么还是找不到？？
+    //测试用Native崩溃
     __android_log_print(ANDROID_LOG_INFO, "native", "xxxxxxxxxx");
     int *p = NULL;
     *p = 10;
@@ -165,7 +164,10 @@ Java_com_android_xknowledge_optimize_crash_CrashReport_testNativeCrash(JNIEnv *e
 bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
                   void *context,
                   bool succeeded) {
-    __android_log_print(ANDROID_LOG_ERROR, "native", "native crash:%s", descriptor.path());
+    __android_log_print(ANDROID_LOG_ERROR, "native", "native crash:%s",
+            descriptor.path());
+    //如果回调返回true，Breakpad将把异常视为已完全处理，禁止任何其他处理程序收到异常通知。
+    //如果回调返回false，Breakpad会将异常视为未处理，并允许其他处理程序处理它。
     return false;
 }
 
@@ -175,6 +177,7 @@ Java_com_android_xknowledge_optimize_crash_CrashReport_initNativeCrash(JNIEnv *e
                                                                        jstring path_) {
     const char *path = env->GetStringUTFChars(path_, 0);
 
+    //开启crash监控
     __android_log_print(ANDROID_LOG_INFO, "native", "===> %s", path);
     google_breakpad::MinidumpDescriptor descriptor(path);
     static google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback,
