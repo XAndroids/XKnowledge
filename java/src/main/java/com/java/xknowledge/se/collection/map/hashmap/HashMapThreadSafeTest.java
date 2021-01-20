@@ -19,7 +19,9 @@ import java.util.concurrent.TimeUnit;
  * thread = Thread[pool-1-thread-9,5,main],put= 9
  * thread = Thread[pool-1-thread-10,5,main],put= 10
  * {2=test:2, 3=test:3, 4=test:4, 5=test:5, 6=test:6, 7=test:7, 8=test:8, 9=test:9, 10=test:10}
- * 参考：https://www.jianshu.com/p/59a2d8e6f296
+ * 参考：
+ * https://www.jianshu.com/p/59a2d8e6f296
+ * https://www.jianshu.com/p/e28792ee30ab
  */
 class HashMapThreadSafeTest {
     private static HashMap<Integer, String> mHashMap = new HashMap<>();
