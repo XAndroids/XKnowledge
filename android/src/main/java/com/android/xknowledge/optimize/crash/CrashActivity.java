@@ -20,7 +20,7 @@ public class CrashActivity extends TitleActivity {
         });
 
         findViewById(R.id.crash_button_native).setOnClickListener(v -> {
-
+            CrashReport.testNativeCrash();
         });
     }
 }

@@ -1,10 +1,10 @@
 package com.android.xknowledge
 
-import android.app.*
+import android.app.Activity
+import android.app.Application
 import android.util.Log
-import com.android.xknowledge.optimize.block.choreographer.ChoreographerHelper
 import com.android.xknowledge.optimize.block.blockcanary.BlockCanary
-import com.android.xknowledge.optimize.crash.CrashHandler
+import com.android.xknowledge.optimize.block.choreographer.ChoreographerHelper
 import com.android.xknowledge.optimize.crash.CrashReport
 import com.android.xknowledge.router.ARouter
 import com.facebook.common.logging.FLog

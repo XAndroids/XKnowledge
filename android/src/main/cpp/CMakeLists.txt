@@ -12,8 +12,11 @@ set(DIR ${CMAKE_SOURCE_DIR}/../jniLibs)
 message(STATUS ${DIR})
 
 aux_source_directory(. SOURCE)
-
 message(STATUS ${SOURCE})
+
+
+include_directories(ffmpeg)
+include_directories(breakpad/src breakpad/src/common/android/include)
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -42,7 +45,6 @@ add_library( # Sets the name of the library.
 #第二个参数：Android NDK对应的库名称
 find_library( # Sets the name of the path variable.
         log-lib
-
         # Specifies the name of the NDK library that
         # you want CMake to locate.
         log)
@@ -57,7 +59,8 @@ find_library( # Sets the name of the path variable.
 set(libs ${CMAKE_SOURCE_DIR}/../cmakeLibs/${ANDROID_ABI}/)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${libs}")
 
-include_directories(include)
+#增加导入/breakpad/CMakeLists.txt
+add_subdirectory(breakpad)
 
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
@@ -67,6 +70,7 @@ target_link_libraries( # Specifies the target library.
         native-lib
         avfilter avformat avcodec avutil swresample swscale rtmp android z
         OpenSLES
+        breakpad
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})

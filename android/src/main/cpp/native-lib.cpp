@@ -17,6 +17,10 @@
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
 
+#include "client/linux/handler/minidump_descriptor.h"
+#include "client/linux/handler/exception_handler.h"
+#include <android/log.h>
+
 extern "C" {
 #include <libavutil/avutil.h>
 }
@@ -146,4 +150,35 @@ Java_com_android_xknowledge_ndk_ffmpeg_Player_stop(JNIEnv *env, jobject thiz, jl
     Player *player = reinterpret_cast<Player *>(nativeHandle);
     player->stop();
     delete player;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_optimize_crash_CrashReport_testNativeCrash(JNIEnv *env, jclass clazz) {
+    //FIXME /Users/qitmac0000562/XCodeProjects/XProjects/XKnowledge/android/src/main/cpp/crash-handler.cpp:10: error: undefined reference to '__android_log_print'
+    //引入了log库为什么还是找不到？？
+    __android_log_print(ANDROID_LOG_INFO, "native", "xxxxxxxxxx");
+    int *p = NULL;
+    *p = 10;
+}
+
+bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
+                  void *context,
+                  bool succeeded) {
+    __android_log_print(ANDROID_LOG_ERROR, "native", "native crash:%s", descriptor.path());
+    return false;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_android_xknowledge_optimize_crash_CrashReport_initNativeCrash(JNIEnv *env, jclass clazz,
+                                                                       jstring path_) {
+    const char *path = env->GetStringUTFChars(path_, 0);
+
+    __android_log_print(ANDROID_LOG_INFO, "native", "===> %s", path);
+    google_breakpad::MinidumpDescriptor descriptor(path);
+    static google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback,
+                                                NULL, true, -1);
+
+    env->ReleaseStringUTFChars(path_, path);
 }

@@ -82,6 +82,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //用于配置Cmake构建参数
+        //配置我们自己的C/C++代码要编译哪些CPU架构
         externalNativeBuild {
             cmake {
                 //将参数传递给变量
@@ -117,6 +118,7 @@ android {
     productFlavors {
         demo {
             dimension "version"
+            //配置打包时会把哪些CPU架构打包进去
             ndk {
                 abiFilters "x86", "armeabi-v7a"
             }
