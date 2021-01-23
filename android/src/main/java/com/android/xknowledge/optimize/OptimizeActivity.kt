@@ -1,6 +1,7 @@
 package com.android.xknowledge.optimize
 
 import com.android.xknowledge.ListActivity
+import com.android.xknowledge.optimize.anr.ANRActivity
 import com.android.xknowledge.optimize.block.blockcanary.BlockCanaryActivity
 import com.android.xknowledge.optimize.crash.CrashActivity
 import com.android.xknowledge.optimize.gc.GcActivity
@@ -22,7 +23,8 @@ class OptimizeActivity : ListActivity() {
             ListItem("BlockCanaryActivity", "BlockCanary相关", BlockCanaryActivity::class.java),
             ListItem("AsyncLayoutActivity", "AsyncLayout相关", AsyncLayoutActivity::class.java),
             ListItem("PowerActivity", "电量白名单相关", PowerActivity::class.java),
-            ListItem("CrashActivity", "Crash监控相关", CrashActivity::class.java)
+            ListItem("CrashActivity", "Crash监控相关", CrashActivity::class.java),
+            ListItem("ANRActivity", "ANR相关", ANRActivity::class.java)
         )
     }
 }

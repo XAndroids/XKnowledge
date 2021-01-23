@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".optimize.anr.ANRActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANR产生条件" />
+
+        <Button
+            android:id="@+id/anr_button_mainsleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mainsleep" />
+
+        <Button
+            android:id="@+id/anr_button_mainwaitblock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mainwaitblock" />
+
+        <Button
+            android:id="@+id/anr_button_mainsynchronizedblock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mainsynchronizedblock" />
+
+        <Button
+            android:id="@+id/anr_button_mainsynchronizedblock2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mainsynchronizedblock2" />
+
+        <Button
+            android:id="@+id/anr_button_maininfinitefor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="maininfinitefor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANR触发条件" />
+
+        <Button
+            android:id="@+id/anr_button_keydispatchtimeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="keydispatchtimeout" />
+
+        <Button
+            android:id="@+id/anr_button_backgroundservicetimeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="backgroundservicetimeout" />
+
+        <Button
+            android:id="@+id/anr_button_foregroundservicetimeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="foregroundservicetimeout" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

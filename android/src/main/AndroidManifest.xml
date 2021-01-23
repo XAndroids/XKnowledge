@@ -202,6 +202,9 @@
         <activity android:name=".optimize.layout.AsyncLayoutActivity" />
         <activity android:name=".optimize.power.PowerActivity" />
         <activity android:name=".optimize.crash.CrashActivity" />
+        <activity android:name=".optimize.anr.ANRActivity" />
+        <service android:name=".optimize.anr.BackgroundService" />
+        <service android:name=".optimize.anr.ForegroundService" />
         <!--安全相关-->
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
@@ -216,6 +219,6 @@
         <activity android:name=".ndk.ffmpeg.FFmpegActivity" />
         <activity android:name=".ndk.ffmpeg.PlayerActivity" />
         <!--插件化，主工程需要注册插件代理Activity-->
-        <activity android:name="com.android.xknowledge.plugin.core.ProxyActivity" />
+        <activity android:name=".plugin.core.ProxyActivity" />
     </application>
 </manifest>
