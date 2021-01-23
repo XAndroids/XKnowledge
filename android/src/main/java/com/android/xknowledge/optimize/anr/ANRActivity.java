@@ -3,6 +3,7 @@ package com.android.xknowledge.optimize.anr;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 
 import com.android.xknowledge.R;
@@ -58,6 +59,17 @@ public class ANRActivity extends TitleActivity {
         findViewById(R.id.anr_button_fileobserver).setOnClickListener(v -> {
             anrFileObserver = new ANRFileObserver("/data/anr/");
             anrFileObserver.startWatching();
+        });
+
+        findViewById(R.id.anr_button_watchdog).setOnClickListener(v -> {
+            ANRWatchDog anrWatchDog = ANRWatchDog.getInstance();
+            anrWatchDog.addANRListener(new ANRWatchDog.ANRListener() {
+                @Override
+                public void onAnrHappened(String stackTraceInfo) {
+                    Log.i("ANR","onAnrHappened, stackTraceInfo = " + stackTraceInfo);
+                }
+            });
+            anrWatchDog.start();
         });
     }
 

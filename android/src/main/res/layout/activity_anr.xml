@@ -93,6 +93,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="fileobserver" />
+
+        <Button
+            android:id="@+id/anr_button_watchdog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="watchdog" />
     </LinearLayout>
 
 </LinearLayout>
