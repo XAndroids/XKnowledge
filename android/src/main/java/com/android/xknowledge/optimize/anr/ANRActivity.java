@@ -3,6 +3,7 @@ package com.android.xknowledge.optimize.anr;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.View;
 
 import com.android.xknowledge.R;
 import com.android.xknowledge.TitleActivity;
@@ -15,6 +16,7 @@ import com.android.xknowledge.TitleActivity;
  * ANR模拟：https://juejin.cn/post/6844903802156351502#heading-9
  */
 public class ANRActivity extends TitleActivity {
+    ANRFileObserver anrFileObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class ANRActivity extends TitleActivity {
             startService(intent);
         });
 
+        findViewById(R.id.anr_button_fileobserver).setOnClickListener(v -> {
+            anrFileObserver = new ANRFileObserver("/data/anr/");
+            anrFileObserver.startWatching();
+        });
     }
 
     //造成ANR环境1：通过主线程Sleep创建，使得主线程阻塞
