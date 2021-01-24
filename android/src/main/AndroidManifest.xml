@@ -176,6 +176,7 @@
         <activity android:name=".framework.mvx.mvn.MVNActivity" />
         <activity android:name=".framework.mvx.mvc.MVCActivity" />
         <activity android:name=".framework.mvx.mvp.view.MVPActivity" />
+        <activity android:name=".framework.mvx.mvvm.view.MVVMActivity" />
         <activity android:name=".framework.FrameworkActivity" />
         <!--自动化测试相关-->
         <activity android:name=".test.robolectric.LoginActivity" />
