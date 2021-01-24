@@ -32,4 +32,8 @@
 
     <string name="label_permission_script_server">ask for script server permission</string>
     <string name="label_permission_form_data">ask for form data permission</string>
+
+    <string name="mvx_name">井字棋</string>
+    <string name="mvx_winner">赢了</string>
+    <string name="mvx_action_reset">重置</string>
 </resources>

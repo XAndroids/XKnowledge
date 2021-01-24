@@ -172,6 +172,8 @@
         <activity android:name=".framework.hotfix.MultidexActivity" />
         <activity android:name=".framework.plugin.PluginActivity" />
         <activity android:name=".framework.module.ModuleActivity" />
+        <activity android:name=".framework.mvx.MVXActivity" />
+        <activity android:name=".framework.mvx.mvn.MVNActivity" />
         <activity android:name=".framework.FrameworkActivity" />
         <!--自动化测试相关-->
         <activity android:name=".test.robolectric.LoginActivity" />

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <GridLayout
+        android:id="@+id/mvx_gridlayout_buttongrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="00" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="01" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="02" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="10" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="11" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="12" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="20" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="21" />
+
+        <Button
+            style="@style/mvxbuttonstyle"
+            android:onClick="onCellClicked"
+            android:tag="22" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/mvx_linearlayout_winerplayergroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/mvx_textview_winnerplaylabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textSize="40sp"
+            tools:text="X" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mvx_winner"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
