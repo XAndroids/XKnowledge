@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
@@ -16,12 +17,16 @@ class LifeCycleActivity : TitleActivity() {
         Log.i("LifeCycle", "LifeCycleActivity_onCreate")
         setContentView(R.layout.activity_lifecycle)
 
-        val toOneButton = findViewById<Button>(R.id.lifecycler_button_toone)
+        val toOneButton = findViewById<Button>(R.id.lifecycler_button_notransparent)
         toOneButton.setOnClickListener {
             Intent().apply {
                 action = "com.android.xknowledge.sdk.component.activity.lifecycler.ActivityOne"
                 startActivity(this)
             }
+        }
+
+        findViewById<Button>(R.id.lifecycler_button_transparent).setOnClickListener {
+            startActivity(Intent(this, TransparentActivity::class.java))
         }
     }
 
@@ -57,20 +62,25 @@ class LifeCycleActivity : TitleActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.i("LifeCycle", "LifeCycleActivity_onSaveInstanceState " + TaskTools.geStaskToptActivity(this))
+        Log.i(
+            "LifeCycle",
+            "LifeCycleActivity_onSaveInstanceState " + TaskTools.geStaskToptActivity(this)
+        )
     }
 
-//    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-//        super.onRestoreInstanceState(savedInstanceState)
-//        Log.i("LifeCycle", "LifeCycleActivity_onRestoreInstanceState")
-//    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i("LifeCycle", "LifeCycleActivity_onRestoreInstanceState")
+    }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         //在折叠屏，或者多窗口适配时，通过给Activity清单添加android:configChanges="screenSize|smallestScreenSize|screenLayout"
         //避免Activity的重建
         //参考：https://developer.android.com/guide/topics/resources/runtime-changes?hl=zh-cn
-        Log.i("LifeCycle", "LifeCycleActivity_onConfigurationChanged" + newConfig.screenHeightDp
-                + ", newConfig.screenWidthDp" + newConfig.screenWidthDp);
+        Log.i(
+            "LifeCycle", "LifeCycleActivity_onConfigurationChanged" + newConfig.screenHeightDp
+                    + ", newConfig.screenWidthDp" + newConfig.screenWidthDp
+        );
     }
 }

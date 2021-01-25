@@ -107,13 +107,16 @@
         <activity android:name=".sdk.storage.StorageActivity" />
         <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
         <activity android:name=".sdk.storage.ExteralStorageActivity" />
-        <activity android:name=".sdk.component.activity.lifecycler.ActivityOne">
+        <activity android:name=".sdk.component.activity.lifecycler.NoTransparentActivity">
             <intent-filter>
                 <action android:name="com.android.xknowledge.sdk.component.activity.lifecycler.ActivityOne" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sdk.component.activity.lifecycler.TransparentActivity"
+            android:theme="@style/Transparent" />
         <!--注册静态广播-->
         <receiver android:name=".sdk.component.broadcast.StaticBroadcastReceiver">
             <intent-filter>
