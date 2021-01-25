@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/showview_global1_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="全局接受者1" />
 
     <TextView
-            android:id="@+id/showview_approve_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="赞成1票" />
+        android:id="@+id/showview_global2_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全局接受者2" />
 
     <TextView
-            android:id="@+id/showview_oppose_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="反对1票" />
+        android:id="@+id/showview_global3_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全局接受者3" />
 
+    <TextView
+        android:id="@+id/showview_local_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本地接受者" />
+
+    <TextView
+        android:id="@+id/showview_stickly_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="粘性接受者" />
+
+    <Button
+        android:id="@+id/showview_stickly_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册粘性广播" />
 </LinearLayout>
