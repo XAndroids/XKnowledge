@@ -87,7 +87,7 @@
         <activity android:name=".sdk.ui.statusbar.ImmersiveActivity" />
         <activity android:name=".sdk.ui.listener.NavigationBarActivity" />
         <activity android:name=".sdk.component.activity.task.TaskActivity" />
-        <activity android:name=".sdk.component.activity.destroy.DestroyActivity" />
+        <activity android:name=".sdk.component.activity.state.SaveInstanceActivity" />
         <activity android:name=".sdk.thread.ThreadActivity" />
         <activity android:name=".sdk.thread.HandlerActivity" />
         <activity android:name=".sdk.ui.view.textview.TextViewActivity" />

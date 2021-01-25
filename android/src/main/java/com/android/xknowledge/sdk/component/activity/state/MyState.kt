@@ -1,4 +1,4 @@
-package com.android.xknowledge.sdk.component.activity.destroy
+package com.android.xknowledge.sdk.component.activity.state
 
 import java.io.Serializable
 

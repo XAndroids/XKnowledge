@@ -6,12 +6,12 @@
     tools:context=".jetpack.viewmodel.ViewModelActivity">
 
     <TextView
-        android:id="@+id/destroy_textview_number"
+        android:id="@+id/saveinstance_textview_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/destroy_button_add"
+        android:id="@+id/saveinstance_button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
