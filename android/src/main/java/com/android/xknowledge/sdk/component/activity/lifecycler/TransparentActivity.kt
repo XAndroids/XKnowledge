@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.android.xknowledge.R
+import com.android.xknowledge.TitleActivity
 
 /**
  * 透明Activity主题Activity，跳转该页面，上一个页面生命周期不执行onStop和onStart
  */
-class TransparentActivity : AppCompatActivity() {
+class TransparentActivity : TitleActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
