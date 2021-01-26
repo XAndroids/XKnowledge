@@ -45,9 +45,9 @@ class SettingActivity : TitleActivity() {
 
         setting_radio_setting.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.setting_radio_wifiadd -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    action2 = Settings.ACTION_WIFI_ADD_NETWORKS
-                }
+//                R.id.setting_radio_wifiadd -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                    action2 = Settings.ACTION_WIFI_ADD_NETWORKS
+//                }
                 R.id.setting_radio_wifiip -> action2 = Settings.ACTION_WIFI_IP_SETTINGS
                 R.id.setting_radio_wifi2 -> action2 = Settings.ACTION_WIFI_SETTINGS
                 R.id.setting_radio_wireless -> action2 = Settings.ACTION_WIRELESS_SETTINGS

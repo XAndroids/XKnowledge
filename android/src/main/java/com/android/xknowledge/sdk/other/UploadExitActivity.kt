@@ -13,7 +13,7 @@ class UploadExitActivity : TitleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_exit)
-        val exitSender = ExitSender()
-        exitreasons_textview_info.text = exitSender.getAndSendExit(this)
+//        val exitSender = ExitSender()
+//        exitreasons_textview_info.text = exitSender.getAndSendExit(this)
     }
 }
