@@ -126,6 +126,10 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".sdk.component.service.ServiceActivity" />
+        <activity android:name=".sdk.component.service.IntentServiceActivity" />
+        <service android:name=".sdk.component.service.MyIntentService"/>
+
         <activity android:name=".sdk.other.UploadExitActivity" />
         <activity android:name=".sdk.other.MockExitActivity" />
         <!--jetpack相关组件-->
