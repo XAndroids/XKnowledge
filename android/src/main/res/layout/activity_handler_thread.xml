@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sdk.thread.HandlerThreadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handler实现子线程执行任务" />
+
+        <Button
+            android:id="@+id/handler_button_sendmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主线程向子线程发消息执行异步任务" />
+
+        <Button
+            android:id="@+id/handler_button_postrunnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主线程向子线程postRunnable执行异步任务" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HandlerThread实现子线程执行任务" />
+
+        <Button
+            android:id="@+id/handlerthread_button_sendmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主线程向子线程发消息执行异步任务" />
+
+        <Button
+            android:id="@+id/handlerthread_button_postrunnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主线程向子线程postRunnable执行异步任务" />
+
+        <Button
+            android:id="@+id/handlerthread_button_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="子线程的Looper退出" />
+    </LinearLayout>
+
+</LinearLayout>

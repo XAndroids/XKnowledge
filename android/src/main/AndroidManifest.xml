@@ -90,6 +90,8 @@
         <activity android:name=".sdk.component.activity.state.SaveInstanceActivity" />
         <activity android:name=".sdk.thread.ThreadActivity" />
         <activity android:name=".sdk.thread.HandlerActivity" />
+        <activity android:name=".sdk.thread.HandlerThreadActivity" />
+        <activity android:name=".sdk.process.MutilProcessActivity" />
         <activity android:name=".sdk.ui.view.textview.TextViewActivity" />
         <activity android:name=".sdk.ui.view.textview.EllipsizeActivity" />
         <activity android:name=".sdk.ui.view.textview.IconFontActivity" />
