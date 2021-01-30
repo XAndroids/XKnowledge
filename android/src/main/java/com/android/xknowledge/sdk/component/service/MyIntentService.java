@@ -33,6 +33,11 @@ public class MyIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Log.i("MyIntentService", "onHandleIntent,thread = " + Thread.currentThread());
         String taskName = intent.getExtras().getString("taskName");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         switch (taskName) {
             case "task1":
                 Log.i("MyIntentService", "do task1");
