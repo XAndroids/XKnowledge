@@ -41,6 +41,20 @@ class HandlerActivity : TitleActivity() {
             Looper.loop()
         }).start()
 
+        //为了说明HandlerThrad的简易性，和线程安全
+//        val thread = object : Thread() {
+//            var threadLooper: Looper? = null
+//
+//            override fun run() {
+//                super.run()
+//                Looper.prepare()
+//                threadLooper = Looper.myLooper()
+//                Looper.loop()
+//            }
+//        }
+//
+//        handlerThread = ThreadHandler(thread.threadLooper)
+
         //等在子线程handlerThread初始化
         Thread.sleep(2000)
 
