@@ -92,6 +92,15 @@
         <activity android:name=".sdk.thread.HandlerActivity" />
         <activity android:name=".sdk.thread.HandlerThreadActivity" />
         <activity android:name=".sdk.process.MutilProcessActivity" />
+        <!--独立私有进程-->
+        <service
+            android:name=".sdk.process.PrivateProcessService"
+            android:process=":privateProcess" />
+        <!--共享公开进程-->
+        <service
+            android:name=".sdk.process.PublicProcessService"
+            android:process="com.android.xknowledge.publicProcess" />
+
         <activity android:name=".sdk.ui.view.textview.TextViewActivity" />
         <activity android:name=".sdk.ui.view.textview.EllipsizeActivity" />
         <activity android:name=".sdk.ui.view.textview.IconFontActivity" />
@@ -128,7 +137,8 @@
 
         <activity android:name=".sdk.component.service.ServiceActivity" />
         <activity android:name=".sdk.component.service.IntentServiceActivity" />
-        <service android:name=".sdk.component.service.MyIntentService"/>
+
+        <service android:name=".sdk.component.service.MyIntentService" />
 
         <activity android:name=".sdk.other.UploadExitActivity" />
         <activity android:name=".sdk.other.MockExitActivity" />

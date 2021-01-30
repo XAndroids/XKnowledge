@@ -2,6 +2,7 @@ package com.android.xknowledge
 
 import android.app.Activity
 import android.app.Application
+import android.os.Process
 import android.util.Log
 import com.android.xknowledge.optimize.block.blockcanary.BlockCanary
 import com.android.xknowledge.optimize.block.choreographer.ChoreographerHelper
@@ -19,6 +20,10 @@ class XApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        //配合多进程，没创建新进程重新执行Application生命周期
+        val pid = Process.myPid()
+        Log.i("ProcessTestService", "XApplication onCreate,pid = $pid")
+
         Fresco.initialize(this)
         FLog.setMinimumLoggingLevel(Log.VERBOSE)
 
