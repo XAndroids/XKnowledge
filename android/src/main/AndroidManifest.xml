@@ -244,6 +244,7 @@
         <activity android:name=".ndk.base.BaseNdkActivity" />
         <activity android:name=".ndk.ffmpeg.FFmpegActivity" />
         <activity android:name=".ndk.ffmpeg.PlayerActivity" />
+        <activity android:name=".ndk.mmap.MmapActivity" />
         <!--插件化，主工程需要注册插件代理Activity-->
         <activity android:name=".plugin.core.ProxyActivity" />
     </application>

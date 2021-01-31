@@ -3,8 +3,8 @@ package com.java.xknowledge.se.collection.map.hashmap;
 //import java.util.Collections;
 //import java.util.HashMap;
 //import java.util.Hashtable;
-//import java.util.Map;
-//import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +27,7 @@ class HashMapThreadSafeTest {
     //方案2：使用Collections.synchronizedMap返回线程安全Map
     //    private static Map<Integer, String> mHashMap = Collections.synchronizedMap(new HashMap<>());
     //方案3：使用ConcurrentHashMap线程安全
-    //    private static Map<Integer, String> mHashMap = new ConcurrentHashMap<>();
+        private static Map<Integer, String> mHashMap = new ConcurrentHashMap<>();
     private static ExecutorService executorService = Executors.newFixedThreadPool(20);
 
     // * 运行：
