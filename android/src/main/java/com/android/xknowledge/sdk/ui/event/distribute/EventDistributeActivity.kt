@@ -3,17 +3,29 @@ package com.android.xknowledge.sdk.ui.event.distribute
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
 
 class EventDistributeActivity : TitleActivity() {
     lateinit var rootView: RootView
+    lateinit var view1: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eventdistribute)
 
         rootView = findViewById(R.id.distribute_root_rootview)
+        view1 = findViewById(R.id.distribute_root_view1)
+        view1.setOnClickListener {
+            Log.i(
+                "EventDistributeActivity",
+                "DistributeActivity_view1_setOnClickListener"
+            )
+        }
+
+        //返回true，代表已处理事件，故不会在回调onClick，反之false会回调
+        view1.setOnTouchListener { _, _ -> false }
     }
 
     /**
