@@ -50,7 +50,9 @@ public class FlowLayout extends ViewGroup {
     //度量：递归度量子View，然后根据子View度量尺寸，计算自己的尺寸
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        clearMeasureParams();//内存 抖动
+        //内存 抖动，onMeasure可能多次调用，具体由父ViewGroup决定，如FrameLayout中就多次调用孩子View的measur
+        //e()
+        clearMeasureParams();
 
         //父ViewGroup的padding
         int paddingLeft = getPaddingLeft();
