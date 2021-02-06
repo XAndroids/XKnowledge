@@ -116,8 +116,9 @@
         <activity android:name=".sdk.ui.theme.ThemeActivity" />
         <activity android:name=".sdk.ui.setting.SettingActivity" />
         <activity android:name=".sdk.ui.custom.CustomActivity" />
-        <activity android:name=".sdk.ui.custom.ViewGroupActivity" />
-        <activity android:name=".sdk.ui.custom.ViewActivity" />
+        <activity android:name=".sdk.ui.custom.viewgroup.ViewGroupActivity" />
+        <activity android:name=".sdk.ui.custom.view.ViewActivity" />
+        <activity android:name=".sdk.ui.custom.viewpager.ViewPagerItemActivity" />
         <activity android:name=".sdk.storage.StorageActivity" />
         <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
         <activity android:name=".sdk.storage.ExteralStorageActivity" />

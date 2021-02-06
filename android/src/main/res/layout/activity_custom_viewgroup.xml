@@ -19,7 +19,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
-        <com.android.xknowledge.sdk.ui.custom.FlowLayout
+        <com.android.xknowledge.sdk.ui.custom.viewgroup.FlowLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/viewgroup_button_circular"
                 android:text="图书勋章日" />
-        </com.android.xknowledge.sdk.ui.custom.FlowLayout>
+        </com.android.xknowledge.sdk.ui.custom.viewgroup.FlowLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
-        <com.android.xknowledge.sdk.ui.custom.FlowLayout
+        <com.android.xknowledge.sdk.ui.custom.viewgroup.FlowLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp">
@@ -198,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/viewgroup_button_circular"
                 android:text="笔记本电脑" />
-        </com.android.xknowledge.sdk.ui.custom.FlowLayout>
+        </com.android.xknowledge.sdk.ui.custom.viewgroup.FlowLayout>
     </LinearLayout>
 
 </ScrollView>

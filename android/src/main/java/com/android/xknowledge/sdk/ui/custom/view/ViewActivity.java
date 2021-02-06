@@ -1,4 +1,4 @@
-package com.android.xknowledge.sdk.ui.custom;
+package com.android.xknowledge.sdk.ui.custom.view;
 
 import android.os.Bundle;
 

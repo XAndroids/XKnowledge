@@ -1,4 +1,4 @@
-package com.android.xknowledge.sdk.ui.custom;
+package com.android.xknowledge.sdk.ui.custom.viewgroup;
 
 import android.content.Context;
 import android.content.res.Resources;
