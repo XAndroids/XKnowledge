@@ -1,6 +1,7 @@
 package com.android.xknowledge.sdk.ui.event
 
 import com.android.xknowledge.ListActivity
+import com.android.xknowledge.sdk.ui.event.conflict.viewpager.ViewPagerConflictActivity
 import com.android.xknowledge.sdk.ui.event.distribute.EventDistributeActivity
 import com.android.xknowledge.sdk.ui.event.nested.RecyclerViewActivity
 import com.android.xknowledge.sdk.ui.event.nested.scrolling.NestedScrollingActivity
@@ -26,7 +27,8 @@ class EventActivity : ListActivity() {
                 RecyclerViewActivity::class.java
             ),
             ListItem("ViewPager嵌套", "ViewPager嵌套相关", ViewPagerActivity::class.java),
-            ListItem("ViewEvent", "View的事件分发流程", ViewEventActivity::class.java)
+            ListItem("ViewEvent", "View的事件分发流程", ViewEventActivity::class.java),
+            ListItem("ViewPager事件冲突", "ViewPager事件冲突", ViewPagerConflictActivity::class.java)
         )
     }
 }

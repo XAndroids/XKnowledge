@@ -7,6 +7,9 @@ import android.view.View
 import com.android.xknowledge.R
 import com.android.xknowledge.TitleActivity
 
+/**
+ * View的事件分发
+ */
 class EventDistributeActivity : TitleActivity() {
     lateinit var rootView: RootView
     lateinit var view1: View
@@ -17,6 +20,7 @@ class EventDistributeActivity : TitleActivity() {
 
         rootView = findViewById(R.id.distribute_root_rootview)
         view1 = findViewById(R.id.distribute_root_view1)
+
         view1.setOnClickListener {
             Log.i(
                 "EventDistributeActivity",

@@ -62,6 +62,7 @@
         <activity android:name=".sdk.component.broadcast.BroadcastClassifyActivity" />
         <activity android:name=".sdk.component.broadcast.BroadcastActivity" />
         <activity android:name=".sdk.ui.event.distribute.EventDistributeActivity" />
+        <activity android:name=".sdk.ui.event.conflict.viewpager.ViewPagerConflictActivity" />
         <activity android:name=".sdk.ui.dialog.DialogCheckActivity" />
         <activity android:name=".sdk.ui.view.covered.CoveredActivity" />
         <activity android:name=".sdk.ui.view.viewpager.ViewPagerCacheActivity" />
