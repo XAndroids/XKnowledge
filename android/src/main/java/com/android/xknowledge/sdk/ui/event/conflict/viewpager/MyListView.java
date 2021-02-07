@@ -14,7 +14,7 @@ public class MyListView extends ListView {
         super(context, attrs);
     }
 
-    // 内部拦截法：子view处理事件冲突
+    // 内部拦截法2：子view处理事件冲突
 //    private int mLastX, mLastY;
 //
 //    @Override
@@ -24,12 +24,15 @@ public class MyListView extends ListView {
 //
 //        switch (event.getAction()) {
 //            case MotionEvent.ACTION_DOWN: {
+//    ACTION_DOWN时：不交还事件；
 //                getParent().requestDisallowInterceptTouchEvent(true);
 //                break;
 //            }
 //            case MotionEvent.ACTION_MOVE: {
 //                int deltaX = x - mLastX;
 //                int deltaY = y - mLastY;
+//ACTION_MOVE时，如果为竖向滑动，也不交还事件让ListView上下滑动，如果是横向滑动，则通过requestDisallowIntercep
+//tTouchEvent(false)将事件处理权重新交给ViewPager，实现ViewPager横向滑动；
 //                if (Math.abs(deltaX) > Math.abs(deltaY)) {
 //                    getParent().requestDisallowInterceptTouchEvent(false);
 //                }

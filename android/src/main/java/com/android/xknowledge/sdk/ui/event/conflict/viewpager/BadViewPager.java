@@ -36,6 +36,11 @@ public class BadViewPager extends ViewPager {
     // 我想要把事件分发给谁就分发给谁
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
+        //内部拦截法1：
+        //在ACTION_DOWN时，不拦截事件，让ListView处理事件形成拦截链，否则一旦ViewPager拦截后ListView无法再重
+        //新获取事件处理权；
+        //在ACTION_MOVE时，拦截事件，让ListView在横向滑动时，通过requestDisallowInterceptTouchEvent(false)
+        //将事件处理权重新交给ViewPager，实现ViewPager横向滑动；
 //        if (event.getAction() == MotionEvent.ACTION_DOWN){
 //            super.onInterceptTouchEvent(event);
 //            return false;
@@ -51,6 +56,9 @@ public class BadViewPager extends ViewPager {
                 mLastY = (int) event.getY();
                 break;
             }
+            //为横向滑动时，onInterceptTouchEvent()返回true，拦截事件，自己处理实现ViewPager横向滑动；
+            //为竖向滑动时，onInterceptTouchEVent()返回fase，不拦截事件，分发给子View ListView处理，
+            //实现ListView竖向滑动；
             case MotionEvent.ACTION_MOVE: {
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;

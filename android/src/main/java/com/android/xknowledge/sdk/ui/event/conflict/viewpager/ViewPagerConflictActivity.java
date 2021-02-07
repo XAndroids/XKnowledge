@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ViewPager事件冲突实践
+ * ViewPager事件冲突实践，分别使用内部拦截法和外部拦截法处理事件冲突
  * 参考：
  * 享学2《事件冲突原因或解决方案大解密》
  */
