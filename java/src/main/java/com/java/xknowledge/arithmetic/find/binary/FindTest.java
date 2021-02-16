@@ -1,4 +1,4 @@
-package com.java.xknowledge.arithmetic.find;
+package com.java.xknowledge.arithmetic.find.binary;
 
 /**
  * 查找测试类
