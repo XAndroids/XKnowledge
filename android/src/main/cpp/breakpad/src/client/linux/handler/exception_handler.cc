@@ -216,6 +216,7 @@ FirstChanceHandler g_first_chance_handler_ = nullptr;
 }  // namespace
 
 // Runs before crashing: normal context.
+//:filter_()等，对象初始化列表
 ExceptionHandler::ExceptionHandler(const MinidumpDescriptor& descriptor,
                                    FilterCallback filter,
                                    MinidumpCallback callback,

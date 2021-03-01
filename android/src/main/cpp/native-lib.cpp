@@ -184,6 +184,7 @@ Java_com_android_xknowledge_optimize_crash_CrashReport_initNativeCrash(JNIEnv *e
     //开启crash监控
     __android_log_print(ANDROID_LOG_INFO, "native", "===> %s", path);
     google_breakpad::MinidumpDescriptor descriptor(path);
+    //C++构造函数调用-括号法：自动调用有参构造函数
     static google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback,
                                                 NULL, true, -1);
 
