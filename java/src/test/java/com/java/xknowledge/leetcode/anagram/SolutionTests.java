@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class SolutionTests {
     @Test
     void testIsAnagram() {
-        assertTrue(new Solution().isAnagram("anagram", "anagram"));
-        assertFalse(new Solution().isAnagram("rat", "car"));
+        assertTrue(Solution.isAnagram1("anagram", "anagram"));
+        assertFalse(Solution.isAnagram1("rat", "car"));
     }
 }
