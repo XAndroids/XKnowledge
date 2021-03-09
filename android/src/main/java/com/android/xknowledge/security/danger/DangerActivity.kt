@@ -33,12 +33,14 @@ class DangerActivity : TitleActivity() {
                         this, Manifest.permission.CALL_PHONE)) {
                     //requestPermissions()：应用可以通过这个方法动态申请权限，调用后会弹出一个对话框提示用户授
                     //权所申请的权限。
-                    Log.i("DangerActivity","DangerActivity_shouldShowRequestPermissionRationale() = true")
+                    Log.i("DangerActivity","DangerActivity_shouldShowRequestPermissionRat"
+                            + "ionale() = true")
                     ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission
                         .CALL_PHONE), 1);
                 } else {
                     //用户拒绝过了，且不要再次询问
-                    Log.i("DangerActivity","DangerActivity_shouldShowRequestPermissionRationale() = false")
+                    Log.i("DangerActivity","DangerActivity_shouldShowRequestPermissionRat"
+                            + "ionale() = false")
                 }
             } else {
                 //已授权，直接拨打电话
@@ -51,15 +53,13 @@ class DangerActivity : TitleActivity() {
 
     //onRequestPermissionsResult()：当应用请求权限时，系统将向用户显示一个对话框。当用户响应时，系统将调用应用的
     //onRequestPermissionsResult()方法，向其传递用户响应，处理对应的场景。
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        Log.i("DangerActivity", "DangerActivity_onRequestPermissionsResult(),requestCode " +
-                "= $requestCode")
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
+        grantResults: IntArray) {
+        Log.i("DangerActivity", "DangerActivity_onRequestPermissionsResult(),requestCode "
+                + "= $requestCode")
         when (requestCode) {
-            1 -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            1 -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager
+                    .PERMISSION_GRANTED) {
                 //用户同意权限，拨打电话
                 call()
             } else {
