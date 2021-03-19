@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.object;
+package com.java.oop;
 
 interface TestInterface {
     void test();

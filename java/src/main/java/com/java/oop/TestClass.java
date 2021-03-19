@@ -1,4 +1,4 @@
-package com.java.xknowledge.se.object;
+package com.java.oop;
 
 /**
  * (抽象)父类和接口具有相同方法，调用实现
