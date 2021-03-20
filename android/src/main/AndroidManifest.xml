@@ -81,6 +81,7 @@
         <activity android:name=".sdk.ui.event.nested.scrolling.NestedScrollingActivity" />
         <activity android:name=".sdk.component.ComponentActivity" />
         <activity android:name=".sdk.component.activity.ActivityActivity" />
+        <activity android:name=".sdk.ui.view.uiupdate.UIUpdateActivity"/>
         <activity
             android:name=".sdk.component.activity.lifecycler.LifeCycleActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout" />
