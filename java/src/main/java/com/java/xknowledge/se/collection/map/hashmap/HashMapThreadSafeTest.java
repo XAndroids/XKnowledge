@@ -24,13 +24,13 @@ class HashMapThreadSafeTest {
     //    private static Map<Integer, String> mHashMap = new HashMap<>();
     //方案1：使用hashTable线程安全
     //    private static Map<Integer, String> mHashMap = new Hashtable<>();
-    //方案2：使用Collections.synchronizedMap返回线程安全Map
+    //方案2：使用Collections.synchronizedMap返回线程安全Map，所有增加synchronized关键字性能差！！
     //    private static Map<Integer, String> mHashMap = Collections.synchronizedMap(new HashMap<>());
     //方案3：使用ConcurrentHashMap线程安全
-        private static Map<Integer, String> mHashMap = new ConcurrentHashMap<>();
+    private static Map<Integer, String> mHashMap = new ConcurrentHashMap<>();
     private static ExecutorService executorService = Executors.newFixedThreadPool(20);
 
-    // * 运行：
+    // * 运行：多线程put导致元素1丢失
     // * thread = Thread[pool-1-thread-1,5,main],put= 1
     // * thread = Thread[pool-1-thread-2,5,main],put= 2
     // * thread = Thread[pool-1-thread-3,5,main],put= 3
@@ -50,7 +50,6 @@ class HashMapThreadSafeTest {
                 mHashMap.put(finalI, "test:" + finalI);
             });
         }
-
         //增加延迟，避免遍历和put修改的异常
         //Exception in thread "main" java.util.ConcurrentModificationException
         //	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1437)
