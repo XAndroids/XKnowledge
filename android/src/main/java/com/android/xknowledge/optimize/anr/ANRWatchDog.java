@@ -84,6 +84,7 @@ public class ANRWatchDog extends Thread {
 
     private String getStackTraceInfo() {
         StringBuilder stringBuilder = new StringBuilder();
+        //获取主线程相关的堆栈信息上传，即从监控异步线程获取主线程的调用堆栈，可精确确认崩溃的位置
         for (StackTraceElement stackTraceElement : Looper.getMainLooper().getThread().getStackTrace()) {
             stringBuilder
                     .append(stackTraceElement.toString())

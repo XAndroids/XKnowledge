@@ -16,7 +16,6 @@ public class StackSampler {
     public static final SimpleDateFormat TIME_FORMATTER =
             new SimpleDateFormat("MM-dd HH:mm:ss.SSS");
 
-
     private Handler mHandler;
     private Map<Long, String> mStackMap = new LinkedHashMap<>();
     private int mMaxCount = 100;
@@ -73,6 +72,7 @@ public class StackSampler {
     private Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
+            //异步收集主线程堆栈信息
             StringBuilder sb = new StringBuilder();
             StackTraceElement[] stackTrace = Looper.getMainLooper().getThread().getStackTrace();
             for (StackTraceElement s : stackTrace) {

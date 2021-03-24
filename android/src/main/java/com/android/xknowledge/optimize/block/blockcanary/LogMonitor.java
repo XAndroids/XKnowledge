@@ -32,14 +32,17 @@ public class LogMonitor implements Printer {
             //记录开始时间
             mStartTimestamp = System.currentTimeMillis();
             mPrintingStarted = true;
+            //下次分发前，开始收集主线程堆栈信息
             mStackSampler.startDump();
         } else {
             final long endTime = System.currentTimeMillis();
             mPrintingStarted = false;
             //出现卡顿
             if (isBlock(endTime)) {
+                //如果出现卡顿，获取搜集的主线程堆栈信息
                 notifyBlockEvent(endTime);
             }
+            //分发结束，停止收集主线程堆栈信息
             mStackSampler.stopDump();
         }
     }
