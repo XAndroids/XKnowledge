@@ -1,257 +1,259 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-package="com.android.xknowledge">
-<!--自定义普通权限，安装的时候就授予-->
-<permission
-    android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER"
-    android:description="@string/permission_script_server"
-    android:protectionLevel="normal" />
-<!--自定义危险权限，运行时动态向用户申请-->
-<permission
-    android:name="com.aimsio.android.READ_FORM_DATA"
-    android:description="@string/permission_form_data"
-    android:protectionLevel="dangerous" />
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.xknowledge">
+    <!--自定义普通权限，安装的时候就授予-->
+    <permission
+        android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER"
+        android:description="@string/permission_script_server"
+        android:protectionLevel="normal" />
+    <!--自定义危险权限，运行时动态向用户申请-->
+    <permission
+        android:name="com.aimsio.android.READ_FORM_DATA"
+        android:description="@string/permission_form_data"
+        android:protectionLevel="dangerous" />
 
-<uses-permission android:name="android.permission.BROADCAST_STICKY" />
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.GET_TASKS" />
-<uses-permission android:name="android.permission.CALL_PHONE" />
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.READ_CONTACTS" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
-<!--声明使用普通自定义权限-->
-<uses-permission android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER" />
-<!--声明使用危险自定义权限-->
-<uses-permission android:name="com.aimsio.android.READ_FORM_DATA" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--声明使用普通自定义权限-->
+    <uses-permission android:name="com.aimsio.android.CONNECT_TO_SCRIPT_SERVER" />
+    <!--声明使用危险自定义权限-->
+    <uses-permission android:name="com.aimsio.android.READ_FORM_DATA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-<!-- 折叠屏适配，设置是否支持大小自适应：-->
-<!-- android:maxAspectRatio="2.4"和android:resizeableActivity="false" 同时设置才生效-->
-<!-- 参考：https://www.jianshu.com/p/83efb0eaeee3 -->
-<application
-    android:name=".XApplication"
-    android:allowBackup="true"
-    android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:requestLegacyExternalStorage="true"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme"
-    tools:ignore="GoogleAppIndexingWarning"
-    tools:replace="android:appComponentFactory"
-    tools:targetApi="q">
-    <activity
-        android:name=".MainActivity"
-        android:theme="@style/AppTheme.Launcher">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+    <!-- 折叠屏适配，设置是否支持大小自适应：-->
+    <!-- android:maxAspectRatio="2.4"和android:resizeableActivity="false" 同时设置才生效-->
+    <!-- 参考：https://www.jianshu.com/p/83efb0eaeee3 -->
+    <application
+        android:name=".XApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:appComponentFactory"
+        tools:targetApi="q">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <!--sdk相关组件-->
-    <activity android:name=".sdk.SdkActivity" />
-    <activity android:name=".sdk.ui.dialog.translucent.DialogTranslucentActivity" />
-    <activity android:name=".sdk.ui.view.viewstub.ViewStubActivity" />
-    <activity android:name=".sdk.component.activity.distribute.activity.DistributeActivity" />
-    <activity android:name=".sdk.component.broadcast.BroadcastClassifyActivity" />
-    <activity android:name=".sdk.component.broadcast.BroadcastActivity" />
-    <activity android:name=".sdk.ui.event.distribute.EventDistributeActivity" />
-    <activity android:name=".sdk.ui.event.conflict.viewpager.ViewPagerConflictActivity" />
-    <activity android:name=".sdk.ui.dialog.DialogCheckActivity" />
-    <activity android:name=".sdk.ui.view.covered.CoveredActivity" />
-    <activity android:name=".sdk.ui.view.viewpager.ViewPagerCacheActivity" />
-    <activity android:name=".sdk.sensor.SensorActivity" />
-    <activity android:name=".sdk.ui.dialog.DialogActivity" />
-    <activity android:name=".sdk.ui.dialog.DialogWebviewActivity" />
-    <activity android:name=".sdk.ui.dialog.FullScreenActivity" />
-    <activity android:name=".sdk.ui.event.nested.RecyclerViewActivity" />
-    <activity android:name=".sdk.ui.UiActivity" />
-    <activity android:name=".sdk.ui.view.recyclerview.RecyclerViewActivity" />
-    <activity android:name=".sdk.ui.view.toast.ToastActivity" />
-    <activity android:name=".sdk.ui.view.ViewActivity" />
-    <activity android:name=".sdk.ui.view.textview.LineHeightActivity" />
-    <activity android:name=".sdk.ui.event.EventActivity" />
-    <activity android:name=".sdk.ui.event.nested.ViewPagerActivity" />
-    <activity android:name=".sdk.ui.event.nested.scrolling.NestedScrollingActivity" />
-    <activity android:name=".sdk.component.ComponentActivity" />
-    <activity android:name=".sdk.component.activity.ActivityActivity" />
-    <activity android:name=".sdk.ui.view.uiupdate.UIUpdateActivity" />
-    <activity
-        android:name=".sdk.component.activity.lifecycler.LifeCycleActivity"
-        android:configChanges="screenSize|smallestScreenSize|screenLayout" />
-    <activity android:name=".sdk.ui.statusbar.StatusBarActivity" />
-    <activity android:name=".sdk.ui.statusbar.ImmersiveActivity" />
-    <activity android:name=".sdk.ui.listener.NavigationBarActivity" />
-    <activity android:name=".sdk.component.activity.task.TaskActivity" />
-    <activity android:name=".sdk.component.activity.state.SaveInstanceActivity" />
-    <activity android:name=".sdk.thread.ThreadActivity" />
-    <activity android:name=".sdk.thread.HandlerActivity" />
-    <activity android:name=".sdk.thread.HandlerThreadActivity" />
-    <activity android:name=".sdk.process.MutilProcessActivity" />
-    <!--独立私有进程-->
-    <service
-        android:name=".sdk.process.PrivateProcessService"
-        android:process=":privateProcess" />
-    <!--共享公开进程-->
-    <service
-        android:name=".sdk.process.PublicProcessService"
-        android:process="com.android.xknowledge.publicProcess" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--sdk相关组件-->
+        <activity android:name=".sdk.SdkActivity" />
+        <activity android:name=".sdk.ui.dialog.translucent.DialogTranslucentActivity" />
+        <activity android:name=".sdk.ui.view.viewstub.ViewStubActivity" />
+        <activity android:name=".sdk.component.activity.distribute.activity.DistributeActivity" />
+        <activity android:name=".sdk.component.broadcast.BroadcastClassifyActivity" />
+        <activity android:name=".sdk.component.broadcast.BroadcastActivity" />
+        <activity android:name=".sdk.ui.event.distribute.EventDistributeActivity" />
+        <activity android:name=".sdk.ui.event.conflict.viewpager.ViewPagerConflictActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogCheckActivity" />
+        <activity android:name=".sdk.ui.view.covered.CoveredActivity" />
+        <activity android:name=".sdk.ui.view.viewpager.ViewPagerCacheActivity" />
+        <activity android:name=".sdk.sensor.SensorActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogWebviewActivity" />
+        <activity android:name=".sdk.ui.dialog.FullScreenActivity" />
+        <activity android:name=".sdk.ui.event.nested.RecyclerViewActivity" />
+        <activity android:name=".sdk.ui.UiActivity" />
+        <activity android:name=".sdk.ui.view.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".sdk.ui.view.toast.ToastActivity" />
+        <activity android:name=".sdk.ui.view.ViewActivity" />
+        <activity android:name=".sdk.ui.view.textview.LineHeightActivity" />
+        <activity android:name=".sdk.ui.event.EventActivity" />
+        <activity android:name=".sdk.ui.event.nested.ViewPagerActivity" />
+        <activity android:name=".sdk.ui.event.nested.scrolling.NestedScrollingActivity" />
+        <activity android:name=".sdk.component.ComponentActivity" />
+        <activity android:name=".sdk.component.activity.ActivityActivity" />
+        <activity android:name=".sdk.ui.view.uiupdate.UIUpdateActivity" />
+        <activity
+            android:name=".sdk.component.activity.lifecycler.LifeCycleActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout" />
+        <activity android:name=".sdk.ui.statusbar.StatusBarActivity" />
+        <activity android:name=".sdk.ui.statusbar.ImmersiveActivity" />
+        <activity android:name=".sdk.ui.listener.NavigationBarActivity" />
+        <activity android:name=".sdk.component.activity.task.TaskActivity" />
+        <activity android:name=".sdk.component.activity.state.SaveInstanceActivity" />
+        <activity android:name=".sdk.thread.ThreadActivity" />
+        <activity android:name=".sdk.thread.HandlerActivity" />
+        <activity android:name=".sdk.thread.HandlerThreadActivity" />
+        <activity android:name=".sdk.process.MutilProcessActivity" />
+        <!--独立私有进程-->
+        <service
+            android:name=".sdk.process.PrivateProcessService"
+            android:process=":privateProcess" />
+        <!--共享公开进程-->
+        <service
+            android:name=".sdk.process.PublicProcessService"
+            android:process="com.android.xknowledge.publicProcess" />
 
-    <activity android:name=".sdk.ui.view.textview.TextViewActivity" />
-    <activity android:name=".sdk.ui.view.textview.EllipsizeActivity" />
-    <activity android:name=".sdk.ui.view.textview.IconFontActivity" />
-    <activity android:name=".sdk.ui.layout.LayoutActivity" />
-    <activity android:name=".sdk.ui.layout.IncludeActivity" />
-    <activity android:name=".sdk.ui.layout.MergeActivity" />
-    <activity android:name=".sdk.ui.height.HeightActivity" />
-    <activity android:name=".sdk.component.broadcast.StaticBroadcastActivity" />
-    <activity android:name=".sdk.thread.AsyncTaskActivity" />
-    <activity android:name=".sdk.ui.event.ontouch.ViewEventActivity" />
-    <activity android:name=".sdk.ui.dialog.DialogBackgroundActivity" />
-    <activity android:name=".sdk.ui.notification.NotificationActivity" />
-    <activity android:name=".sdk.ui.theme.ThemeActivity" />
-    <activity android:name=".sdk.ui.setting.SettingActivity" />
-    <activity android:name=".sdk.ui.custom.CustomActivity" />
-    <activity android:name=".sdk.ui.custom.viewgroup.ViewGroupActivity" />
-    <activity android:name=".sdk.ui.custom.view.ViewActivity" />
-    <activity android:name=".sdk.ui.custom.viewpager.ViewPagerItemActivity" />
-    <activity android:name=".sdk.storage.StorageActivity" />
-    <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
-    <activity android:name=".sdk.storage.ExteralStorageActivity" />
-    <activity android:name=".sdk.component.activity.lifecycler.NoTransparentActivity">
-        <intent-filter>
-            <action android:name="com.android.xknowledge.sdk.component.activity.lifecycler.ActivityOne" />
+        <activity android:name=".sdk.ui.view.textview.TextViewActivity" />
+        <activity android:name=".sdk.ui.view.textview.EllipsizeActivity" />
+        <activity android:name=".sdk.ui.view.textview.IconFontActivity" />
+        <activity android:name=".sdk.ui.layout.LayoutActivity" />
+        <activity android:name=".sdk.ui.layout.IncludeActivity" />
+        <activity android:name=".sdk.ui.layout.MergeActivity" />
+        <activity android:name=".sdk.ui.height.HeightActivity" />
+        <activity android:name=".sdk.component.broadcast.StaticBroadcastActivity" />
+        <activity android:name=".sdk.thread.AsyncTaskActivity" />
+        <activity android:name=".sdk.ui.event.ontouch.ViewEventActivity" />
+        <activity android:name=".sdk.ui.dialog.DialogBackgroundActivity" />
+        <activity android:name=".sdk.ui.notification.NotificationActivity" />
+        <activity android:name=".sdk.ui.theme.ThemeActivity" />
+        <activity android:name=".sdk.ui.setting.SettingActivity" />
+        <activity android:name=".sdk.ui.custom.CustomActivity" />
+        <activity android:name=".sdk.ui.custom.viewgroup.ViewGroupActivity" />
+        <activity android:name=".sdk.ui.custom.view.ViewActivity" />
+        <activity android:name=".sdk.ui.custom.viewpager.ViewPagerItemActivity" />
+        <activity android:name=".sdk.storage.StorageActivity" />
+        <activity android:name=".sdk.storage.sharedpreferences.SharedPreferencesActivity" />
+        <activity android:name=".sdk.storage.ExteralStorageActivity" />
+        <activity android:name=".sdk.component.activity.lifecycler.NoTransparentActivity">
+            <intent-filter>
+                <action android:name="com.android.xknowledge.sdk.component.activity.lifecycler.ActivityOne" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".sdk.component.activity.lifecycler.TransparentActivity"
-        android:theme="@style/Transparent" />
-    <!--注册静态广播-->
-    <receiver android:name=".sdk.component.broadcast.StaticBroadcastReceiver">
-        <intent-filter>
-            <action android:name="com.byread.static" />
-        </intent-filter>
-    </receiver>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sdk.component.activity.lifecycler.TransparentActivity"
+            android:theme="@style/Transparent" />
+        <!--注册静态广播-->
+        <receiver android:name=".sdk.component.broadcast.StaticBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.byread.static" />
+            </intent-filter>
+        </receiver>
 
-    <activity android:name=".sdk.component.service.ServiceActivity" />
-    <activity android:name=".sdk.component.service.IntentServiceActivity" />
+        <activity android:name=".sdk.component.service.ServiceActivity" />
+        <activity android:name=".sdk.component.service.IntentServiceActivity" />
 
-    <service android:name=".sdk.component.service.MyIntentService" />
+        <service android:name=".sdk.component.service.MyIntentService" />
 
-    <activity android:name=".sdk.other.UploadExitActivity" />
-    <activity android:name=".sdk.other.MockExitActivity" />
-    <!--jetpack相关组件-->
-    <activity android:name=".jetpack.paging.ui.PagingListActivity" />
-    <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
-    <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
-    <activity android:name=".jetpack.paging.ui.DbActivity" />
-    <activity android:name=".jetpack.paging.PagingActivity" />
-    <activity android:name=".jetpack.JetpackActivity" />
-    <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
-    <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
-    <activity android:name=".jetpack.livedata.LiveDataActivity" />
-    <activity android:name=".jetpack.databinding.DataBindingActivity" />
-    <activity
-        android:name=".jetpack.navigation.NavigationActivity"
-        android:theme="@style/NavigationTheme">
-        <!--添加<nav-graph> tag生成相应的IntentFilter，执行导航图中指定的Destination-->
-        <nav-graph android:value="@navigation/navigation_graph" />
-    </activity>
-    <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
-    <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
-        <intent-filter>
-            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-        </intent-filter>
-        <meta-data
-            android:name="android.appwidget.provider"
-            android:resource="@xml/appwidget_deeplink_info" />
-    </receiver>
-    <!--开源库相关组件-->
-    <activity android:name=".open.OpenActivity" />
-    <activity android:name=".open.image.fresco.FrescoActivity" />
-    <activity android:name=".open.image.fresco.ImageListActivity" />
-    <activity android:name=".open.image.fresco.GifActivity" />
-    <activity android:name=".open.image.fresco.GifListActivity" />
-    <activity android:name=".open.message.eventbus.StickyActivity" />
-    <activity android:name=".open.message.eventbus.EventbusActivity" />
-    <activity android:name=".open.reactive.ReactiveActivity" />
-    <activity android:name=".open.reactive.rxbinding.RxBindingActivity" />
-    <activity android:name=".open.reactive.rxbinding.ClickActivity" />
-    <activity android:name=".open.reactive.rxbinding.FormActivity" />
-    <activity android:name=".open.reactive.rxbinding.VerifyActivity" />
-    <activity android:name=".open.reactive.rxbinding.RecyclerActivity" />
-    <activity android:name=".open.reactive.rxbinding.PermissionActivity" />
-    <activity android:name=".open.net.retrofit.RetrofitActivity" />
-    <activity android:name=".open.net.retrofit.GetRequestActivity" />
-    <activity android:name=".open.net.retrofit.PostRequestActivity" />
-    <!--framework相关-->
-    <activity android:name=".framework.aspectj.AspectJActivity" />
-    <activity android:name=".framework.aspectj.LoginActivity" />
-    <activity android:name=".framework.inject.InjectActivity" />
-    <activity android:name=".framework.hotfix.MultidexActivity" />
-    <activity android:name=".framework.plugin.PluginActivity" />
-    <activity android:name=".framework.module.ModuleActivity" />
-    <activity android:name=".framework.mvx.MVXActivity" />
-    <activity android:name=".framework.mvx.mvn.MVNActivity" />
-    <activity android:name=".framework.mvx.mvc.MVCActivity" />
-    <activity android:name=".framework.mvx.mvp.view.MVPActivity" />
-    <activity android:name=".framework.mvx.mvvm.view.MVVMActivity" />
-    <activity android:name=".framework.FrameworkActivity" />
-    <!--自动化测试相关-->
-    <activity android:name=".test.robolectric.LoginActivity" />
-    <activity android:name=".test.robolectric.RobolectricActivity" />
-    <activity android:name=".test.TestActivity" />
-    <!--hybrid相关-->
-    <activity android:name=".hybrid.jsinvoke.JSInvokeActivity" />
-    <activity android:name=".hybrid.webview.WebviewActivity" />
-    <activity android:name=".hybrid.HybridActivity" />
-    <!--优化相关-->
-    <activity android:name=".optimize.strictmode.StrictActivity" />
-    <activity android:name=".optimize.OptimizeActivity" />
-    <activity android:name=".optimize.leak.leakcanary.LeakcanaryActivity" />
-    <activity android:name=".optimize.leak.leakcanary.TestActivity" />
-    <activity android:name=".optimize.gc.GcActivity" />
-    <activity android:name=".optimize.leak.leakmemory.LeakMemoryActivity" />
-    <activity android:name=".optimize.leak.leakmemory.BroadcastReceiverLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.StaticReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.SingletonLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.InnerClassReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.AnonymousClassReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.AsyncTaskReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.HandlersReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.ThreadReferenceLeakActivity" />
-    <activity android:name=".optimize.leak.leakmemory.TimerTaskReferenceLeakActivity" />
-    <activity android:name=".optimize.systrace.SystraceActivity" />
-    <activity android:name=".optimize.block.blockcanary.BlockCanaryActivity" />
-    <activity android:name=".optimize.layout.AsyncLayoutActivity" />
-    <activity android:name=".optimize.power.PowerActivity" />
-    <activity android:name=".optimize.crash.CrashActivity" />
-    <activity android:name=".optimize.anr.ANRActivity" />
+        <activity android:name=".sdk.other.UploadExitActivity" />
+        <activity android:name=".sdk.other.MockExitActivity" />
+        <!--jetpack相关组件-->
+        <activity android:name=".jetpack.paging.ui.PagingListActivity" />
+        <activity android:name=".jetpack.paging.ui.DbAndNetActivity" />
+        <activity android:name=".jetpack.paging.ui.NetByItemActivity" />
+        <activity android:name=".jetpack.paging.ui.DbActivity" />
+        <activity android:name=".jetpack.paging.PagingActivity" />
+        <activity android:name=".jetpack.JetpackActivity" />
+        <activity android:name=".jetpack.lifecycler.LifeCyclerActivity" />
+        <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
+        <activity android:name=".jetpack.livedata.LiveDataActivity" />
+        <activity android:name=".jetpack.databinding.DataBindingActivity" />
+        <activity
+            android:name=".jetpack.navigation.NavigationActivity"
+            android:theme="@style/NavigationTheme">
+            <!--添加<nav-graph> tag生成相应的IntentFilter，执行导航图中指定的Destination-->
+            <nav-graph android:value="@navigation/navigation_graph" />
+        </activity>
+        <!--声明Widget，参考:在清单中声明应用微件，https://developer.android.com/guide/topics/appwidgets/index.html#AppWidgetProvider-->
+        <receiver android:name=".jetpack.navigation.DeepLinkAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_deeplink_info" />
+        </receiver>
+        <!--开源库相关组件-->
+        <activity android:name=".open.OpenActivity" />
+        <activity android:name=".open.image.fresco.FrescoActivity" />
+        <activity android:name=".open.image.fresco.ImageListActivity" />
+        <activity android:name=".open.image.fresco.GifActivity" />
+        <activity android:name=".open.image.fresco.GifListActivity" />
+        <activity android:name=".open.message.eventbus.StickyActivity" />
+        <activity android:name=".open.message.eventbus.EventbusActivity" />
+        <activity android:name=".open.reactive.ReactiveActivity" />
+        <activity android:name=".open.reactive.rxbinding.RxBindingActivity" />
+        <activity android:name=".open.reactive.rxbinding.ClickActivity" />
+        <activity android:name=".open.reactive.rxbinding.FormActivity" />
+        <activity android:name=".open.reactive.rxbinding.VerifyActivity" />
+        <activity android:name=".open.reactive.rxbinding.RecyclerActivity" />
+        <activity android:name=".open.reactive.rxbinding.PermissionActivity" />
+        <activity android:name=".open.net.retrofit.RetrofitActivity" />
+        <activity android:name=".open.net.retrofit.GetRequestActivity" />
+        <activity android:name=".open.net.retrofit.PostRequestActivity" />
+        <!--framework相关-->
+        <activity android:name=".framework.aspectj.AspectJActivity" />
+        <activity android:name=".framework.aspectj.LoginActivity" />
+        <activity android:name=".framework.inject.InjectActivity" />
+        <activity android:name=".framework.hotfix.MultidexActivity" />
+        <activity android:name=".framework.plugin.PluginActivity" />
+        <activity android:name=".framework.module.ModuleActivity" />
+        <activity android:name=".framework.mvx.MVXActivity" />
+        <activity android:name=".framework.mvx.mvn.MVNActivity" />
+        <activity android:name=".framework.mvx.mvc.MVCActivity" />
+        <activity android:name=".framework.mvx.mvp.view.MVPActivity" />
+        <activity android:name=".framework.mvx.mvvm.view.MVVMActivity" />
+        <activity android:name=".framework.FrameworkActivity" />
+        <!--自动化测试相关-->
+        <activity android:name=".test.robolectric.LoginActivity" />
+        <activity android:name=".test.robolectric.RobolectricActivity" />
+        <activity android:name=".test.TestActivity" />
+        <!--hybrid相关-->
+        <activity android:name=".hybrid.jsinvoke.JSInvokeActivity" />
+        <activity android:name=".hybrid.webview.WebviewActivity" />
+        <activity android:name=".hybrid.HybridActivity" />
+        <!--优化相关-->
+        <activity android:name=".optimize.strictmode.StrictActivity" />
+        <activity android:name=".optimize.OptimizeActivity" />
+        <activity android:name=".optimize.leak.leakcanary.LeakcanaryActivity" />
+        <activity android:name=".optimize.leak.leakcanary.TestActivity" />
+        <activity android:name=".optimize.gc.GcActivity" />
+        <activity android:name=".optimize.leak.leakmemory.LeakMemoryActivity" />
+        <activity android:name=".optimize.leak.leakmemory.BroadcastReceiverLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.StaticReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.SingletonLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.InnerClassReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.AnonymousClassReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.AsyncTaskReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.HandlersReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.ThreadReferenceLeakActivity" />
+        <activity android:name=".optimize.leak.leakmemory.TimerTaskReferenceLeakActivity" />
+        <activity android:name=".optimize.systrace.SystraceActivity" />
+        <activity android:name=".optimize.block.blockcanary.BlockCanaryActivity" />
+        <activity android:name=".optimize.layout.AsyncLayoutActivity" />
+        <activity android:name=".optimize.power.PowerActivity" />
+        <activity android:name=".optimize.crash.CrashActivity" />
+        <activity android:name=".optimize.anr.ANRActivity" />
 
-    <service android:name=".optimize.anr.BackgroundService" />
-    <service android:name=".optimize.anr.ForegroundService" />
-    <!--安全相关-->
-    <activity android:name=".security.SecurityActivity" />
-    <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
-    <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
-    <activity android:name=".security.permission.CustomPermissionActivity" />
-    <activity android:name=".security.danger.DangerActivity" />
-    <activity android:name=".other.OtherActivity" />
-    <activity android:name=".other.AdbActivity" />
-    <!--ndk相关-->
-    <activity android:name=".ndk.NdkActivity" />
-    <activity android:name=".ndk.base.BaseNdkActivity" />
-    <activity android:name=".ndk.ffmpeg.FFmpegActivity" />
-    <activity android:name=".ndk.ffmpeg.PlayerActivity" />
-    <activity android:name=".ndk.mmap.MmapActivity" />
-    <!--插件化，主工程需要注册插件代理Activity-->
-    <activity android:name=".plugin.core.ProxyActivity" />
-</application>
+        <service android:name=".optimize.anr.BackgroundService" />
+        <service android:name=".optimize.anr.ForegroundService" />
+        <!--安全相关-->
+        <activity android:name=".security.SecurityActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidJavaActivity" />
+        <activity android:name=".security.flowdroid.FlowDroidKotlinActivity" />
+        <activity android:name=".security.permission.CustomPermissionActivity" />
+        <activity android:name=".security.danger.DangerActivity" />
+        <activity android:name=".other.OtherActivity" />
+        <activity android:name=".other.AdbActivity" />
+        <activity android:name=".other.HookActivity" />
+        <!--ndk相关-->
+        <activity android:name=".ndk.NdkActivity" />
+        <activity android:name=".ndk.base.BaseNdkActivity" />
+        <activity android:name=".ndk.ffmpeg.FFmpegActivity" />
+        <activity android:name=".ndk.ffmpeg.PlayerActivity" />
+        <activity android:name=".ndk.mmap.MmapActivity" />
+        <!--插件化，主工程需要注册插件代理Activity-->
+        <activity android:name=".plugin.core.ProxyActivity" />
+    </application>
 </manifest>
