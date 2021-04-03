@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import sun.java2d.pipe.SpanShapeRenderer;
-
 /**
  * 需求：异步执行预加载QP任务，以hybridid为唯一id标识加载任务
  * 如果任务完成还没有观察者则等待30秒，有观察者立即返回移除，超时还没有观察者移除；

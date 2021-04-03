@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.reverseList;
+package com.java.xknowledge.leetcode.list.reverseList;
 
 public class Solution {
     public static class ListNode {
