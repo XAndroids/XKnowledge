@@ -78,15 +78,15 @@ class Solution {
      * 递归的调用方式：不断左子子树入栈，如果没有则输出当前节点，立即转向右子树重复，此堆栈
      */
     public static List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> resultList = new ArrayList<>();
-        Deque<TreeNode> stackDeque = new LinkedList<>();
+        List<Integer> resultList = new ArrayList<>();//树的遍历结果集合
+        Deque<TreeNode> stackDeque = new LinkedList<>();//控制调用的对阵
         while (root != null || !stackDeque.isEmpty()) {
             if (root != null) {
-                stackDeque.push(root);
-                root = root.left;
+                stackDeque.push(root);//当前节点入栈，不断深入左子树
+                root = root.left;//不断深入左子树
             } else {
                 TreeNode temp = stackDeque.pop();
-                resultList.add(temp.val);
+                resultList.add(temp.val);//没有左子树输出当前节点，立即转向右子树
                 root = temp.right;
             }
         }
