@@ -22,11 +22,8 @@ class Solution {
         ListNode searchB = headB;
 
         while (searchA != searchB) {//香蕉节点是searchA和searchB同一个节点对象，不是数据相等
-            searchA = searchA.next;
-            searchB = searchB.next;
-
-            if (searchA == null) searchA = headB;//如果A或B走到头，切换到另外链表，消除长度差
-            if (searchB == null) searchB = headA;
+            searchA = searchA == null ? headB : searchA.next;//如果A或B走到头，切换到另外链表，消除长度差
+            searchB = searchB == null ? headA : searchB.next;//否则继续向后
         }
         return searchA;
     }
