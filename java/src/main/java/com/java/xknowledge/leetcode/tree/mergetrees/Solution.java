@@ -66,10 +66,6 @@ class Solution {
         return mergeNode;
     }
 
-    public static TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-
-    }
-
     public static void main(String[] args) {
         TreeNode root1 = new TreeNode(1);
         root1.left = new TreeNode(2);
