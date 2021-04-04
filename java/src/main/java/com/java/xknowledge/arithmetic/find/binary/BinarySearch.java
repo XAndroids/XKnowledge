@@ -19,7 +19,7 @@ class BinarySearch {
 
         int mid;
         while (start <= end) {//如果start和end没有交叉，循环使用二分进行查找
-            mid = (start + end);
+            mid = (start + end) / 2;
 
             if (array[mid] < a) {
                 start = mid + 1;
