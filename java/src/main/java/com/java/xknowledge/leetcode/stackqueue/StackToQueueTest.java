@@ -1,10 +1,10 @@
-package com.java.xknowledge.leetcode.other;
+package com.java.xknowledge.leetcode.stackqueue;
 
 import java.util.Stack;
 
 /**
  * 232-用栈实现队列？
- * 参考：leetCode
+ * 链接：https://leetcode-cn.com/problems/implement-queue-using-stacks/
  */
 class StackToQueueTest {
     public static void main(String[] args) {

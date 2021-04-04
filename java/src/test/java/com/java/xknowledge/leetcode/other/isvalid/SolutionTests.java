@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.isvalid;
+package com.java.xknowledge.leetcode.other.isvalid;
 
 import org.junit.jupiter.api.Test;
 
