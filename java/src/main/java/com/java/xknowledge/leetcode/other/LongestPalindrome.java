@@ -1,62 +1,47 @@
 package com.java.xknowledge.leetcode.other;
 
 /**
- * 题目：
- * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
- * 示例1:
- * 输入: "babad" 输出: "bab" 注意: "aba" 也是一个有效答案。
- * 示例2:
- * 输入: "cbbd" 输出: "bb"
- * 参考：
- * https://leetcode-cn.com/problems/longest-palindrome/
- * https://juejin.im/post/5d3e92ace51d45508c2fb940
+ * 5. 最长回文子串
+ * 链接：https://leetcode-cn.com/problems/longest-palindrome/
  */
 public class LongestPalindrome {
 
     public static void main(String[] args) {
-        System.out.println(violenceMethod("eaaaaccccf"));
-        System.out.println(invertMethod("eaaaaccccf"));
-        System.out.println(dynamicMethod("eaaaaccccf"));
-        System.out.println(centerMethod("eaaaaccccf"));
+        System.out.println(violenceMethod("a"));
+//        System.out.println(invertMethod("eaaaaccccf"));
+//        System.out.println(dynamicMethod("eaaaaccccf"));
+//        System.out.println(centerMethod("eaaaaccccf"));
     }
 
     /**
      * 暴力方法：选出所有子字符串可能的开始和结束位置，并检验它是不是回文
      */
     private static String violenceMethod(String s) {
-        System.out.println("暴力校验字符串：" + s);
-        //初始化回文字符串的起始位置和最大长度
-        int violenceStart = 0;
-        int violenceMaxLength = 1;
-
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 1; j < s.length(); j++) {
-                System.out.println("校验字符子串：" + s.substring(i, j + 1));
-
-                //从字符串"头尾"逐步向内，判断是否是回文字符串
-                int checkStart = i, checkEnd = j;
-                while (checkStart < checkEnd && s.charAt(checkStart) == s.charAt(checkEnd)) {
-                    checkStart++;
-                    checkEnd--;
-                }
-                int checkLength = j - i + 1;
-                //如果checkStart和checkEnd，"相交"或者"相叉"则是回文，分别"aabaa"：checkStart = checkEnd，
-                //"abba"：checkStart > checkEnd
-                if (checkStart >= checkEnd) {
-                    System.out.println("校验回文字符子串：" + s.substring(i, j + 1) + "!");
-                    if (checkLength > violenceMaxLength) {
-                        //记录更长回文起始位置和长度
-                        violenceMaxLength = checkLength;
-                        violenceStart = i;
-                        System.out.println("校验更长回文字符子串：" + s.substring(violenceStart, violenceStart + violenceMaxLength) + "!!");
-                    }
-
+        int max = 0;
+        String result = "";
+        for (int i = 0; i <= s.length() - 1; i++) {//暴力穷举所有字符子串检测
+            for (int j = i + 1; j <= s.length() - 1; j++) {
+                String check = s.substring(i, j);
+                if (isPalindromic(check) && check.length() > max) {//如果是回文并且长度更大
+                    result = check;//更新最长回文子串
+                    max = result.length();//更新最大长度
                 }
             }
         }
+        return result;
+    }
 
-        //根据最长回文长度和位置，返回最长回文
-        return s.substring(violenceStart, violenceStart + violenceMaxLength);
+    /**
+     * 是否是回文
+     */
+    private static boolean isPalindromic(String check) {
+        int len = check.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (check.charAt(i) != check.charAt(len - i - 1)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

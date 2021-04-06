@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.string;
+package com.java.xknowledge.leetcode.string.longestsubstring;
 
 import java.util.HashMap;
 import java.util.Map;
