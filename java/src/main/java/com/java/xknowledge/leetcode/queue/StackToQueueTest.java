@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.stackqueue;
+package com.java.xknowledge.leetcode.queue;
 
 import java.util.Stack;
 
