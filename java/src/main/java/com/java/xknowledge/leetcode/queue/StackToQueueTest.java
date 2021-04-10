@@ -24,7 +24,7 @@ class StackToQueueTest {
         //出队从出队栈出栈
         public int pop() {
             inToOutStack();
-            return outStack.pop();
+            return outStack.size() > 0 ? outStack.pop() : -1;
         }
 
         //如果出队栈为空，则将入队栈出栈到出队栈
@@ -39,7 +39,7 @@ class StackToQueueTest {
 
         public int peek() {
             inToOutStack();
-            return outStack.peek();
+            return outStack.size() > 0 ? outStack.peek() : -1;
         }
 
         //两个栈都为空，则为空
