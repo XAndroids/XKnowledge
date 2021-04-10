@@ -38,6 +38,8 @@ class Solution {
             temp2 = temp2.next;
         }
         return null;
+        String s = new String();
+        s.replaceAll()
     }
 
     /**
