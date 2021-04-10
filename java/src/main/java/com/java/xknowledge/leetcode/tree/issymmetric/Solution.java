@@ -29,18 +29,18 @@ class Solution {
         return isSymmetricCheck(root.left, root.right);
     }
 
-    public boolean isSymmetricCheck(TreeNode root1, TreeNode root2) {
-        //递归到节点子节点都为null，返回true
-        if (root1 == null && root2 == null) {
+    public boolean isSymmetricCheck(TreeNode left, TreeNode right) {
+        //左右子树都为null，则退出递归
+        if (left == null && right == null) {
             return true;
         }
 
-        {//如果节点单一为null，或者值不相同，就递归返回false，不再继续递归
-            if (root1 == null || root2 == null || root1.val != root2.val)
-                return false;
+        //左右子树，明确不相等，则退出递归
+        if (left == null || right == null || left.val != right.val) {
+            return false;
         }
 
-        //如果当前节点的值相同，则继续将节点1左和节点2右继续判断镜像
-        return isSymmetricCheck(root1.left, root2.right) && isSymmetricCheck(root1.right, root2.left);
+        //否则继续递归左左和右右，或者左右和右左子树
+        return isSymmetricCheck(left.left, right.right) && isSymmetricCheck(left.right, right.left);
     }
 }
