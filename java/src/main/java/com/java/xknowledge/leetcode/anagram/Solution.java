@@ -4,21 +4,7 @@ import java.util.Arrays;
 
 /**
  * 242. 有效的字母异位词
- * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
- * 示例 1:
- * 输入: s = "anagram", t = "nagaram"
- * 输出: true
- * <p>
- * 示例 2:
- * 输入: s = "rat", t = "car"
- * 输出: false
- * 说明:
- * 你可以假设字符串只包含小写字母。
- * <p>
- * 进阶:
- * 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
- * <p>
- * 参考：https://leetcode-cn.com/problems/valid-anagram/
+ * 链接：https://leetcode-cn.com/problems/valid-anagram/
  */
 class Solution {
     /**
@@ -29,13 +15,13 @@ class Solution {
             return false;
         }
 
-        char[] aChars = s.toCharArray();
+        char[] aChars = s.toCharArray();//比较字符串转换成字符数组
         char[] tChars = t.toCharArray();
-        Arrays.sort(aChars);
+        Arrays.sort(aChars);//对子字符数组进行排序
         Arrays.sort(tChars);
-        String sString = String.copyValueOf(aChars);
+        String sString = String.copyValueOf(aChars);//再次转换成字符串
         String tString = String.copyValueOf(tChars);
-        return sString.equals(tString);
+        return sString.equals(tString);//排序后字符串应该相等
     }
 
     /**
