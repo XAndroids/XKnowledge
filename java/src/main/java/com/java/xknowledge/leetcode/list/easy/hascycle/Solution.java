@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.hascycle;
+package com.java.xknowledge.leetcode.list.easy.hascycle;
 
 import java.util.HashSet;
 import java.util.Set;

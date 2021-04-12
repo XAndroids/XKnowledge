@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.ispalindrome;
+package com.java.xknowledge.leetcode.list.easy.ispalindrome;
 
 import java.util.ArrayList;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.reverseList;
+package com.java.xknowledge.leetcode.list.easy.reverseList;
 
 /**
  * 206、反转链表

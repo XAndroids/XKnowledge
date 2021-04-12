@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.mergelists;
+package com.java.xknowledge.leetcode.list.easy.mergelists;
 
 /**
  * 21. 合并两个有序链表

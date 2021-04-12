@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.reverseList;
+package com.java.xknowledge.leetcode.list.easy.reverseList;
 
 import org.junit.jupiter.api.Test;
 

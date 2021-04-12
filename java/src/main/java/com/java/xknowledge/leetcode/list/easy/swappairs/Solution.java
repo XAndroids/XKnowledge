@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.swappairs;
+package com.java.xknowledge.leetcode.list.easy.swappairs;
 
 /**
  * 24、两两交换链表中的节点

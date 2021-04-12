@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.list.Intersectionode;
+package com.java.xknowledge.leetcode.list.easy.Intersectionode;
 
 /**
  * 160. 相交链表
