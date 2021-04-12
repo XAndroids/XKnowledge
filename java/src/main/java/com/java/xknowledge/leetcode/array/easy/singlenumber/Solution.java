@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.singlenumber;
+package com.java.xknowledge.leetcode.array.easy.singlenumber;
 
 import java.util.HashSet;
 import java.util.Set;

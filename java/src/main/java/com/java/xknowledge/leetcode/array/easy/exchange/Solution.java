@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.exchange;
+package com.java.xknowledge.leetcode.array.easy.exchange;
 
 /**
  * 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面

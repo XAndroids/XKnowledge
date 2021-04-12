@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.removeduplicates;
+package com.java.xknowledge.leetcode.array.easy.removeduplicates;
 
 /**
  * 26. 删除有序数组中的重复项

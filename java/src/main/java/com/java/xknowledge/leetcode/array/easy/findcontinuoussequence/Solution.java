@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.findcontinuoussequence;
+package com.java.xknowledge.leetcode.array.easy.findcontinuoussequence;
 
 import java.util.ArrayList;
 import java.util.Arrays;

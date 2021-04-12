@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.missingnumber;
+package com.java.xknowledge.leetcode.array.easy.missingnumber;
 
 /**
  * 剑指 Offer 53 - II. 0～n-1中缺失的数字

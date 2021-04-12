@@ -1,17 +1,10 @@
-package com.java.xknowledge.leetcode.other;
+package com.java.xknowledge.leetcode.string.longestpalindrome;
 
 /**
  * 5. 最长回文子串
  * 链接：https://leetcode-cn.com/problems/longest-palindrome/
  */
-public class LongestPalindrome {
-
-    public static void main(String[] args) {
-        System.out.println(violenceMethod("a"));
-//        System.out.println(invertMethod("eaaaaccccf"));
-//        System.out.println(dynamicMethod("eaaaaccccf"));
-//        System.out.println(centerMethod("eaaaaccccf"));
-    }
+public class Solution {
 
     /**
      * 暴力方法：选出所有子字符串可能的开始和结束位置，并检验它是不是回文
@@ -149,4 +142,12 @@ public class LongestPalindrome {
         //直到不满足回文条件，计算改中心点的回文长度
         return startRight - startLeft - 1;
     }
+
+    public static void main(String[] args) {
+        System.out.println(violenceMethod("a"));
+//        System.out.println(invertMethod("eaaaaccccf"));
+//        System.out.println(dynamicMethod("eaaaaccccf"));
+//        System.out.println(centerMethod("eaaaaccccf"));
+    }
+
 }

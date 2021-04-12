@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.finddisappearednumbers;
+package com.java.xknowledge.leetcode.array.easy.finddisappearednumbers;
 
 import java.util.ArrayList;
 import java.util.List;

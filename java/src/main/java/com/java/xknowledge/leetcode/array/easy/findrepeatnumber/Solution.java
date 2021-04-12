@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.findrepeatnumber;
+package com.java.xknowledge.leetcode.array.easy.findrepeatnumber;
 
 import java.util.HashSet;
 import java.util.Set;

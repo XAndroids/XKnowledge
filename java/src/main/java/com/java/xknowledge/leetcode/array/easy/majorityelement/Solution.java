@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.array.majorityelement;
+package com.java.xknowledge.leetcode.array.easy.majorityelement;
 
 import java.util.Arrays;
 import java.util.HashMap;
