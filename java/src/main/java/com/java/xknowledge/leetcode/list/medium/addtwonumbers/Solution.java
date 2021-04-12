@@ -46,7 +46,7 @@ class Solution {
         }
 
         //遍历完成后，如果还有进位，则构造新节点
-        if (carry > 1) {
+        if (carry == 1) {
             cur.next = new ListNode(carry);
         }
 
