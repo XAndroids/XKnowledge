@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.mirrortree;
+package com.java.xknowledge.leetcode.tree.easy.mirrortree;
 
 /**
  * 剑指 Offer 27. 二叉树的镜像

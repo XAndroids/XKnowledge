@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.diameterofbinarytree;
+package com.java.xknowledge.leetcode.tree.easy.diameterofbinarytree;
 
 /**
  * 543. 二叉树的直径

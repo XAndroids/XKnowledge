@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.mergetrees;
+package com.java.xknowledge.leetcode.tree.easy.mergetrees;
 
 /**
  * 617. 合并二叉树

@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.kthlargest;
+package com.java.xknowledge.leetcode.tree.easy.kthlargest;
 
 import java.util.Set;
 import java.util.TreeSet;

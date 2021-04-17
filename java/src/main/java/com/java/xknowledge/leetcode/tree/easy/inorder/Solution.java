@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.inorder;
+package com.java.xknowledge.leetcode.tree.easy.inorder;
 
 import java.util.ArrayList;
 import java.util.Deque;

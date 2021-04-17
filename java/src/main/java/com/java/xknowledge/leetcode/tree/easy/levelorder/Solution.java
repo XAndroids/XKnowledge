@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.levelorder;
+package com.java.xknowledge.leetcode.tree.easy.levelorder;
 
 import java.util.ArrayList;
 import java.util.List;

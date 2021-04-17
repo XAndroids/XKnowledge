@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.checksubtree;
+package com.java.xknowledge.leetcode.tree.easy.checksubtree;
 
 /**
  * 面试题 04.10. 检查子树

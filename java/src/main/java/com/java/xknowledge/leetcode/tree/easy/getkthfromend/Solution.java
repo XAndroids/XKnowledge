@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.getkthfromend;
+package com.java.xknowledge.leetcode.tree.easy.getkthfromend;
 
 /**
  * 剑指 Offer 22. 链表中倒数第k个节点

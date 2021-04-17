@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.reverseprint;
+package com.java.xknowledge.leetcode.tree.easy.reverseprint;
 
 import java.util.Deque;
 import java.util.LinkedList;

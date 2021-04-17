@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.issymmetric;
+package com.java.xknowledge.leetcode.tree.easy.issymmetric;
 
 /**
  * 101. 对称二叉树

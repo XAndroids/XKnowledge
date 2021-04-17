@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.inverttree;
+package com.java.xknowledge.leetcode.tree.easy.inverttree;
 
 /**
  * 226. 翻转二叉树
