@@ -34,7 +34,8 @@ class Solution {
                 mergeList.add(intervals[i]);
             } else {
                 //如果重合，则更新当前mergeList区间为新的重合区间
-                mergeList.get(mergeList.size() - 1)[1] = Math.max(mergeList.get(mergeList.size() - 1)[1], intervals[i][1]);
+                mergeList.get(mergeList.size() - 1)[1] = Math.max(mergeList.get(mergeList.size() -
+                        1)[1], intervals[i][1]);
             }
         }
 
