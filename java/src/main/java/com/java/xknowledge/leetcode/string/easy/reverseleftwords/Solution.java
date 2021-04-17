@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.string.reverseleftwords;
+package com.java.xknowledge.leetcode.string.easy.reverseleftwords;
 
 /**
  * 剑指 Offer 58 - II. 左旋转字符串

@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.string.minwindow;
+package com.java.xknowledge.leetcode.string.easy.minwindow;
 
 class Solution {
     public String minWindow(String s, String t) {

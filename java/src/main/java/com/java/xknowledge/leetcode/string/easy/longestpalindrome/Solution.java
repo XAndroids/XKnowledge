@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.string.longestpalindrome;
+package com.java.xknowledge.leetcode.string.easy.longestpalindrome;
 
 /**
  * 5. 最长回文子串
