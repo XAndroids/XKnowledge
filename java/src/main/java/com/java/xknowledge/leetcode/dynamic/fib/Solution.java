@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.other.fib;
+package com.java.xknowledge.leetcode.dynamic.fib;
 
 /**
  * 509. 斐波那契数
