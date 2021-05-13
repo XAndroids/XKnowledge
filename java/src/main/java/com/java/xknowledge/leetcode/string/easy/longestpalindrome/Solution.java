@@ -134,7 +134,8 @@ public class Solution {
      */
     private static int expandAroundCenter(String s, int startLeft, int startRight) {
         //如果当前字符串是回文，则继续向外拓展判断
-        while (startLeft >= 0 && startRight < s.length() && s.charAt(startLeft) == s.charAt(startRight)) {
+        while (startLeft >= 0 && startRight < s.length() && s.charAt(startLeft) == s
+                .charAt(startRight)) {
             startLeft--;
             startRight++;
         }
