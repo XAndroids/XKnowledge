@@ -41,7 +41,7 @@ class Solution {
                 continue;
             }
 
-            path.addLast(candidates[begin]);
+            path.addLast(candidates[i]);
             dfs(candidates, i + 1, path, target - candidates[i], resultList);
             path.removeLast();
         }
