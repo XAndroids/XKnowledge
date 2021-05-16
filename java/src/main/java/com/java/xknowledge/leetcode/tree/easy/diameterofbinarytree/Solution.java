@@ -5,7 +5,7 @@ package com.java.xknowledge.leetcode.tree.easy.diameterofbinarytree;
  * 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree/
  */
 class Solution {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
