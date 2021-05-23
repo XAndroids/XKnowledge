@@ -22,6 +22,7 @@ class TestClass extends TestAbstractClass implements TestInterface {
     public static void main(String[] args) {
         //1.2 调用方法时，自由子类实现具体方法，故调用的是子类方法
         TestInterface testClass = new TestClass();
+        TestInterface testClass10 = testClass;
         testClass.test();
         //2.2 调用方法时，由于父类实现接口方法，子类覆盖接口方法，调用方法为子类，除非子类方法中super调用父类方法
         testClass.test2();
