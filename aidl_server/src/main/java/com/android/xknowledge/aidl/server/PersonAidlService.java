@@ -25,7 +25,8 @@ public class PersonAidlService extends Service {
         @Override
         public void addPerson(Person person) throws RemoteException {
             personList.add(person);
-            Log.i("PersonAidlService", personList.toString());
+            Log.i("AIDL", "PersonAidlService = " + personList.toString());
+            Log.i("AIDL", "Service Thread = " + Thread.currentThread().getName());
         }
     };
 }

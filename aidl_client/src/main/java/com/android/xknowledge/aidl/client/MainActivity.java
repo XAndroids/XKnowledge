@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
+                    Log.i("AIDL", "Client Thread = " + Thread.currentThread().getName());
                     personAidl.addPerson(new Person("aidl test"));
                 } catch (RemoteException e) {
                     e.printStackTrace();
