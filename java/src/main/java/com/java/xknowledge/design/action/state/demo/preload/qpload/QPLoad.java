@@ -53,17 +53,20 @@ public class QPLoad implements Runnable {
         if (mDataLoader != null) {
             mQPString = mDataLoader.getQPDataString();
             mLoadState.loadComplete();//可能是StateListening或loadComplete状态
-            System.out.println("QPLoad_run_mDataLoader.getQPDataString, mHybridId = " + mHybridId + "mLoadState = " + mLoadState + "mQPString = " + mQPString);
+            System.out.println("QPLoad_run_mDataLoader.getQPDataString, mHybridId = " + mHybridId +
+                    "mLoadState = " + mLoadState + "mQPString = " + mQPString);
         }
     }
 
     void doQPLoadComplete() {
-        System.out.println("QPLoad_doQPLoadComplete, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_doQPLoadComplete, mHybridId = " + mHybridId + "mLoadState = "
+                + mLoadState);
         setLoadState(new StateComplete(this));
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                System.out.println("QPLoad_startTimeout, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+                System.out.println("QPLoad_startTimeout, mHybridId = " + mHybridId + "mLoadState = "
+                        + mLoadState);
                 mLoadState.timeOut();
             }
         }, 10 * 1000);
@@ -72,22 +75,26 @@ public class QPLoad implements Runnable {
     void setListeningAndAddLocalCallback(LoadCallback loadCallback) {
         addLoadCallback(loadCallback);
         setLoadState(new StateListening(this));
-        System.out.println("QPLoad_setListeningAndAddLocalCallback, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_setListeningAndAddLocalCallback, mHybridId = " + mHybridId
+                + "mLoadState = " + mLoadState);
     }
 
     void addLoadCallback(LoadCallback loadCallback) {
-        System.out.println("QPLoad_addLoadCallback, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_addLoadCallback, mHybridId = " + mHybridId + "mLoadState = "
+                + mLoadState);
         mLoadCallbackList.add(loadCallback);
     }
 
     void addAndNotifyLoadCallback(LoadCallback loadCallback) {
-        System.out.println("QPLoad_addAndNotifyLoadCallback, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_addAndNotifyLoadCallback, mHybridId = " + mHybridId + "mLoadState = "
+                + mLoadState);
         mLoadCallbackList.add(loadCallback);
         notifyAllLoadCallback();
     }
 
     void notifyAllLoadCallback() {
-        System.out.println("QPLoad_notifyAllLoadCallback, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_notifyAllLoadCallback, mHybridId = " + mHybridId + "mLoadState = "
+                + mLoadState);
         if (!mLoadCallbackList.isEmpty()) {
             for (int i = 0; i < mLoadCallbackList.size(); i++) {
                 mLoadCallbackList.get(i).onResult(mQPString);
@@ -98,7 +105,8 @@ public class QPLoad implements Runnable {
     }
 
     void removeQPLoad() {
-        System.out.println("QPLoad_removeQPLoad, mHybridId = " + mHybridId + "mLoadState = " + mLoadState);
+        System.out.println("QPLoad_removeQPLoad, mHybridId = " + mHybridId + "mLoadState = "
+                + mLoadState);
         setLoadState(new StateDestroy(this));
         QPLoadManager.getInstance().removeQPLoad(mHybridId);
     }

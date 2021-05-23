@@ -40,7 +40,8 @@ class PreLoadDemo {
                 e.printStackTrace();
             }
             String result = "hotel qp result";
-            System.out.println(String.format("%s ,load = %s", simpleDateFormat.format(new Date()), result));
+            System.out.println(String.format("%s ,load = %s", simpleDateFormat.format(new Date()),
+                    result));
             return result;
         });
 
@@ -52,21 +53,16 @@ class PreLoadDemo {
         QPLoadManager.getInstance().listenQP("hotel", new LoadCallback() {
             @Override
             public void onResult(String qpString) {
-                System.out.println(String.format("%s ,hotel callback = " + qpString, simpleDateFormat.format(new Date())));
+                System.out.println(String.format("%s ,hotel callback = " + qpString, simpleDateFormat
+                        .format(new Date())));
             }
         });
-//
-//        QPLoadManager.getInstance().listenQP("hotel", new LoadCallback() {
-//            @Override
-//            public void onResult(String qpString) {
-//                System.out.println(String.format("%s ,hotel2 callback = " + qpString, simpleDateFormat.format(new Date())));
-//            }
-//        });
 
         QPLoadManager.getInstance().listenQP("flight", new LoadCallback() {
             @Override
             public void onResult(String qpString) {
-                System.out.println(String.format("%s ,flight callback = " + qpString, simpleDateFormat.format(new Date())));
+                System.out.println(String.format("%s ,flight callback = " + qpString, simpleDateFormat
+                        .format(new Date())));
             }
         });
     }

@@ -43,13 +43,15 @@ public class QPLoadManager {
             System.out.println("QPLoadManager_loadQP_new QPLoad, hybrid = " + hybrid);
             qpLoad = new QPLoad(hybrid, dataLoader);
             mQpLoadMap.put(hybrid, qpLoad);
-            System.out.println("QPLoadManager_loadQP_mQpLoadMap.put, mQpLoadMap = " + mQpLoadMap.toString());
+            System.out.println("QPLoadManager_loadQP_mQpLoadMap.put, mQpLoadMap = " +
+                    mQpLoadMap.toString());
             qpLoad.startLoad();
         }
     }
 
     void listenQP(String hybrid, LoadCallback loadCallback) {
-        System.out.println("QPLoadManager_listenQP, hybrid = " + hybrid + ",loadCallback = " + loadCallback);
+        System.out.println("QPLoadManager_listenQP, hybrid = " + hybrid + ",loadCallback = " +
+                loadCallback);
         QPLoad qpLoad = mQpLoadMap.get(hybrid);
         if (qpLoad != null && loadCallback != null)
             qpLoad.listenLoad(loadCallback);
