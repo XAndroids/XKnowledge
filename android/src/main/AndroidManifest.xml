@@ -88,6 +88,8 @@
         <activity android:name=".sdk.ui.statusbar.StatusBarActivity" />
         <activity android:name=".sdk.ui.statusbar.ImmersiveActivity" />
         <activity android:name=".sdk.ui.listener.NavigationBarActivity" />
+        <activity android:name=".sdk.ui.animation.ScalAnimationActivity" />
+        <activity android:name=".sdk.ui.animator.ObjectAnimatorActivity" />
         <activity android:name=".sdk.component.activity.task.TaskActivity" />
         <activity android:name=".sdk.component.activity.state.SaveInstanceActivity" />
         <activity android:name=".sdk.thread.ThreadActivity" />

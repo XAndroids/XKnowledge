@@ -1,6 +1,8 @@
 package com.android.xknowledge.sdk.ui
 
 import com.android.xknowledge.ListActivity
+import com.android.xknowledge.sdk.ui.animation.ScalAnimationActivity
+import com.android.xknowledge.sdk.ui.animator.ObjectAnimatorActivity
 import com.android.xknowledge.sdk.ui.custom.CustomActivity
 import com.android.xknowledge.sdk.ui.dialog.DialogActivity
 import com.android.xknowledge.sdk.ui.event.EventActivity
@@ -28,7 +30,9 @@ class UiActivity : ListActivity() {
             ListItem("Theme", "主题相关", ThemeActivity::class.java),
             ListItem("Setting", "设置相关", SettingActivity::class.java),
             ListItem("Height", "屏幕高度", HeightActivity::class.java),
-            ListItem("CustomView", "自定义View相关", CustomActivity::class.java)
+            ListItem("CustomView", "自定义View相关", CustomActivity::class.java),
+            ListItem("ObjectAnimator", "属性动画", ObjectAnimatorActivity::class.java),
+            ListItem("ScalAnimation", "补间动画", ScalAnimationActivity::class.java)
         )
     }
 }
