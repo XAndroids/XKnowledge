@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.thread;
+package com.java.xknowledge.leetcode.thread.easy.other;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
