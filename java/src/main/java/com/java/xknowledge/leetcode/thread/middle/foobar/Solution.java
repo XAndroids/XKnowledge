@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.thread.easy.foobar;
+package com.java.xknowledge.leetcode.thread.middle.foobar;
 
 /**
  * 1115. 交替打印FooBar
