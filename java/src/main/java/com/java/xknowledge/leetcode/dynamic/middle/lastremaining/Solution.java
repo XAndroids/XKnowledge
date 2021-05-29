@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.dynamic.lastremaining;
+package com.java.xknowledge.leetcode.dynamic.middle.lastremaining;
 
 /**
  * 剑指 Offer 62. 圆圈中最后剩下的数字
