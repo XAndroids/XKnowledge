@@ -36,7 +36,7 @@ class Solution {
     }
 
     //暴力破解法！！！，次算法不行。如case[0,1,0,3,2,3]，按此算法结果是3，但是0,1,2,3结果是4！！！
-    public int lengthOfLIS2(int[] nums) {
+//    public int lengthOfLIS2(int[] nums) {
 //        //参数校验
 //        if (nums == null) return 0;
 //        if (nums.length == 0 || nums.length == 1) return nums.length;
@@ -57,5 +57,5 @@ class Solution {
 //        }
 //
 //        return maxResult;
-    }
+//    }
 }
