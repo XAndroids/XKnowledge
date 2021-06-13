@@ -19,6 +19,8 @@ class XApplication : Application() {
         const val MY_APP_TAG: String = "XApplication";
     }
 
+    //参考：《Android：全面解析 Application类》：https://juejin.cn/post/6844903496806825998#heading-11
+    //ContextImpl注入Application/onCreate之前
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         Log.i("XApplication", "attachBaseContext")
@@ -73,11 +75,13 @@ class XApplication : Application() {
         CrashReport.init(this)
     }
 
+    //通知当前内存使用/级别识别/资源不同程度释放/避免系统杀掉
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
         Log.i("XApplication", "onTrimMemory,level = $level");
     }
 
+    //onTrimMemory Andorid4.0后替代此API
     override fun onLowMemory() {
         super.onLowMemory()
         Log.i("XApplication", "onTrimMemory")
