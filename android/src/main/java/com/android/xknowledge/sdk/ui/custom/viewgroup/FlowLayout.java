@@ -2,10 +2,13 @@ package com.android.xknowledge.sdk.ui.custom.viewgroup;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.android.xknowledge.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +42,9 @@ public class FlowLayout extends ViewGroup {
     //主题style
     public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        //Andorid自定义属性，在Android X还是支持android:xxx写法
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MyTextView);
+        String mText = ta.getString(R.styleable.MyTextView_android_text);
     }
 
     //四个参数 自定义属性
