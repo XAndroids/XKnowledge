@@ -2,6 +2,7 @@ package com.android.xknowledge
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Process
 import android.util.Log
 import com.android.xknowledge.optimize.block.blockcanary.BlockCanary
@@ -18,8 +19,14 @@ class XApplication : Application() {
         const val MY_APP_TAG: String = "XApplication";
     }
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        Log.i("XApplication", "attachBaseContext")
+    }
+
     override fun onCreate() {
         super.onCreate()
+        Log.i("XApplication", "onCreate")
         //配合多进程，没创建新进程重新执行Application生命周期
         val pid = Process.myPid()
         Log.i("ProcessTestService", "XApplication onCreate,pid = $pid")
@@ -64,5 +71,15 @@ class XApplication : Application() {
 
         //捕获Java异常
         CrashReport.init(this)
+    }
+
+    override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
+        Log.i("XApplication", "onTrimMemory,level = $level");
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        Log.i("XApplication", "onTrimMemory")
     }
 }
