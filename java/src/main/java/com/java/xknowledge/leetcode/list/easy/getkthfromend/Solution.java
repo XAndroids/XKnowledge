@@ -1,4 +1,4 @@
-package com.java.xknowledge.leetcode.tree.easy.getkthfromend;
+package com.java.xknowledge.leetcode.list.easy.getkthfromend;
 
 /**
  * 剑指 Offer 22. 链表中倒数第k个节点
@@ -18,7 +18,7 @@ class Solution {
      * 统计长度法
      */
     public ListNode getKthFromEnd1(ListNode head, int k) {
-        //第一遍历统计链表的长度
+        //第一遍历，统计链表的长度
         int listLength = 0;
         ListNode temp = head;
         while (temp != null) {
@@ -26,8 +26,10 @@ class Solution {
             temp = temp.next;
         }
 
-        //第二次遍历，根据倒数距离k，计算正序遍历距离startIndex
+        //根据倒数距离k，计算正序遍历距离startIndex
         int startIndex = listLength - k;
+
+        //第二次遍历，从head节点遍历查找返回的节点
         ListNode temp2 = head;
         while (temp2 != null) {
             if (startIndex == 0) {//如果遍历到返回处，返回temp2
@@ -37,6 +39,8 @@ class Solution {
             startIndex--;
             temp2 = temp2.next;
         }
+
+        //如果没有找到，则返回null
         return null;
     }
 
