@@ -22,10 +22,12 @@ class Solution {
             return null;
         }
 
-        //定义辅助节点temp/pre/cur
-        ListNode temp = new ListNode(-1);
-        temp.next = head;
-        ListNode pre = temp;
+        //定义辅助result节点，用于返回删除后的链表，处理head.val=val的情况！！！
+        ListNode result = new ListNode(-1);
+        result.next = head;
+
+        //定义辅助pre/cur节点，用于查找和删除节点
+        ListNode pre = result;
         ListNode cur = head;
 
         //查找val相等的节点位置
@@ -40,6 +42,6 @@ class Solution {
         }
 
         //返回辅助temp节点的下一个节点
-        return temp.next;
+        return result.next;
     }
 }
