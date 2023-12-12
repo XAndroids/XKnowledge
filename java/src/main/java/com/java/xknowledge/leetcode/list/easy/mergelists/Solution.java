@@ -24,7 +24,7 @@ class Solution {
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode();//创建辅助head节点
+        ListNode head = new ListNode();//创建辅助head节点，保存返回结果头指针
         ListNode pre = head;//创建辅助pre指针，用来串联合并链表
 
         while (l1 != null && l2 != null) {//当两个链表当前节点任意未null时，就不用合并操作
@@ -36,7 +36,7 @@ class Solution {
                 l2 = l2.next;
             }
 
-            pre = pre.next;//pre辅助指针向后移动
+            pre = pre.next;//pre辅助串联指针向后移动
         }
 
         if (l1 != null) pre.next = l1;//如果某个链表还存在，直接连接上即可
