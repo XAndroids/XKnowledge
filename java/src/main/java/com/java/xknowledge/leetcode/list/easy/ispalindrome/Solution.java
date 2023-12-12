@@ -53,6 +53,7 @@ class Solution {
          * 栈方法：通过入栈和出栈字符反转顺序，进行前后节点的对比
          */
         public boolean isPalindrome2(ListNode head) {
+            //通过入栈和出栈，反转链表
             Deque<Integer> stackInteger = new LinkedList<>();
             ListNode tmp = head;
             while (tmp != null) {//遍历将链表节点入栈
@@ -60,9 +61,10 @@ class Solution {
                 tmp = tmp.next;
             }
 
+            //通过正常遍历和出栈顺序判断是否是回文
             ListNode tmp2 = head;
             while (tmp2 != null) {
-                if (tmp2.val != stackInteger.pop()) {//通过正常遍历和出栈顺序判断是否是回文
+                if (tmp2.val != stackInteger.pop()) {
                     return false;
                 }
                 tmp2 = tmp2.next;
