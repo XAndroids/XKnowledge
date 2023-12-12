@@ -24,10 +24,11 @@ public class Solution {
         ListNode curr = head;
 
         while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+            ListNode next = curr.next;//next节点保存下一个节点引用
+            curr.next = prev;//倒转当前节点
+
+            prev = curr;//前移pre，未下一个节点倒转做准备
+            curr = next;//前移cur，为下一个节点倒转做准备
         }
 
         return prev;
