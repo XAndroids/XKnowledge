@@ -18,13 +18,17 @@ class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
 
-        ListNode searchA = headA;//A/B链表开始遍历
+        //A/B链表开始遍历
+        ListNode searchA = headA;
         ListNode searchB = headB;
 
-        while (searchA != searchB) {//香蕉节点是searchA和searchB同一个节点对象，不是数据相等
+        //相交节点是searchA和searchB同一个节点对象，不是数据相等！！！！
+        while (searchA != searchB) {
             searchA = searchA == null ? headB : searchA.next;//如果A或B走到头，切换到另外链表，消除长度差
             searchB = searchB == null ? headA : searchB.next;//否则继续向后
         }
+
+        //找到相交节点，返回
         return searchA;
     }
 
