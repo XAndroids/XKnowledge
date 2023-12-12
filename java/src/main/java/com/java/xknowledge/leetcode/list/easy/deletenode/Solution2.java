@@ -15,8 +15,9 @@ class Solution2 {
     }
 
     public void deleteNode(ListNode node) {
-        //直接从当前节点删除
+        //复制下一个节点的值
         node.val = node.next.val;
+        //直接删除下一个节点，从而删除想要删除节点
         node.next = node.next.next;
     }
 }
