@@ -15,7 +15,7 @@ class Solution {
 
         public void first() throws InterruptedException {
             synchronized (lock) {//获取lock锁
-                if (index == 1) {
+                if (index == 1) {//判断当前条件，是否适合输出，输出完毕后释放锁
                     System.out.println("first");
                     index++;
                     lock.notifyAll();
@@ -25,7 +25,7 @@ class Solution {
 
         public void second() throws InterruptedException {
             synchronized (lock) {//获取lock锁
-                while (index < 2) {
+                while (index < 2) {//判断当前条件是否适合输出，or否则释放锁等待
                     System.out.println("second wait");
                     lock.wait();
                 }
@@ -38,7 +38,7 @@ class Solution {
 
         public void third() throws InterruptedException {
             synchronized (lock) {//获取lock锁
-                while (index < 3) {
+                while (index < 3) {//判断当前条件是否适合输出，or否则释放锁等待
                     System.out.println("third wait");
                     lock.wait();
                 }

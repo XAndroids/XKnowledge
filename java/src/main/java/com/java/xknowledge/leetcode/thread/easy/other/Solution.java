@@ -171,8 +171,8 @@ class Solution {
 
 
     public static void main(String[] args) {
-        MyThread4 thread1 = new MyThread4();
-        MyThread4 thread2 = new MyThread4();
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
         thread1.start();
         thread2.start();
     }
